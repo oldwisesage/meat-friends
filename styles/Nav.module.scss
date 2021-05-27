@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100vw;
+  background-color: purple;
+}
+
+.logo {
+  color: red;
+  justify-content: flex-start;
+}
+.title {
+  margin: 20px;
+  font-size: 3em;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: red;
+  width: 80vw;
+}
+
+.navlinks {
+  color: white;
+  text-decoration: none;
+  margin: auto 45px;
+  font-size: 150%;
+}
+.navlinks:hover {
+}
+.cart {
+  margin: auto;
+}
