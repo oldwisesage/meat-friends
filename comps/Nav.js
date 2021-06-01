@@ -22,8 +22,23 @@ const Nav = () => {
           <a className={styles.navlinks}>Contact</a>
         </Link>
       </div>
-      <div className={styles.cart}>
-        <Image src="/1f6d2.png" width={50} height={50} />
+      <div className={styles.account}>
+        <Link href="/">
+          <a className={styles.account__login}>Log in</a>
+        </Link>
+        <div className={styles.account__user}>
+          <Image
+            src="https://fakeimg.pl/50x50
+            "
+            width="50"
+            height="50"
+            className={styles.account__user_photo}
+          ></Image>
+          <div className={styles.account__user_name}>User</div>
+        </div>
+        <div className={styles.cart}>
+          <Image src="/1f6d2.png" width={50} height={50} />
+        </div>
       </div>
     </nav>
   );

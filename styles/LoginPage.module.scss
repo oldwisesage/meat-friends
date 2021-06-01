@@ -1,0 +1,10 @@
+.container {
+  background: blue;
+}
+
+.loginpage {
+  background: brown;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  min-height: 80vh;
+}

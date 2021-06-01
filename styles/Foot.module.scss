@@ -1,0 +1,29 @@
+.foot {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  grid-gap: 50px;
+  background: darkgrey;
+}
+.logo {
+  color: white;
+}
+.left {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  overflow: hidden;
+}
+.right {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  overflow: hidden;
+}
+.link {
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: brown;
+  }
+}

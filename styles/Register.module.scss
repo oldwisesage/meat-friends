@@ -1,0 +1,107 @@
+.base {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: auto;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+.container {
+  background: white;
+  margin: 50px;
+  padding: 50px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  width: 400px;
+}
+
+.text {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 25px;
+  &_title {
+    color: black;
+  }
+  &_subtitle {
+    color: grey;
+  }
+}
+
+.form {
+  display: grid;
+
+  &__group {
+    display: grid;
+    grid-gap: 20px;
+    &_check {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
+  }
+  &__input {
+    background: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px 2px 0 0;
+    border-bottom: 1px solid black;
+    height: 25px;
+    &_check {
+      margin: auto 20px;
+    }
+    &:focus {
+      border: none;
+      border-bottom: 1.5px solid blue;
+      text-decoration: none;
+    }
+  }
+  &__label {
+    margin-left: 20px;
+    &_check {
+      color: grey;
+    }
+  }
+}
+.forgot {
+  &__text {
+    text-decoration: none;
+    color: grey;
+    font-size: 15px;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+.create {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-top: 35px;
+  &__btn {
+    background: none;
+    color: grey;
+    border: 2px solid grey;
+    margin: 20px 0;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 20px;
+    padding: 5px 20px;
+    &:hover {
+      background: rgba(100, 100, 100, 0.6);
+    }
+  }
+}
+.register {
+  &__text {
+    color: grey;
+  }
+  &__link {
+    text-decoration: none;
+    color: grey;
+    &:hover {
+      color: blue;
+    }
+  }
+}

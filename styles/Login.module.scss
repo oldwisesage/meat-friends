@@ -1,0 +1,90 @@
+.base {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: auto;
+  align-content: center;
+  justify-content: center;
+  background: transparent;
+}
+.container {
+  background: white;
+  margin: 50px;
+  padding: 50px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+.text {
+  &__title {
+    color: black;
+  }
+  &__subtitle {
+    color: grey;
+  }
+}
+.form {
+  display: grid;
+
+  &__group {
+    display: grid;
+    grid-gap: 20px;
+  }
+  &__input {
+    background: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px 2px 0 0;
+    border-bottom: 1px solid black;
+    height: 25px;
+    &:focus {
+      border: none;
+      border-bottom: 1.5px solid blue;
+      text-decoration: none;
+    }
+  }
+  &__label {
+    margin-left: 20px;
+  }
+}
+.forgot {
+  &__text {
+    text-decoration: none;
+    color: grey;
+    font-size: 15px;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+.submit {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-top: 15px;
+  &__btn {
+    background: none;
+    color: grey;
+    border: 2px solid grey;
+    margin: 20px 0;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 20px;
+    padding: 5px 20px;
+    &:hover {
+      background: rgba(100, 100, 100, 0.6);
+    }
+  }
+}
+.register {
+  &__text {
+    color: grey;
+  }
+  &__link {
+    text-decoration: none;
+    color: grey;
+    &:hover {
+      color: blue;
+    }
+  }
+}

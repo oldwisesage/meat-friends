@@ -1,1 +1,130 @@
+.container {
+  display: grid;
+  // grid-template-rows: ;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "cta cta cta"
+    "shop shop shop"
+    "about about about";
+}
+.cta {
+  grid-area: cta;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background: url("https://fakeimg.pl/1200x600");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  &__text {
+    color: white;
+    font-size: 45px;
+    max-width: 450px;
+    justify-self: center;
+    align-self: center;
+  }
+  &__btn {
+    text-decoration: none;
+    justify-self: center;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+  }
+  &__btn:hover {
+    color: red;
+    border: 2px solid red;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
 
+.shop {
+  display: grid;
+  grid-area: shop;
+  grid-template-columns: 100px repeat(3, 1fr) 100px;
+  background: lightblue;
+  color: white;
+  &__title {
+    grid-column: 2 / -2;
+    margin: 20px;
+  }
+  &__animals {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 2 / -2;
+    grid-gap: 50px;
+    margin: 50px;
+  }
+  &__animal {
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    &:hover {
+      border: 1px solid white;
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+  &__img {
+    border-radius: 20px;
+    margin: 20px;
+  }
+  &__btn {
+    text-decoration: none;
+    align-self: center;
+    justify-self: center;
+    margin: 20px auto 50px;
+    border: 2px solid white;
+    font-size: 20px;
+    font-weight: 400px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    &:hover {
+      color: blue;
+      border: 2px solid blue;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+.who {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background: lightgrey;
+  min-width: 100vw;
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-left: 100px;
+    color: white;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 50px;
+    justify-items: center;
+    margin-bottom: 75px;
+
+    &_container {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+    &_img {
+      border-radius: center;
+    }
+    &_text {
+      color: white;
+      font-size: 20px;
+      padding: 25px 100px;
+    }
+    &_btn {
+      font-size: 25px;
+      background: none;
+      border: 3px solid white;
+      color: white;
+    }
+  }
+}
