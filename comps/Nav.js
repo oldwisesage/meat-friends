@@ -4,26 +4,26 @@ import styles from "../styles/Nav.module.scss";
 
 const Nav = () => {
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.container}>
       <div className={styles.logo}>
         <h1 className={styles.title}>meat friends</h1>
       </div>
-      <div className={styles.links}>
+      <div className={styles.nav}>
         <Link href="/">
-          <a className={styles.navlinks}>About</a>
+          <a className={styles.nav__link}>About</a>
         </Link>
         <Link href="/">
-          <a className={styles.navlinks}>Shop</a>
+          <a className={styles.nav__link}>Shop</a>
         </Link>
         <Link href="/">
-          <a className={styles.navlinks}>Philosophy</a>
+          <a className={styles.nav__link}>Philosophy</a>
         </Link>
         <Link href="/">
-          <a className={styles.navlinks}>Contact</a>
+          <a className={styles.nav__link}>Contact</a>
         </Link>
       </div>
       <div className={styles.account}>
-        <Link href="/">
+        <Link href="/login">
           <a className={styles.account__login}>Log in</a>
         </Link>
         <div className={styles.account__user}>

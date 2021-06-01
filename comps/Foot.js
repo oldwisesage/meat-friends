@@ -5,38 +5,38 @@ import Link from "next/link";
 const Foot = () => {
   return (
     <footer className={styles.foot}>
-      <div className={styles.foot__left}>
+      <div className={styles.left}>
         <Link href="/">
-          <a className={styles.foot__link}>Word</a>
+          <a className={styles.link}>Word</a>
         </Link>
         <Link href="/">
-          <a className={styles.foot__link}>Word</a>
+          <a className={styles.link}>Word</a>
         </Link>
         <Link href="/">
-          <a className={styles.foot__link}>Word</a>
+          <a className={styles.link}>Word</a>
         </Link>
         <Link href="/">
-          <a className={styles.foot__link}>Word</a>
+          <a className={styles.link}>Word</a>
         </Link>
       </div>
-      <div className={styles.foot__logo}>
+      <div className={styles.logo}>
         <h1>meat friends</h1>
       </div>
-      <div className={styles.foot__right}>
+      <div className={styles.right}>
         <Link href="/">
-          <a className={styles.foot__link}>Word</a>
+          <a className={styles.link}>Word</a>
         </Link>
         <Link href="/">
-          <a className={styles.foot__link}>Word</a>
+          <a className={styles.link}>Word</a>
         </Link>
         <Link href="/">
-          <a className={styles.foot__link}>Word</a>
+          <a className={styles.link}>Word</a>
         </Link>
         <Link href="/">
-          <a className={styles.foot__link}>Word</a>
+          <a className={styles.link}>Word</a>
         </Link>
         <Link href="/">
-          <a className={styles.foot__link}>Word</a>
+          <a className={styles.link}>Word</a>
         </Link>
       </div>
     </footer>
