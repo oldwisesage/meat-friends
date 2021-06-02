@@ -12,14 +12,16 @@ export default function Home() {
         <main>
           <div className={styles.container}>
             <div className={styles.cta}>
-              <h2 className={[styles.cta__text]}>
-                Some sort of slogan that is kind of cool
-              </h2>
-              <button className={styles.cta__btn}>Click me!</button>
+              <div className={styles.cta__container}>
+                <h2 className={[styles.cta__text]}>
+                  Some sort of slogan that is kind of cool
+                </h2>
+                <button className={styles.cta__btn}>Click me!</button>
+              </div>
             </div>
             <ShopLanding />
+
             <div className={styles.who}>
-              <h1 className={styles.who__title}>Section 3 - Philosophy</h1>
               <div className={styles.who__content}>
                 <Image
                   src="https://fakeimg.pl/300x300"

@@ -1,0 +1,28 @@
+@import "variables";
+
+.container {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-areas: "gutter content content content gutter";
+}
+.title {
+}
+.section {
+  grid-column: 2 /-2;
+  display: grid;
+  background: $color-grey-pale;
+
+  padding: 10rem;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 10rem;
+  &__img {
+    border-radius: $border-radius;
+  }
+  &__text {
+    font-size: $plus-font-size;
+    color: gray;
+    justify-self: center;
+    align-self: center;
+    line-height: 1.5;
+  }
+}

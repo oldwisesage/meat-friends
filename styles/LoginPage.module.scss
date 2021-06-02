@@ -1,10 +1,10 @@
-.container {
-  background: blue;
-}
+@import "variables";
 
-.loginpage {
-  background: brown;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+.container {
   min-height: 80vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  padding: 2rem;
+  background: $color-grey-pale;
 }

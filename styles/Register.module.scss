@@ -1,31 +1,28 @@
-.base {
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: auto;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
-}
+@import "mixins";
+@import "variables";
+
 .container {
   background: white;
-  margin: 50px;
-  padding: 50px;
+  margin: 5rem;
+  padding: 5rem;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr;
-  width: 400px;
+  width: 40rem;
 }
 
 .text {
   display: grid;
   align-items: center;
   justify-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 2.5rem;
   &_title {
-    color: black;
+    font-size: $midsmall-font-size;
+    color: $color-black;
   }
   &_subtitle {
-    color: grey;
+    font-size: $base-font-size;
+    color: $color-grey-dark;
   }
 }
 
@@ -34,7 +31,7 @@
 
   &__group {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 2rem;
     &_check {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -49,7 +46,7 @@
     border-bottom: 1px solid black;
     height: 25px;
     &_check {
-      margin: auto 20px;
+      margin: auto 2rem;
     }
     &:focus {
       border: none;
@@ -58,7 +55,7 @@
     }
   }
   &__label {
-    margin-left: 20px;
+    margin-left: 2rem;
     &_check {
       color: grey;
     }
@@ -80,25 +77,17 @@
   justify-items: center;
   margin-top: 35px;
   &__btn {
-    background: none;
-    color: grey;
-    border: 2px solid grey;
-    margin: 20px 0;
-    font-weight: 400;
-    font-size: 20px;
-    margin: 20px;
-    padding: 5px 20px;
-    &:hover {
-      background: rgba(100, 100, 100, 0.6);
-    }
+    @include btn-dark;
   }
 }
 .register {
   &__text {
     color: grey;
   }
+
   &__link {
     text-decoration: none;
+    font-size: $base-font-size;
     color: grey;
     &:hover {
       color: blue;

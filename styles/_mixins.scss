@@ -1,0 +1,23 @@
+@import "variables";
+
+@mixin btn-dark {
+  text-decoration: none;
+  background: $color-grey-dark;
+  border: none;
+  color: $color-white;
+  font-size: $plus-font-size;
+  padding: 0.5rem 1rem;
+  border-radius: $border-radius;
+  &:hover {
+    color: red;
+    border: 2px solid red;
+  }
+}
+@mixin btn-light {
+}
+
+@mixin container {
+}
+
+@mixin title {
+}

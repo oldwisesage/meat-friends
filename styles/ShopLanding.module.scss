@@ -1,49 +1,31 @@
+@import "mixins";
+
 .container {
   display: grid;
   grid-area: shop;
-  grid-template-columns: 100px repeat(3, 1fr) 100px;
-  background: lightblue;
+  min-height: 60vh;
+  grid-template-columns: 100px 1fr 100px;
   color: white;
-}
-.title {
-  grid-column: 2 / -2;
-  margin: 20px;
 }
 .animals {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-column: 2 / -2;
-  grid-gap: 50px;
-  margin: 50px;
+  margin: 5rem;
 }
 .animal {
   display: grid;
   grid-auto-flow: row;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
-  padding: 25px;
+  padding: 2.5rem;
   &:hover {
-    border: 1px solid white;
-    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid $color-grey-light;
+    background: $color-grey-pale;
+    border-radius: $border-radius;
   }
   &__img {
     border-radius: 20px;
     margin: 20px;
-  }
-  &__btn {
-    text-decoration: none;
-    align-self: center;
-    justify-self: center;
-    margin: 20px auto 50px;
-    border: 2px solid white;
-    font-size: 20px;
-    font-weight: 400px;
-    color: white;
-    background-color: rgba(255, 255, 255, 0.3);
-    &:hover {
-      color: blue;
-      border: 2px solid blue;
-      background-color: rgba(255, 255, 255, 0.8);
-    }
   }
 }

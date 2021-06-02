@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 .container {
   display: grid;
   // grid-template-rows: ;
@@ -10,52 +13,38 @@
 .cta {
   grid-area: cta;
   display: grid;
-  justify-content: center;
-  align-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: end;
+  justify-content: start;
   background: url("https://fakeimg.pl/1200x600");
   background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 500px;
+  min-height: 50rem;
+
+  &__container {
+    padding: 0 0 5rem 5rem;
+  }
   &__text {
-    color: white;
-    font-size: 45px;
-    max-width: 450px;
-    justify-self: center;
-    align-self: center;
+    color: $color-white;
+    font-size: 4.5rem;
+    max-width: 45rem;
   }
   &__btn {
-    text-decoration: none;
-    justify-self: center;
-    border: 2px solid white;
-    background: rgba(255, 255, 255, 0.3);
-    color: white;
-    font-weight: 500;
-    font-size: 25px;
-  }
-  &__btn:hover {
-    color: red;
-    border: 2px solid red;
-    background-color: rgba(255, 255, 255, 0.8);
+    @include btn-dark;
   }
 }
 .who {
   display: grid;
-  grid-template-columns: auto 1fr;
-  background: lightgrey;
+  grid-template-columns: 100px 1fr 2fr 100px;
+  background: $color-white;
   min-width: 100vw;
-
-  &__title {
-    grid-column: 1 / -1;
-    margin-left: 100px;
-    color: white;
-  }
 
   &__content {
     display: grid;
+    grid-column: 2 / -2;
     grid-template-columns: 1fr 2fr;
-    grid-gap: 50px;
     justify-items: center;
-    margin-bottom: 75px;
+    margin-bottom: 7.5rem;
 
     &_container {
       display: grid;
@@ -63,18 +52,16 @@
       justify-items: center;
     }
     &_img {
-      border-radius: center;
+      border-radius: $border-radius;
     }
     &_text {
-      color: white;
+      color: $color-black;
       font-size: 20px;
-      padding: 25px 100px;
     }
     &_btn {
-      font-size: 25px;
-      background: none;
-      border: 3px solid white;
-      color: white;
+      justify-self: start;
+      margin-left: 15rem;
+      @include btn-dark;
     }
   }
 }

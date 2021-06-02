@@ -1,6 +1,11 @@
+@import "mixins";
+@import "variables";
 .container {
-  background: brown;
+  background: $color-grey-pale;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr;
   min-height: 80vh;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
 }

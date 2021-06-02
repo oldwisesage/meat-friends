@@ -1,30 +1,31 @@
+@import "variables";
+
 .container {
   display: grid;
   grid-template-columns: auto 1fr auto;
   justify-content: center;
   align-items: center;
-  background-color: purple;
+  background-color: $color-grey-dark;
 }
 
 .logo {
-  color: red;
-  margin: 0 30px;
+  color: white;
 }
 .title {
-  margin: 10px 20px;
-  font-size: 3em;
+  margin: 0.5rem 4rem;
+  font-size: 4.5rem;
 }
 
 .nav {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr) 2fr;
   justify-items: center;
-  background-color: red;
+  align-content: end;
   &__link {
     color: white;
     text-decoration: none;
     margin: auto 45px;
-    font-size: 150%;
+    font-size: 2rem;
     &:hover {
       color: blue;
       border-bottom: 2px solid blue;
@@ -42,8 +43,11 @@
     justify-items: center;
     align-items: center;
     text-decoration: none;
-    font-size: 25px;
+    font-size: $plus-font-size;
     color: white;
+    border: 2px solid $color-grey-pale;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3px;
   }
   &__user {
     display: none;
@@ -67,4 +71,5 @@
 }
 .cart {
   margin: auto 30px;
+  fill: $color-white;
 }
