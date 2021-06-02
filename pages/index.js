@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Landing.module.scss";
+import ShopLanding from "../comps/ShopLanding";
 import { Fragment } from "react";
 
 export default function Home() {
@@ -16,38 +17,7 @@ export default function Home() {
               </h2>
               <button className={styles.cta__btn}>Click me!</button>
             </div>
-            <div className={styles.shop}>
-              <h1 className={styles.shop__title}>Section 2 - Shop</h1>.
-              <div className={styles.shop__animals}>
-                <div className={styles.shop__animal}>
-                  <Image
-                    src="https://fakeimg.pl/300x300"
-                    className={styles.shop__img}
-                    width="200"
-                    height="200"
-                  />
-                  <button className={styles.shop__btn}>Shop pork</button>
-                </div>
-                <div className={styles.shop__animal}>
-                  <Image
-                    src="https://fakeimg.pl/300x300"
-                    className={styles.shop__img}
-                    width="200"
-                    height="200"
-                  />
-                  <button className={styles.shop__btn}>Shop beef</button>
-                </div>
-                <div className={styles.shop__animal}>
-                  <Image
-                    src="https://fakeimg.pl/300x300"
-                    className={styles.shop__img}
-                    width="200"
-                    height="200"
-                  />
-                  <button className={styles.shop__btn}>Shop chix</button>
-                </div>
-              </div>
-            </div>
+            <ShopLanding />
             <div className={styles.who}>
               <h1 className={styles.who__title}>Section 3 - Philosophy</h1>
               <div className={styles.who__content}>
