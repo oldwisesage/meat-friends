@@ -14,9 +14,23 @@
   }
 }
 @mixin btn-light {
+  @include btn-dark;
+  background: $color-white;
+  color: $color-grey-dark;
+  &:hover {
+    color: red;
+    border: 2px solid red;
+  }
 }
 
 @mixin container {
+  background: white;
+  margin: 5rem;
+  padding: 5rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  width: 40rem;
 }
 
 @mixin title {

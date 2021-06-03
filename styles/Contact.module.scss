@@ -1,0 +1,79 @@
+@import "variables";
+@import "mixins";
+
+.container {
+  display: grid;
+  margin: 2rem 0;
+}
+
+.text {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 2.5rem;
+  &_title {
+    font-size: $midsmall-font-size;
+    color: $color-black;
+  }
+  &_subtitle {
+    font-size: $base-font-size;
+    color: $color-grey-dark;
+  }
+}
+
+.form {
+  display: grid;
+
+  &__group {
+    display: grid;
+    grid-gap: 2rem;
+
+    &_title {
+      color: $color-grey-dark;
+    }
+    &_check {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
+  }
+  &__input {
+    margin-left: 0.25rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 2px 2px 0 0;
+    border-bottom: 1px solid black;
+    height: 25px;
+    &_dropdown {
+      border: 1px solid $color-grey-dark;
+      background: $color-grey-pale;
+    }
+    &_description {
+      border: 1px solid $color-grey-dark;
+      background: $color-grey-pale;
+      min-height: 10rem;
+    }
+  }
+  &__label {
+    margin-left: 2rem;
+    &_check {
+      color: grey;
+    }
+  }
+}
+.submit {
+  display: grid;
+  grid-gap: 1.5rem;
+  margin-bottom: 2rem;
+  &_text {
+    font-size: $base-font-size;
+    color: $color-grey-dark;
+  }
+  &_btn {
+    margin-left: 0.25rem;
+    justify-self: start;
+    width: 15rem;
+    @include btn-dark;
+  }
+}

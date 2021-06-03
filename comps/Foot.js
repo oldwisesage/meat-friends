@@ -75,7 +75,7 @@ const Foot = () => {
           <p className={styles.copyright__text}>
             ©{" "}
             <Link href="/">
-              <a className={styles.copyright__link}>Sage Winn</a>
+              <a className={styles.copyright__link}>Meat Friends</a>
             </Link>{" "}
             2020. All rights reserved
           </p>

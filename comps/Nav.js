@@ -15,7 +15,7 @@ const Nav = () => {
         <Link href="/about">
           <a className={styles.nav__link}>About</a>
         </Link>
-        <Link href="/">
+        <Link href="/contact">
           <a className={styles.nav__link}>Contact</a>
         </Link>
       </div>
@@ -24,14 +24,8 @@ const Nav = () => {
           <a className={styles.account__login}>Log in</a>
         </Link>
         <div className={styles.account__user}>
-          <Image
-            src="https://fakeimg.pl/50x50
-            "
-            width="50"
-            height="50"
-            className={styles.account__user_photo}
-          ></Image>
-          <div className={styles.account__user_name}>User</div>
+          <div className={styles.account__user_photo}></div>
+          <div className={styles.account__user_name}>account</div>
         </div>
         <div className={styles.cart}>
           <svg

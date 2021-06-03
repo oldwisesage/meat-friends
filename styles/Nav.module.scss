@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 .container {
   display: grid;
@@ -39,37 +40,44 @@
   align-items: center;
   justify-items: center;
   &__login {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    text-decoration: none;
-    font-size: $plus-font-size;
-    color: white;
-    border: 2px solid $color-grey-pale;
-    padding: 0.5rem 1.5rem;
-    border-radius: 3px;
+    @include btn-light;
+    width: 10rem;
+    text-align: center;
+    justify-content: center;
   }
   &__user {
-    display: none;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-items: center;
-    margin-left: 20px;
+    grid-gap: 1rem;
+    border: 1.5px solid $color-grey-dark;
+    border-radius: 50px;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    background: $color-grey-pale;
+    display: none;
+    &:hover {
+      background: #fff;
+    }
 
     &_photo {
       color: blue;
+      background: $color-grey-dark;
+      width: 4rem;
+      height: 4rem;
       border-radius: 50px;
     }
 
     &_name {
-      margin-left: 10px;
-      font-size: 20px;
-      font-weight: 300;
-      color: white;
+      font-size: $small-font-size;
+      color: $color-grey-dark;
     }
   }
 }
 .cart {
   margin: auto 30px;
-  fill: $color-white;
+  fill: $color-grey-pale;
+  &:hover {
+    fill: #fff;
+  }
 }
