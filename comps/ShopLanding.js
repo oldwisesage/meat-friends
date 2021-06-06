@@ -1,17 +1,20 @@
 import styles from "../styles/ShopLanding.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 const ShopLanding = () => {
   return (
     <div className={styles.container}>
       <div className={styles.animals}>
         <div className={styles.animal}>
-          <Image
-            src="https://fakeimg.pl/300x300"
-            className={styles.animal__img}
-            width="200"
-            height="200"
-          />
+          <Link href="/meats/beef">
+            <Image
+              src="https://fakeimg.pl/300x300"
+              className={styles.animal__img}
+              width="200"
+              height="200"
+            />
+          </Link>
         </div>
         <div className={styles.animal}>
           <Image
