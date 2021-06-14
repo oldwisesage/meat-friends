@@ -3,5 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/meats/beef/cut": "pages/meats/beef/cut.js",
-  "/contact": "pages/contact.js"
+  "/": "pages/index.js"
 }
