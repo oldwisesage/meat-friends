@@ -1,38 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Pro&family=Lora");
+
 // COLOR VARIABLES
-$color-red-dark: #904d50;
-$color-red-mid: #b06d71;
-$color-red-light: #cda2a4;
-$color-red-pale: #dbbdbe;
+$red-dark: #904d50;
+$red-mid: #b06d71;
+$red-light: #cda2a4;
+$red-pale: #dbbdbe;
 
-$color-green-dark: #798465;
-$color-green-mid: #9da68c;
-$color-green-light: #bac1ae;
-$color-green-pale: #ced3c5;
+$green-dark: #798465;
+$green-mid: #9da68c;
+$green-light: #bac1ae;
+$green-pale: #ced3c5;
 
-$color-blue-dark: #587090;
-$color-blue-mid: #8196b1;
-$color-blue-light: #a6b5c9;
-$color-blue-pale: #c0cbd8;
+$blue-dark: #587090;
+$blue-mid: #8196b1;
+$blue-light: #a6b5c9;
+$blue-pale: #c0cbd8;
 
-$color-brown-dark: #886e5f;
-$color-brown-mid: #ab9487;
-$color-brown-light: #c4b4ab;
-$color-brown-pale: #d5cac3;
+$brown-dark: #886e5f;
+$brown-mid: #ab9487;
+$brown-light: #c4b4ab;
+$brown-pale: #d5cac3;
 
-$color-grey-dark: #8f8f8f;
-$color-grey-mid: #adadad;
-$color-grey-light: #cccccc;
-$color-grey-pale: #e0e0e0;
+$grey-dark: #8f8f8f;
+$grey-mid: #adadad;
+$grey-light: #cccccc;
+$grey-pale: #e0e0e0;
 
-$color-black: #000;
-$color-white: #fff;
+$black: #000;
+$white: #fff;
 
-// TRANSPARENT COLOR
+// TRANSPARENT COLORS
 
 // FONT VARIABLES
-$font-lora: "Lora", sans-serif;
-$font-avenir: "Nunito", serif;
+$lora: "Lora", sans-serif;
+$nunito: "Nunito", serif;
+// $avenir: "Avenir", serif;
 
 // FONT SIZES
 $largest-font-size: 7.451rem;

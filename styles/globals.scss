@@ -1,5 +1,11 @@
 @import "variables";
+@import "mixins";
 
+// CSS Reset
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
 *,
 *::before,
 *::after {
@@ -7,14 +13,44 @@
   padding: 0;
   box-sizing: inherit;
 }
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
 body {
   font-family: $font-avenir;
   color: $color-black;
   font-weight: 300;
   line-height: 1.6;
 }
+
+// GLOBAL STYLES
+// TYPOGRAPHY
+// h1
+// h2
+// h3
+// h4
+// h5
+// h6
+// body
+// sub1
+// sub2
+// sub3
+
+// GRID
+// no-gutter-grid
+// 50-gutter-grid
+// margin-XXX
+// column-XXX
+
+// grid-vertical
+
+// grid-stretch-10
+// grid-stretch-8
+// grid-stretch-4
+// grid-stretch-3
+
+// grid-center-6
+// grid-center-4
+// grid-center-3-200
+// grid-center-3-200
+// grid-center-2
+// grid-center-1
+
+// FLEX
