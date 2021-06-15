@@ -24,11 +24,12 @@
 }
 
 @mixin container {
-  background: white;
-  margin: 5rem;
-  padding: 5rem;
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr;
-  width: 40rem;
+  &-full {
+    width: 100%;
+
+    &-banner {
+    }
+  }
 }
