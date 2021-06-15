@@ -1,39 +1,64 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
 
 .container {
-  background: $color-white;
-  padding: 4rem 4rem 0 4rem;
+  background: white;
+  margin: 5rem;
+  padding: 5rem;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr;
-  border-radius: $border-radius;
+  width: 40rem;
 }
+
 .text {
-  padding: 2rem 0;
-  &__title {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 2.5rem;
+  &_title {
     font-size: $midsmall-font-size;
     color: $color-black;
   }
-  &__subtitle {
+  &_subtitle {
     font-size: $base-font-size;
     color: $color-grey-dark;
   }
 }
+
 .form {
   display: grid;
 
   &__group {
     display: grid;
     grid-gap: 2rem;
+    &_check {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
   }
   &__input {
-    background: $color-grey-pale;
+    background: white;
     text-decoration: none;
     border: none;
-    border-bottom: 1.5px solid $color-grey-dark;
-    height: 2.5rem;
-    padding: 0.5rem;
+    border-radius: 2px 2px 0 0;
+    border-bottom: 1px solid black;
+    height: 25px;
+    &_check {
+      margin: auto 2rem;
+    }
+    &:focus {
+      border: none;
+      border-bottom: 1.5px solid blue;
+      text-decoration: none;
+    }
+  }
+  &__label {
+    margin-left: 2rem;
+    &_check {
+      color: grey;
+    }
   }
 }
 .forgot {
@@ -46,28 +71,23 @@
     }
   }
 }
-.submit {
+.create {
   display: grid;
   align-items: center;
   justify-items: center;
-  margin: 2rem 0;
+  margin-top: 35px;
   &__btn {
     @include btn-dark;
-    &:hover {
-      background: rgba(100, 100, 100, 0.6);
-    }
   }
 }
 .register {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  align-self: end;
   &__text {
-    font-size: $base-font-size;
     color: grey;
   }
+
   &__link {
     text-decoration: none;
+    font-size: $base-font-size;
     color: grey;
     &:hover {
       color: blue;

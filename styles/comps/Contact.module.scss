@@ -1,14 +1,9 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
 
 .container {
-  background: white;
-  margin: 5rem;
-  padding: 5rem;
   display: grid;
-  align-items: center;
-  grid-template-columns: 1fr;
-  width: 40rem;
+  margin: 2rem 0;
 }
 
 .text {
@@ -32,6 +27,10 @@
   &__group {
     display: grid;
     grid-gap: 2rem;
+
+    &_title {
+      color: $color-grey-dark;
+    }
     &_check {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -39,19 +38,21 @@
     }
   }
   &__input {
-    background: white;
+    margin-left: 0.25rem;
     text-decoration: none;
+    padding: 0.5rem;
     border: none;
     border-radius: 2px 2px 0 0;
     border-bottom: 1px solid black;
     height: 25px;
-    &_check {
-      margin: auto 2rem;
+    &_dropdown {
+      border: 1px solid $color-grey-dark;
+      background: $color-grey-pale;
     }
-    &:focus {
-      border: none;
-      border-bottom: 1.5px solid blue;
-      text-decoration: none;
+    &_description {
+      border: 1px solid $color-grey-dark;
+      background: $color-grey-pale;
+      min-height: 10rem;
     }
   }
   &__label {
@@ -61,36 +62,18 @@
     }
   }
 }
-.forgot {
-  &__text {
-    text-decoration: none;
-    color: grey;
-    font-size: 15px;
-    &:hover {
-      font-weight: 600;
-    }
-  }
-}
-.create {
+.submit {
   display: grid;
-  align-items: center;
-  justify-items: center;
-  margin-top: 35px;
-  &__btn {
-    @include btn-dark;
-  }
-}
-.register {
-  &__text {
-    color: grey;
-  }
-
-  &__link {
-    text-decoration: none;
+  grid-gap: 1.5rem;
+  margin-bottom: 2rem;
+  &_text {
     font-size: $base-font-size;
-    color: grey;
-    &:hover {
-      color: blue;
-    }
+    color: $color-grey-dark;
+  }
+  &_btn {
+    margin-left: 0.25rem;
+    justify-self: start;
+    width: 15rem;
+    @include btn-dark;
   }
 }

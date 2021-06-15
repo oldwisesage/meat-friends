@@ -1,5 +1,5 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
 
 .container {
   display: grid;
@@ -20,8 +20,8 @@
   border-bottom: 1px solid $color-grey-light;
   width: 90%;
   &_title {
-    color: $color-grey-dark;
-    font-size: $large-font-size;
+    color: $grey-dark;
+    font-size: $xl2-font;
   }
 }
 .sidebar {
@@ -34,7 +34,7 @@
 }
 .customer {
   &_title {
-    font-size: $small-font-size;
+    font-size: $sm1-font;
   }
   &_text {
     margin-left: 0.5rem;

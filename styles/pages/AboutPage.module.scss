@@ -1,4 +1,4 @@
-@import "variables";
+@import "../variables";
 
 .container {
   display: grid;
@@ -10,7 +10,7 @@
 .section {
   grid-column: 2 /-2;
   display: grid;
-  background: $color-grey-pale;
+  background: $grey-pale;
 
   padding: 10rem;
   grid-template-columns: repeat(3, auto);
@@ -19,7 +19,7 @@
     border-radius: $border-radius;
   }
   &__text {
-    font-size: $plus-font-size;
+    font-size: $plusfont-size;
     color: gray;
     justify-self: center;
     align-self: center;

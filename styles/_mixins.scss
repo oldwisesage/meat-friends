@@ -2,12 +2,12 @@
 
 @mixin btn-dark {
   text-decoration: none;
-  background: $color-grey-dark;
+  background: $grey-dark;
   border: none;
-  color: $color-white;
-  font-size: $plus-font-size;
+  color: $white;
+  font-size: $plus-font;
   padding: 0.5rem 1rem;
-  border-radius: $border-radius;
+  border-radius: $border-radius-base;
   &:hover {
     color: red;
     border: 2px solid red;
@@ -31,7 +31,4 @@
   align-items: center;
   grid-template-columns: 1fr;
   width: 40rem;
-}
-
-@mixin title {
 }

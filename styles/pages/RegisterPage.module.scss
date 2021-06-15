@@ -1,5 +1,6 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
+
 .container {
   background: $color-grey-pale;
   display: grid;

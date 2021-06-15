@@ -1,3 +1,6 @@
+@import "../mixins";
+@import "../variables";
+
 .container {
   display: grid;
   grid-template-areas: "gut content gut";

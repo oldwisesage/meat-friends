@@ -36,28 +36,40 @@ $lora: "Lora", sans-serif;
 $nunito: "Nunito", serif;
 // $avenir: "Avenir", serif;
 
+// TYPE SCALE
+
 // FONT SIZES
-$largest-font: 7.451rem;
-$large-font: 5.96rem;
-$midlarge-font: 4.768rem;
-$mid-font: 3.815rem;
-$midsmall-font: 3.052rem;
-$small-font: 2.441rem;
-$plus-font: 1.953rem;
-$base-font: 1.563rem;
-$tiny-font: 1.25rem;
+// based on major third scaling
+$xl1-font: 7.451rem;
+$xl2-font: 5.96rem;
+$lg1-font: 4.768rem;
+$lg2-font: 3.815rem;
+$m1-font: 3.052rem;
+$m2-font: 2.441rem;
+$sm1-font: 1.953rem;
+$sm2-font: 1.563rem;
+$xs1-font: 1.25rem;
+
+// FONT WEIGHTS
+$heavy-font: 600;
+$bold-font: 500;
+$mid-font: 400;
+$book-font: 300;
+$light-font: 200;
+$thin-font: 100;
 
 // BORDER RADIUS
+$border-radius-base: 10px;
 $border-radius: 5px;
 
 // GRID VARIABLES
-// $grid-width: 114rem;
-// $gutter-vertical: 8rem;
-// $gutter-vertical-small: 6rem;
-// $gutter-horizontal: 3rem;
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 3rem;
 
 // RESPONSIVE BREAKPOINTS
-$bp-largest: 75em; // 1200px
-$bp-large: 62.5em; // 1000px
-$bp-medium: 50em; // 800px;
-$bp-small: 37.5em; // 600px;
+$bp-desk: 75em; // 1200px
+$bp-laptop: 62.5em; // 1000px
+$bp-tablet: 50em; // 800px;
+$bp-phone: 37.5em; // 600px;
