@@ -1,4 +1,4 @@
-import styles from "../styles/WhatPart.module.scss";
+import styles from "../styles/comps/WhatPart.module.scss";
 import Image from "next/image";
 
 const WhatPart = () => {

@@ -1,0 +1,32 @@
+@import "../mixins";
+@import "../variables";
+
+.container {
+  display: grid;
+  grid-area: shop;
+  min-height: 60vh;
+  grid-template-columns: 100px 1fr 100px;
+  color: white;
+}
+.animals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: 2 / -2;
+  margin: 5rem;
+}
+.animal {
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  padding: 2.5rem;
+  &:hover {
+    border: 1px solid $color-grey-light;
+    background: $color-grey-pale;
+    border-radius: $border-radius;
+  }
+  &__img {
+    border-radius: 20px;
+    margin: 20px;
+  }
+}

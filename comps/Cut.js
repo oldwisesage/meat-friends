@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Cut.module.scss";
+import styles from "../styles/comps/Cut.module.scss";
 
 const Cut = () => {
   return (
     <Link href="/meats/beef/cut">
-      <div className={styles.container}>
+      <div className={styles.container && styles.image}>
         <div className={styles.content}>
           <Image
             src="https://fakeimg.pl/250x250"

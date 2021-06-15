@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Landing.module.scss";
+import styles from "../styles/pages/Landing.module.scss";
 import ShopLanding from "../comps/ShopLanding";
 import { Fragment } from "react";
 

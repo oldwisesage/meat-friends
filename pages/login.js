@@ -1,5 +1,5 @@
 import Login from "../comps/Login";
-import styles from "../styles/LoginPage.module.scss";
+import styles from "../styles/pages/LoginPage.module.scss";
 
 const LoginPage = () => {
   return (

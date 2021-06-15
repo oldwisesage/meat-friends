@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/Foot.module.scss";
+import styles from "../styles/comps/Foot.module.scss";
 import Link from "next/link";
 
 const Foot = () => {

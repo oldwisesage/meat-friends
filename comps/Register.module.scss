@@ -1,0 +1,96 @@
+@import "../mixins";
+@import "../variables";
+
+.container {
+  background: white;
+  margin: 5rem;
+  padding: 5rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  width: 40rem;
+}
+
+.text {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 2.5rem;
+  &_title {
+    font-size: $midsmall-font-size;
+    color: $color-black;
+  }
+  &_subtitle {
+    font-size: $base-font-size;
+    color: $color-grey-dark;
+  }
+}
+
+.form {
+  display: grid;
+
+  &__group {
+    display: grid;
+    grid-gap: 2rem;
+    &_check {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
+  }
+  &__input {
+    background: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px 2px 0 0;
+    border-bottom: 1px solid black;
+    height: 25px;
+    &_check {
+      margin: auto 2rem;
+    }
+    &:focus {
+      border: none;
+      border-bottom: 1.5px solid blue;
+      text-decoration: none;
+    }
+  }
+  &__label {
+    margin-left: 2rem;
+    &_check {
+      color: grey;
+    }
+  }
+}
+.forgot {
+  &__text {
+    text-decoration: none;
+    color: grey;
+    font-size: 15px;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+.create {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-top: 35px;
+  &__btn {
+    @include btn-dark;
+  }
+}
+.register {
+  &__text {
+    color: grey;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: $base-font-size;
+    color: grey;
+    &:hover {
+      color: blue;
+    }
+  }
+}

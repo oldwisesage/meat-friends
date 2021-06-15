@@ -1,6 +1,6 @@
 import Nav from "./Nav";
 import Foot from "./Foot";
-import Banner from "../comps/Banner";
+import Banner from "./Banner";
 
 const Layout = ({ children }) => {
   return (

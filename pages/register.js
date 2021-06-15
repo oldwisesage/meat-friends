@@ -1,5 +1,5 @@
 import Register from "../comps/Register";
-import styles from "../styles/RegisterPage.module.scss";
+import styles from "../styles/pages/RegisterPage.module.scss";
 
 const RegisterPage = () => {
   return (

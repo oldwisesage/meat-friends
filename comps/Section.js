@@ -1,4 +1,4 @@
-import styles from "../syles/Section.module.scss";
+import styles from "../syles/comps/Section.module.scss";
 
 const Section = () => {
   return;
