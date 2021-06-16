@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/comps/Contact.module.scss";
+import styles from "./Contact.module.scss";
 
 const Contact = () => {
   return (

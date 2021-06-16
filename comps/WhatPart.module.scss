@@ -1,5 +1,5 @@
-@import "../mixins";
-@import "../variables";
+@import "../styles/mixins";
+@import "../styles/variables";
 
 .container {
   display: grid;
@@ -20,7 +20,7 @@
   &_goodfor {
     &_title {
       font-size: $midsmall-font-size;
-      color: $color-grey-dark;
+      color: $grey-dark;
     }
     &_items {
       display: grid;
@@ -42,7 +42,7 @@
         border-radius: 50px;
       }
       &_title {
-        font-size: $base-font-size;
+        font-size: $sm2-font;
         justify-self: start;
       }
     }
@@ -51,23 +51,23 @@
   &_cooknotes {
     &_title {
       font-size: $midsmall-font-size;
-      color: $color-grey-dark;
+      color: $grey-dark;
     }
     &_text {
       margin-left: 1rem;
       font-size: $tiny-font-size;
-      color: $color-grey-dark;
+      color: $grey-dark;
     }
   }
   &_whyitsgood {
     &_title {
       font-size: $midsmall-font-size;
-      color: $color-grey-dark;
+      color: $grey-dark;
     }
     &_text {
       margin-left: 1rem;
       font-size: $tiny-font-size;
-      color: $color-grey-dark;
+      color: $grey-dark;
     }
   }
 }

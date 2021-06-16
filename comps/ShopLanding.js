@@ -1,44 +1,25 @@
-import Image from "next/image";
-import Link from "next/link";
-import styles from "../styles/comps/ShopLanding.module.scss";
+// import Image from "next/image";
+// import Link from "next/link";
+import Animal from "./Animal";
+import styles from "./ShopLanding.module.scss";
 
 const ShopLanding = () => {
   return (
     <div className={styles.container}>
       <div className={styles.animals}>
-        <div className={styles.animal}>
-          <Link href="/meats/beef">
-            <Image
-              src="https://fakeimg.pl/300x300"
-              className={styles.animal__img}
-              width="200"
-              height="200"
-            />
-          </Link>
+        <div className={styles.animals_heading}>
+          <h1 className={styles.animals_heading_title}>
+            Our current inventory
+          </h1>
+          <p className={styles.animals_heading_subtitle}>
+            Choose your favorite
+          </p>
         </div>
-        <div className={styles.animal}>
-          <Image
-            src="https://fakeimg.pl/300x300"
-            className={styles.animal__img}
-            width="200"
-            height="200"
-          />
-        </div>
-        <div className={styles.animal}>
-          <Image
-            src="https://fakeimg.pl/300x300"
-            className={styles.animal__img}
-            width="200"
-            height="200"
-          />
-        </div>
-        <div className={styles.animal}>
-          <Image
-            src="https://fakeimg.pl/300x300"
-            className={styles.animal__img}
-            width="200"
-            height="200"
-          />
+        <div className={styles.animals_content}>
+          <Animal />
+          <Animal />
+          <Animal />
+          <Animal />
         </div>
       </div>
     </div>

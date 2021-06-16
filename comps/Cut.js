@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/comps/Cut.module.scss";
+import styles from "./Cut.module.scss";
 
 const Cut = () => {
   return (

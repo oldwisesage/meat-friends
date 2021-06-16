@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/pages/About.module.scss";
+import styles from "./about.module.scss";
 
 const Philosophy = () => {
   return (

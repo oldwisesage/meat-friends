@@ -1,43 +1,22 @@
-@import "../mixins";
-@import "../variables";
+@import "../styles/mixins";
+@import "../styles/variables";
 
 .container {
+  position: relative;
   display: grid;
   // grid-template-rows: ;
+  overflow-y: visible;
+  overflow-x: hidden;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
     "cta cta cta"
     "shop shop shop"
     "about about about";
 }
-.cta {
-  grid-area: cta;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  align-content: end;
-  justify-content: start;
-  background: url("https://fakeimg.pl/1200x600");
-  background-size: cover;
-  min-height: 50rem;
-
-  &__container {
-    padding: 0 0 5rem 5rem;
-  }
-  &__text {
-    color: $color-white;
-    font-size: 4.5rem;
-    max-width: 45rem;
-  }
-  &__btn {
-    @include btn-dark;
-  }
-}
 .who {
   display: grid;
-  grid-template-columns: 100px 1fr 2fr 100px;
-  background: $color-white;
   min-width: 100vw;
+  grid-template-columns: 100px 1fr 2fr 100px;
 
   &__content {
     display: grid;
@@ -55,13 +34,13 @@
       border-radius: $border-radius;
     }
     &_text {
-      color: $color-black;
+      color: $black;
       font-size: 20px;
     }
     &_btn {
       justify-self: start;
       margin-left: 15rem;
-      @include btn-dark;
+      @include btn-black;
     }
   }
 }

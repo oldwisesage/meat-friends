@@ -1,8 +1,8 @@
-@import "../mixins";
-@import "../variables";
+@import "../styles/mixins";
+@import "../styles/variables";
 
 .container {
-  background: $color-grey-pale;
+  background: $grey-pale;
   display: grid;
   grid-template-columns: 1fr;
   min-height: 80vh;

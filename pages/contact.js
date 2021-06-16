@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Contact from "../comps/Contact";
-import styles from "../styles/pages/ContactUs.module.scss";
+import styles from "./ContactPage.module.scss";
 
 const ContactUs = () => {
   return (

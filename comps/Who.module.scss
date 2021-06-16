@@ -1,0 +1,24 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  height: 50rem;
+}
+.heading {
+  &_title {
+    @include title;
+  }
+  &_subtitle {
+    @include subtext;
+  }
+}
+.content {
+  &_title {
+  }
+  &_text {
+  }
+  &_btn {
+  }
+  &_illustration {
+  }
+}

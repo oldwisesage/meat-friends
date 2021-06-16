@@ -1,5 +1,5 @@
-@import "../mixins";
-@import "../variables";
+@import "../styles/mixins";
+@import "../styles/variables";
 
 .container {
   display: grid;
@@ -8,8 +8,8 @@
   grid-gap: 1.5rem;
   &:hover {
     box-shadow: 1px rgba(0, 0, 0, 0.5);
-    background: $color-grey-pale;
-    border: 0.5px solid $color-grey-pale;
+    background: $grey-pale;
+    border: 0.5px solid $grey-pale;
   }
 }
 .content {
@@ -23,11 +23,11 @@
     border-radius: $border-radius;
   }
   &_title {
-    font-size: $small-font-size;
-    color: $color-grey-dark;
+    font-size: $sm1-font;
+    color: $grey-dark;
   }
   &_price {
-    font-size: $base-font-size;
-    color: $color-grey-mid;
+    font-size: $sm2-font;
+    color: $grey-mid;
   }
 }

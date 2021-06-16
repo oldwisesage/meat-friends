@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Cut from "../../comps/Cut";
-import styles from "../../styles/Beef.module.scss";
+import styles from "./Beef.module.scss";
 
 const Beef = () => {
   return (

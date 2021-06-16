@@ -1,12 +1,13 @@
-import styles from "../syles/comps/Section.module.scss";
+import styles from "./Section.module.scss";
 
 const Section = () => {
-  return;
-  <div className={styles.container}>
-    <div className={styles.header}>
-      <h1 className={styles.header_text}>Section title</h1>
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1 className={styles.header_text}>Section title</h1>
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default Section;

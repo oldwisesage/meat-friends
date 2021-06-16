@@ -1,5 +1,5 @@
-@import "../mixins";
-@import "../variables";
+@import "../styles/mixins";
+@import "../styles/variables";
 
 .container {
   display: grid;
@@ -17,7 +17,7 @@
   justify-items: center;
   padding: 2.5rem;
   grid-column: 2 / -2;
-  border-bottom: 1px solid $color-grey-light;
+  border-bottom: 1px solid $grey-light;
   width: 90%;
   &_title {
     color: $grey-dark;
@@ -38,44 +38,44 @@
   }
   &_text {
     margin-left: 0.5rem;
-    font-size: $base-font-size;
-    color: $color-grey-dark;
+    font-size: $sm2-font;
+    color: $grey-dark;
     font-weight: 200;
     &_bold {
       font-weight: 400;
-      color: $color-black;
+      color: $black;
     }
   }
 }
 .marketing {
   &_title {
-    font-size: $small-font-size;
+    font-size: $sm2-font;
   }
   &_text {
     margin-left: 0.5rem;
-    color: $color-grey-dark;
-    font-size: $base-font-size;
+    color: $grey-dark;
+    font-size: $sm2-font;
     &_bold {
     }
   }
 }
 .visit {
   &_title {
-    font-size: $small-font-size;
+    font-size: $sm1-font;
   }
   &_content {
     margin-left: 0.5rem;
     &_logo {
-      color: $color-grey-dark;
-      font-size: $midsmall-font-size;
+      color: $grey-dark;
+      font-size: $m2-font;
       font-weight: 600;
       margin-bottom: -0.75rem;
     }
     &_address {
-      font-size: $base-font-size;
+      font-size: $sm2-font;
     }
     &_email {
-      font-size: $base-font-size;
+      font-size: $sm2-font;
     }
   }
 }

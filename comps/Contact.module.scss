@@ -1,5 +1,5 @@
-@import "../mixins";
-@import "../variables";
+@import "../styles/mixins";
+@import "../styles/variables";
 
 .container {
   display: grid;
@@ -12,12 +12,12 @@
   justify-items: center;
   margin-bottom: 2.5rem;
   &_title {
-    font-size: $midsmall-font-size;
-    color: $color-black;
+    font-size: $sm1-font;
+    color: $black;
   }
   &_subtitle {
-    font-size: $base-font-size;
-    color: $color-grey-dark;
+    font-size: $sm2-font;
+    color: $grey-dark;
   }
 }
 
@@ -29,7 +29,7 @@
     grid-gap: 2rem;
 
     &_title {
-      color: $color-grey-dark;
+      color: $grey-dark;
     }
     &_check {
       display: grid;
@@ -46,12 +46,12 @@
     border-bottom: 1px solid black;
     height: 25px;
     &_dropdown {
-      border: 1px solid $color-grey-dark;
-      background: $color-grey-pale;
+      border: 1px solid $grey-dark;
+      background: $grey-pale;
     }
     &_description {
-      border: 1px solid $color-grey-dark;
-      background: $color-grey-pale;
+      border: 1px solid $grey-dark;
+      background: $grey-pale;
       min-height: 10rem;
     }
   }
@@ -67,8 +67,8 @@
   grid-gap: 1.5rem;
   margin-bottom: 2rem;
   &_text {
-    font-size: $base-font-size;
-    color: $color-grey-dark;
+    font-size: $sm2-font;
+    color: $grey-dark;
   }
   &_btn {
     margin-left: 0.25rem;

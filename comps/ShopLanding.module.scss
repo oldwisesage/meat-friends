@@ -1,32 +1,30 @@
-@import "../mixins";
-@import "../variables";
+@import "../styles/mixins";
+@import "../styles/variables";
 
 .container {
+  padding: 10rem 0;
   display: grid;
   grid-area: shop;
   min-height: 60vh;
-  grid-template-columns: 100px 1fr 100px;
-  color: white;
 }
 .animals {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
   grid-column: 2 / -2;
-  margin: 5rem;
-}
-.animal {
-  display: grid;
-  grid-auto-flow: row;
-  justify-items: center;
-  align-items: center;
-  padding: 2.5rem;
-  &:hover {
-    border: 1px solid $color-grey-light;
-    background: $color-grey-pale;
-    border-radius: $border-radius;
+  grid-gap: 3rem;
+  width: 100vw;
+  padding: 0 5rem;
+  &_heading {
+    &_title {
+      margin-bottom: 0.5rem;
+      @include title;
+    }
+    &_subtitle {
+      @include subtext;
+    }
   }
-  &__img {
-    border-radius: 20px;
-    margin: 20px;
+  &_content {
+    display: flex;
+    justify-content: space-between;
   }
 }

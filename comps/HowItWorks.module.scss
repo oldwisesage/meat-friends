@@ -1,0 +1,45 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  min-width: 100vw;
+}
+.inner_container {
+  margin: 2.5rem;
+  padding: 2.5rem;
+  background: $grey-pale;
+  border-radius: $border-radius;
+}
+
+.heading {
+  &_title {
+    @include title;
+  }
+  &_subtitle {
+    @include subtext;
+  }
+}
+
+.section {
+  display: grid;
+  grid-auto-flow: column;
+  margin-top: 2.5rem;
+  width: 50%;
+  &_img {
+    border-radius: $border-radius;
+    height: 30rem;
+    width: 30rem;
+  }
+  &_content {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 5rem;
+    &_subtitle {
+      @include heavy-subtitle;
+    }
+    &_text {
+      @include loud-text;
+      margin-left: 0.5rem;
+    }
+  }
+}

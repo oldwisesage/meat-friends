@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/comps/Banner.module.scss";
+import styles from "./Banner.module.scss";
 
 const Banner = () => {
   return (
