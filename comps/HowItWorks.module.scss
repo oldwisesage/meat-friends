@@ -3,12 +3,14 @@
 
 .container {
   min-width: 100vw;
+  grid-area: how;
 }
 .inner_container {
   margin: 2.5rem;
   padding: 2.5rem;
   background: $grey-pale;
   border-radius: $border-radius;
+  box-shadow: 1px solid $grey-dark;
 }
 
 .heading {

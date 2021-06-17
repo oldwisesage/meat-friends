@@ -11,36 +11,6 @@
   grid-template-areas:
     "cta cta cta"
     "shop shop shop"
+    "how how how"
     "about about about";
-}
-.who {
-  display: grid;
-  min-width: 100vw;
-  grid-template-columns: 100px 1fr 2fr 100px;
-
-  &__content {
-    display: grid;
-    grid-column: 2 / -2;
-    grid-template-columns: 1fr 2fr;
-    justify-items: center;
-    margin-bottom: 7.5rem;
-
-    &_container {
-      display: grid;
-      align-items: center;
-      justify-items: center;
-    }
-    &_img {
-      border-radius: $border-radius;
-    }
-    &_text {
-      color: $black;
-      font-size: 20px;
-    }
-    &_btn {
-      justify-self: start;
-      margin-left: 15rem;
-      @include btn-black;
-    }
-  }
 }
