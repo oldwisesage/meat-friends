@@ -19,7 +19,7 @@
 
   &_goodfor {
     &_title {
-      font-size: $midsmall-font-size;
+      font-size: $sm2-font;
       color: $grey-dark;
     }
     &_items {
@@ -50,23 +50,23 @@
 
   &_cooknotes {
     &_title {
-      font-size: $midsmall-font-size;
+      font-size: $sm2-font;
       color: $grey-dark;
     }
     &_text {
       margin-left: 1rem;
-      font-size: $tiny-font-size;
+      font-size: $xs1-font;
       color: $grey-dark;
     }
   }
   &_whyitsgood {
     &_title {
-      font-size: $midsmall-font-size;
+      font-size: $sm2-font;
       color: $grey-dark;
     }
     &_text {
       margin-left: 1rem;
-      font-size: $tiny-font-size;
+      font-size: $xs1-font;
       color: $grey-dark;
     }
   }

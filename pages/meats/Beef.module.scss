@@ -2,26 +2,28 @@
 @import "../../styles/variables";
 
 .container {
+  padding: 5rem 0;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 25rem 1fr 25rem;
   min-height: 80vh;
 }
-.sub_container {
-  display: grid;
-  grid-template-columns: 5% 1fr 5%;
-  grid-column: 2;
-  background: $white;
-}
 .title {
-  grid-column: 2 / -2;
-  justify-self: start;
-  margin: 5rem;
+  grid-column: 2;
+  grid-row: 1;
   &_heading {
-    font-size: $lg2-font;
-    color: $grey-dark;
+    @include title;
   }
   &_subheading {
-    font-size: $sm1-font;
-    color: $grey-dark;
+    @include subtext;
+  }
+}
+.card_container {
+  margin-top: 2.5rem;
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  &_subtitle {
+    @include subtitle;
   }
 }

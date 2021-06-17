@@ -18,7 +18,19 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
-// LAYOUTS
+// LAYOUT HELPERS
+@mixin border-red {
+  border: 1px solid red;
+}
+@mixin border-blue {
+  border: 1px solid blue;
+}
+@mixin border-purple {
+  border: 1px solid purple;
+}
+@mixin border-green {
+  border: 1px solid green;
+}
 
 // SPACING
 @mixin center-items-container {
@@ -59,6 +71,9 @@
 @mixin loud-text {
   font-size: $sm1-font;
   font-weight: $light-font;
+}
+@mixin base-text {
+  font-size: $sm1-font;
 }
 @mixin basic-link {
   display: grid;

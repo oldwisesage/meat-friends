@@ -5,7 +5,7 @@ import styles from "./Cut.module.scss";
 const Cut = () => {
   return (
     <Link href="/meats/beef/cut">
-      <div className={styles.container && styles.image}>
+      <div className={styles.container}>
         <div className={styles.content}>
           <Image
             src="https://fakeimg.pl/250x250"

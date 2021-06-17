@@ -3,9 +3,10 @@
 
 .container {
   display: grid;
+  grid-row: 2;
   grid-template-columns: 20rem;
   border-radius: $border-radius;
-  grid-gap: 1.5rem;
+  margin-top: 2.5rem;
   &:hover {
     box-shadow: 1px rgba(0, 0, 0, 0.5);
     background: $grey-pale;
@@ -24,10 +25,10 @@
   }
   &_title {
     font-size: $sm1-font;
-    color: $grey-dark;
+    color: $black;
   }
   &_price {
     font-size: $sm2-font;
-    color: $grey-mid;
+    color: $black;
   }
 }

@@ -8,9 +8,9 @@
 .inner_container {
   margin: 2.5rem;
   padding: 2.5rem;
-  background: $grey-pale;
+  background: rgba($grey-pale, 0.95);
   border-radius: $border-radius;
-  box-shadow: 1px solid $grey-dark;
+  box-shadow: 1px 1px 1px 1px blur $grey-dark;
 }
 
 .heading {

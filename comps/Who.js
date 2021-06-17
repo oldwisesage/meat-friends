@@ -5,17 +5,17 @@ const Who = () => {
   return (
     <div className={styles.container}>
       <div className={styles.heading}>
-        <h1 className={styles.heading_title}>Meet the team</h1>
-      </div>
-      <div className={styles.content_illustration}>
-        <Image src="/../public/placeholder.png" width="300" height="300" />
+        <h1 className={styles.heading_title}>What drives us?</h1>
       </div>
       <div className={styles.content}>
-        <h2 className={styles.content_title}>Something about our cool team.</h2>
+        <h2 className={styles.content_title}>
+          Something about our cool about the company.
+        </h2>
         <p className={styles.content_text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum
-          dolor sit amet consectetur adipisicing elit.
+          Something far more in depth about the company & how it should be
+          presented to all the people out there.
         </p>
+        <button className={styles.content_btn}>Click me!</button>
       </div>
     </div>
   );
