@@ -51,6 +51,19 @@
     color: $grey-pale;
   }
 }
+@mixin small-logo-text {
+  font-weight: 900;
+  font-size: $m2-font;
+  letter-spacing: -0.5 px;
+  color: $black;
+  &:hover {
+    color: $grey-pale;
+  }
+}
+@mixin super-title {
+  font-weight: $heavy-font;
+  font-size: $lg1-font;
+}
 @mixin title {
   font-weight: $heavy-font;
   font-size: $lg2-font;
@@ -68,12 +81,23 @@
   font-size: $m2-font;
   font-weight: $light-font;
 }
+@mixin small-title {
+  font-size: $m2-font;
+  font-weight: $heavy-font;
+}
 @mixin loud-text {
   font-size: $sm1-font;
   font-weight: $light-font;
 }
 @mixin base-text {
   font-size: $sm1-font;
+}
+@mixin long-form-text {
+  font-size: $sm2-font;
+  font-weight: $book-font;
+}
+@mixin bold {
+  font-weight: 600;
 }
 @mixin basic-link {
   display: grid;

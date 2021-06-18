@@ -3,84 +3,168 @@
 
 .container {
   display: grid;
-  grid-template-areas:
-    "gutter heading heading gutter"
-    "gutter sidebar contact gutter"
-    "gutter sidebar contact gutter";
-  grid-gap: 1rem;
-  grid-template-columns: 20rem 1fr 2fr 20rem;
-  justify-items: center;
-  margin-bottom: 5rem;
+  background-color: white;
+  grid-template-columns: 1fr 85rem 1fr;
 }
 .heading {
-  display: grid;
-  justify-items: center;
-  padding: 2.5rem;
-  grid-column: 2 / -2;
-  border-bottom: 1px solid $grey-light;
-  width: 90%;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  grid-column: 2;
   &_title {
-    color: $grey-dark;
-    font-size: $xl2-font;
+    @include super-title;
+  }
+  &_subtitle {
+    @include subtitle;
+    font-weight: 300;
   }
 }
-.sidebar {
-  margin: 6rem 0;
-  margin-left: 10rem;
+.lower_container {
   display: grid;
-  grid-gap: 2rem;
-  grid-row: 2;
+  grid-template-columns: 1fr 2fr;
   grid-column: 2;
+  border-top: 1px solid $grey-pale;
+  grid-gap: 2.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 7.5rem;
+}
+
+.sidebar {
+  // @include border-purple;
+  grid-column: 1;
 }
 .customer {
   &_title {
-    font-size: $sm1-font;
+    @include small-title;
+    display: flex;
+    align-items: center;
   }
-  &_text {
-    margin-left: 0.5rem;
-    font-size: $sm2-font;
-    color: $grey-dark;
-    font-weight: 200;
-    &_bold {
-      font-weight: 400;
-      color: $black;
+  &_section {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    grid-gap: 0.5rem;
+    margin-top: 0.5em;
+    &_hr {
+      @include long-form-text;
+      @include bold;
+      &_content {
+        @include long-form-text;
+      }
+    }
+    &_phone {
+      @include long-form-text;
+      @include bold;
+      &_content {
+        @include long-form-text;
+      }
+    }
+    &_email {
+      @include long-form-text;
+      @include bold;
+      &_content {
+        @include long-form-text;
+      }
     }
   }
 }
 .marketing {
+  margin-top: 2.5rem;
   &_title {
-    font-size: $sm2-font;
+    @include small-title;
   }
   &_text {
-    margin-left: 0.5rem;
-    color: $grey-dark;
-    font-size: $sm2-font;
+    margin-top: 0.5rem;
+    @include long-form-text;
     &_bold {
+      @include long-form-text;
+      @include bold;
     }
   }
 }
 .visit {
+  margin-top: 2.5rem;
   &_title {
-    font-size: $sm1-font;
+    @include small-title;
   }
   &_content {
-    margin-left: 0.5rem;
+    margin-top: 0.5rem;
     &_logo {
-      color: $grey-dark;
-      font-size: $m2-font;
-      font-weight: 600;
-      margin-bottom: -0.75rem;
+      @include small-logo-text;
     }
     &_address {
-      font-size: $sm2-font;
+      @include long-form-text;
     }
     &_email {
-      font-size: $sm2-font;
+      @include long-form-text;
+      @include bold;
     }
   }
 }
 .contact {
-  grid-row: 2;
-  grid-column: 3;
+  grid-column: 2;
   display: grid;
+}
+.form {
+  display: grid;
+  grid-gap: 2.5rem;
+
+  &_group {
+    display: grid;
+    grid-gap: 2.5rem;
+    &_top {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 2.5rem;
+      & > * {
+      }
+    }
+  }
+  &_input {
+    background: $white;
+    height: 4rem;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.04);
+    border-radius: $border-radius;
+    padding: 0.25rem 0.5rem;
+    @include loud-text;
+    &::placeholder {
+      color: $grey-mid;
+    }
+    &:focus {
+      outline: 1px solid $green-dark;
+      box-shadow: 0px 4px 9px rgba(100, 68, 68, 0.1);
+    }
+    &:active {
+      outline: 1px solid $green-dark;
+    }
+    &_msg {
+      @include loud-text;
+      background: $white;
+      height: 10rem;
+      color: black;
+      text-decoration: none;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.04);
+      border-radius: $border-radius;
+      padding: 0.25rem 0.5rem;
+      vertical-align: top;
+      resize: none;
+      &::placeholder {
+        color: $grey-mid;
+      }
+      &:focus {
+        outline: 1px solid $green-dark;
+        box-shadow: 0px 4px 9px rgba(100, 68, 68, 0.1);
+      }
+      &:active {
+        outline: 1px solid $green-dark;
+      }
+    }
+  }
+  &_btn {
+    &_click {
+      @include btn-black;
+    }
+  }
 }
