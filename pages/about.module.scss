@@ -3,27 +3,121 @@
 
 .container {
   display: grid;
-  grid-template-columns: 150px 1fr 150px;
-  grid-template-areas: "gutter content content content gutter";
+  grid-template-columns: 1fr 80rem 1fr;
+  background: white;
 }
-.title {
-}
-.section {
-  grid-column: 2 /-2;
-  display: grid;
-  background: $grey-pale;
-
-  padding: 10rem;
-  grid-template-columns: repeat(3, auto);
-  grid-gap: 10rem;
-  &__img {
-    border-radius: $border-radius;
+.heading {
+  margin-top: 5rem;
+  grid-column: 2;
+  &_title {
+    @include title;
   }
-  &__text {
-    font-size: $lg2-font;
-    color: gray;
-    justify-self: center;
-    align-self: center;
-    line-height: 1.5;
+  &_subtitle {
+    margin-top: 1rem;
+    @include subtext;
+  }
+}
+.container_cards {
+  margin: 2.5rem 0;
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 5rem;
+}
+.card {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  &_what {
+    @include base-card-styles;
+    padding: 2.5rem;
+    &_title {
+      @include subtitle;
+      grid-row: 1;
+      font-size: $m2-font;
+    }
+    &_text {
+      grid-row: 2;
+      margin-top: 1.5rem;
+      @include loud-text;
+    }
+    &_illustration {
+    }
+  }
+  &_why {
+    &_title {
+      margin-top: 2.5rem;
+      @include subtitle;
+    }
+    &_text {
+      margin-top: 1rem;
+      @include loud-text;
+    }
+    &_list {
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      padding-left: 1rem;
+      margin: 1rem 0;
+      &_item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        & > span {
+          margin-right: 1rem;
+        }
+      }
+    }
+    &_image {
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.who {
+  display: grid;
+  grid-template-columns: 1fr 80rem 1fr;
+  grid-template-rows: repeat(2, auto);
+  margin-top: 2.5rem;
+  background: $grey-dark;
+  width: 100vw;
+  grid-column: 1 / -1;
+  &_heading {
+    margin-top: 2.5rem;
+    grid-column: 2/ -2;
+    &_title {
+      @include title;
+      color: $white;
+    }
+    &_subtitle {
+      @include subtext;
+      margin-top: 1rem;
+      color: $white;
+    }
+  }
+  &_people {
+    margin-top: 2.5rem;
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 2.5rem;
+    justify-items: stretch;
+    justify-content: stretch;
+  }
+  &_person {
+    &_avatar {
+      background-color: $grey-mid;
+      border-radius: $border-radius;
+    }
+    &_text {
+    }
+    &_name {
+      @include base-text;
+      font-size: $sm2-font;
+    }
+    &_job {
+      font-weight: 500;
+    }
   }
 }

@@ -56,7 +56,14 @@
   margin: auto 30px;
   display: grid;
   place-items: center;
-  & > *:hover {
-    fill: $grey-dark;
+  &_icon {
+    padding: 0.5rem;
+    border-radius: 50px;
+    &:hover {
+      background-color: rgba($grey-pale, 0.1);
+    }
+    &:active {
+      background-color: rgba($grey-pale, 0.2);
+    }
   }
 }
