@@ -8,20 +8,18 @@ const Nav = () => {
       <div className={styles.logo}>
         <h1 className={styles.logo_text}>meat friends</h1>
       </div>
-      <div className={styles.nav}>
-        <Link href="/shop">
-          <a className={styles.nav_link}>shop</a>
-        </Link>
-        <Link href="/about">
-          <a className={styles.nav_link}>about</a>
-        </Link>
-        <Link href="/contact">
-          <a className={styles.nav_link}>contact</a>
-        </Link>
-        <Link href="/recipes">
-          <a className={styles.nav_link}>recipes</a>
-        </Link>
-      </div>
+      <Link href="/shop">
+        <a className={styles.link}>shop</a>
+      </Link>
+      <Link href="/about">
+        <a className={styles.link}>about</a>
+      </Link>
+      <Link href="/contact">
+        <a className={styles.link}>contact</a>
+      </Link>
+      <Link href="/recipes">
+        <a className={styles.link}>recipes</a>
+      </Link>
       <div className={styles.account}>
         <Link href="/login">
           <a className={styles.account__login}>log in</a>

@@ -8,4 +8,9 @@
   overflow-y: visible;
   overflow-x: hidden;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "cta cta cta"
+    "shop shop shop"
+    "how how how"
+    "about about about";
 }

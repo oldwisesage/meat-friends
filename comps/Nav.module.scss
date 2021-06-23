@@ -2,37 +2,34 @@
 @import "../styles/variables";
 
 .container {
-  @include full-container;
-  @include center-items-container;
-  height: 75px;
-  grid-template-columns: auto 1fr auto;
+  display: grid;
+  align-items: baseline;
+  align-content: center;
+  height: 8rem;
+  grid-template-columns: 25rem repeat(4, 1fr) 25rem;
 }
 
 .logo {
-  @include logo-container;
   align-items: center;
+  align-self: center;
   color: $black;
   &_text {
     @include logo-text;
-    text-align: center;
-    min-width: 28.8rem;
+    display: flex;
+    justify-content: center;
+    min-width: 28rem;
   }
 }
 
-.nav {
-  @include five-grid-equal;
+.link {
   @include center-items-container;
-  height: 100%;
-  grid-gap: 10px;
-  &_link {
-    @include center-items-container;
-    @include basic-link;
-  }
+  @include basic-link;
 }
 
 .account {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-column: 6;
   place-items: center;
   &__login {
     @include btn-black;
