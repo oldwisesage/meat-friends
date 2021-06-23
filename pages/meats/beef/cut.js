@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Cut from "../../../comps/Cut";
 import WhatPart from "../../../comps/WhatPart";
-import styles from "./CutPage.module.scss";
+import styles from "./cut.module.scss";
 
 const CutPage = () => {
   return (

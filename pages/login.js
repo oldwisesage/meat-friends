@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Login from "../comps/Login";
-import styles from "./LoginPage.module.scss";
+import styles from "./login.module.scss";
 
 const LoginPage = () => {
   return (
@@ -39,6 +39,15 @@ const LoginPage = () => {
         <div className={styles.submit}>
           <button className={styles.submit_btn}>Sign in</button>
         </div>
+        {/* <div className={styles.twitter}>
+          <button className={styles.twitter_btn}></button>
+        </div>
+        <div className={styles.github}>
+          <button className={styles.github_btn}></button>
+        </div>
+        <div className={styles.facebook}>
+          <button className={styles.facebook_btn}></button>
+        </div> */}
         <div className={styles.register}>
           <p className={styles.register_text}>
             <span>

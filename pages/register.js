@@ -1,4 +1,4 @@
-import styles from "./RegisterPage.module.scss";
+import styles from "./register.module.scss";
 import FormInput from "../comps/FormInput";
 
 const RegisterPage = () => {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Contact from "../comps/Contact";
-import styles from "./ContactPage.module.scss";
+import styles from "./contact.module.scss";
 
 const ContactUs = () => {
   return (
@@ -91,7 +91,7 @@ const ContactUs = () => {
             </div>
             <div className={styles.form_group}>
               <textarea
-                className={styles.form_input_msg}
+                className={styles.form_msg}
                 placeholder="Enter your message here"
                 required
               />

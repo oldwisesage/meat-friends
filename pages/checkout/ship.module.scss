@@ -1,0 +1,184 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: white;
+}
+.container_checkout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  grid-column: 2;
+  &_art {
+    @include logo-text;
+  }
+}
+
+.checkout {
+  margin: 5rem 0;
+  grid-column: 2;
+}
+.heading {
+  margin-bottom: 2.5rem;
+  &_title {
+    @include title;
+  }
+  &_subtitle {
+    @include subtext;
+  }
+}
+.contact {
+  &_heading {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-self: flex-end;
+    align-items: baseline;
+    justify-content: space-between;
+    &_title {
+      @include loud-text;
+    }
+    &_already {
+      @include loud-text;
+      &_link {
+        @include bold;
+        text-decoration: none;
+        color: $black;
+        &:hover {
+          color: $grey-dark;
+        }
+      }
+    }
+  }
+  &_form {
+    display: grid;
+    grid-gap: 1rem;
+  }
+  &_names {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  &_input {
+    @include base-input;
+  }
+}
+
+.ship {
+  margin-top: 2.5rem;
+  &_heading {
+    margin-bottom: 0.5rem;
+    &_title {
+      @include loud-text;
+    }
+  }
+  &_form {
+    display: grid;
+    grid-gap: 1rem;
+  }
+  &_names {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 1rem;
+  }
+  &_citystatezip {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 1rem;
+  }
+  &_input {
+    @include base-input;
+  }
+}
+
+.bottom {
+  margin: 5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  &_return {
+    &_link {
+      @include basic-link;
+      font-weight: 300;
+    }
+  }
+  &_btn {
+    @include btn-black;
+  }
+}
+
+.container_cart {
+  background: $brown-pale;
+}
+
+.cart {
+  display: grid;
+  padding: 2rem 5rem;
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    &_img {
+      border-radius: $border-radius;
+    }
+    &_name {
+      font-size: $m2-font;
+      font-weight: 400;
+    }
+    &_price {
+      font-size: $m2-font;
+    }
+  }
+
+  &_promo {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 2fr 1fr;
+    border-top: 1px solid $brown-mid;
+    border-bottom: 1px solid $brown-mid;
+    padding: 2.5rem 0;
+    &_input {
+      @include base-input;
+    }
+    &_btn {
+      @include btn-black;
+    }
+  }
+  &_price {
+  }
+  &_shipping {
+    margin: 2.5rem 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    &_label {
+      font-size: $sm1-font;
+      font-weight: 400;
+    }
+    &_cost {
+      width: 15rem;
+      font-size: $m2-font;
+      font-weight: 300;
+      text-align: right;
+    }
+  }
+  &_total {
+    margin: 2.5rem 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    &_label {
+      font-size: $sm1-font;
+    }
+    &_cost {
+      width: 15rem;
+      font-size: $m2-font;
+      text-align: right;
+    }
+  }
+}

@@ -8,18 +8,16 @@ import Who from "../comps/Who";
 
 export default function Home() {
   return (
-    <>
-      <div>
-        <head></head>
-        <main>
-          <div className={styles.container}>
-            <Cta />
-            <ShopLanding />
-            <HowItWorks />
-            <Who />
-          </div>
-        </main>
-      </div>
-    </>
+    <div>
+      <head></head>
+      <main>
+        <div className={styles.container}>
+          <Cta />
+          <ShopLanding />
+          <HowItWorks />
+          <Who />
+        </div>
+      </main>
+    </div>
   );
 }
