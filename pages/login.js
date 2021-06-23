@@ -61,4 +61,7 @@ const LoginPage = () => {
     </div>
   );
 };
+
+LoginPage.layout = "pic";
+
 export default LoginPage;

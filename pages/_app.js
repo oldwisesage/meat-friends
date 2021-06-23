@@ -1,12 +1,14 @@
-import Layout from "../comps/Layout";
+import App from "next/app";
+import LayoutWrapper from "../layouts/layout-wrapper";
 import "../styles/globals.scss";
 
-function MyApp({ Component, pageProps }) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+export default class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props;
+    return (
+      <LayoutWrapper {...pageProps}>
+        <Component {...pageProps} />
+      </LayoutWrapper>
+    );
+  }
 }
-
-export default MyApp;

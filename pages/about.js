@@ -118,4 +118,6 @@ const About = () => {
   );
 };
 
+About.layout = "default";
+
 export default About;

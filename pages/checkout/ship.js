@@ -190,4 +190,6 @@ const Checkout = () => {
   );
 };
 
+Checkout.layout = "checkout";
+
 export default Checkout;

@@ -118,4 +118,6 @@ const Pay = () => {
   );
 };
 
+Pay.layout = "checkout";
+
 export default Pay;

@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "./Landing.module.scss";
 import Cta from "../comps/Cta";
 import HowItWorks from "../comps/HowItWorks";
 import ShopLanding from "../comps/ShopLanding";
 import Who from "../comps/Who";
+import styles from "./landing.module.scss";
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <head></head>
@@ -20,4 +20,8 @@ export default function Home() {
       </main>
     </div>
   );
-}
+};
+
+Home.layout = "landing";
+
+export default Home;

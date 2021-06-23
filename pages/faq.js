@@ -1,6 +1,6 @@
 import styles from "./faq.module.scss";
 
-const faq = () => {
+const FaqPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.faq}>
@@ -97,4 +97,6 @@ const faq = () => {
   );
 };
 
-export default faq;
+FaqPage.layout = "pic";
+
+export default FaqPage;

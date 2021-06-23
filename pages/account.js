@@ -50,4 +50,6 @@ const Account = () => {
   );
 };
 
+Account.layout = "default";
+
 export default Account;

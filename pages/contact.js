@@ -106,4 +106,6 @@ const ContactUs = () => {
   );
 };
 
+ContactUs.layout = "default";
+
 export default ContactUs;

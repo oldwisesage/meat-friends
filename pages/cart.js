@@ -137,4 +137,6 @@ const Cart = () => {
   );
 };
 
+Cart.layout = "default";
+
 export default Cart;

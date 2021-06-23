@@ -73,4 +73,7 @@ const RegisterPage = () => {
     </div>
   );
 };
+
+RegisterPage.layout = "pic";
+
 export default RegisterPage;
