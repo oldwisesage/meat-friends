@@ -3,6 +3,8 @@ import LandingLayout from "./landing";
 import AdminLayout from "./admin";
 import CheckoutLayout from "./checkout";
 import PicLayout from "./pic";
+import NoLayout from "./no";
+import ErrLayout from "./err";
 
 const layouts = {
   default: DefaultLayout,
@@ -10,6 +12,8 @@ const layouts = {
   admin: AdminLayout,
   checkout: CheckoutLayout,
   pic: PicLayout,
+  no: NoLayout,
+  err: ErrLayout,
 };
 
 const LayoutWrapper = (props) => {
