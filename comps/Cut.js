@@ -2,6 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Cut.module.scss';
 
+const ALL_CUTS_QUERY = gql`
+  query ALL_PRODUCTS_QUERY
+`
+
+
 const Cut = () => (
   useQuery
 
