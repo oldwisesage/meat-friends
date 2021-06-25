@@ -1,4 +1,4 @@
-import styles from "../styles/Login.module.scss";
+import styles from "./Login.module.scss";
 import Link from "next/link";
 
 const Login = () => {

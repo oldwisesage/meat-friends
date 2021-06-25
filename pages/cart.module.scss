@@ -1,0 +1,269 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 80rem 1fr;
+  grid-template-rows: repeat(3, auto);
+  background: $white;
+  padding-bottom: 5rem;
+}
+.heading {
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  &_return {
+    align-self: flex-start;
+    justify-self: flex-start;
+    &_btn {
+      @include btn-black;
+      font-size: $sm2-font;
+      padding: 0.5rem 1rem;
+    }
+  }
+  &_title {
+    margin-top: 5rem;
+    @include title;
+    // justify-self: flex-end;
+  }
+  &_subtitle {
+    @include subtext;
+  }
+}
+.cart {
+  margin-left: -2.5rem;
+  @include shadow-idle;
+  background-color: rgba($grey-pale, 0.9);
+  border-radius: $border-radius;
+  width: 85rem;
+  grid-column: 2;
+  grid-row: 2;
+  //CART ITEM
+  &_item {
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 10rem repeat(4, 1fr) 5rem;
+    grid-auto-flow: column;
+    align-content: stretch;
+    justify-content: stretch;
+    &_thumb {
+      border-radius: $border-radius;
+    }
+    &_name {
+      align-self: center;
+      padding-left: 2.5rem;
+      &_main {
+        @include subtitle;
+      }
+      &_sub {
+        @include long-form-text;
+        color: $grey-dark;
+      }
+    }
+    &_price {
+      align-self: center;
+      @include subtitle;
+      font-weight: 700;
+      color: $blue-dark;
+      justify-self: center;
+    }
+    &_qty {
+      align-self: center;
+      justify-self: center;
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 0.5rem;
+      align-items: center;
+      &_btn {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        border: none;
+        border-radius: $border-radius;
+        font-size: $m2-font;
+        font-weight: $heavy-font;
+        padding: 1rem 1.5rem;
+      }
+      &_plus {
+        fill: $grey-mid;
+        &:hover {
+          fill: $grey-dark;
+        }
+        &:active {
+          fill: $black;
+        }
+      }
+      &_minus {
+        fill: $grey-mid;
+        &:hover {
+          fill: $grey-dark;
+        }
+        &:active {
+          fill: $black;
+        }
+      }
+    }
+    &_total {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      &_text {
+        justify-self: flex-end;
+        @include subtext;
+        font-weight: 600;
+      }
+      &_cost {
+        @include subtitle;
+        justify-self: center;
+        font-weight: 800;
+        color: $blue-dark;
+      }
+    }
+    &_remove {
+      align-self: center;
+      justify-self: flex-end;
+      &_icon {
+        fill: $grey-mid;
+        &:hover {
+          fill: $grey-dark;
+        }
+        &:active {
+          fill: $black;
+        }
+      }
+    }
+  }
+}
+.checkout {
+  margin: 2.5rem 0;
+  grid-column: 2;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5rem;
+  &_left {
+    display: grid;
+    grid-gap: 2.5rem;
+  }
+  &_payment {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.04);
+    border-radius: $border-radius;
+    padding: 0.25rem 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    align-items: center;
+    height: 4rem;
+    &:hover {
+      border: 1px solid $blue-pale;
+      box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+    }
+
+    &_card {
+      :hover {
+        fill: $blue-pale;
+      }
+    }
+    &_info {
+      align-items: flex-start;
+      margin-left: 2rem;
+      &_title {
+        font-size: $xs1-font;
+        font-weight: 600;
+        color: $grey-dark;
+      }
+      &_number {
+        font-size: $xs1-font;
+        color: $grey-mid;
+      }
+    }
+    &_go {
+      justify-self: flex-end;
+    }
+  }
+
+  &_notes {
+    resize: none;
+    @include loud-text;
+    font-size: $sm1-font;
+    background: $white;
+    height: 10rem;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.04);
+    border-radius: $border-radius;
+    padding: 0.25rem 0.5rem;
+    vertical-align: top;
+    resize: none;
+    &::placeholder {
+      color: $grey-mid;
+    }
+    &:focus {
+      outline: 1px solid $green-dark;
+      box-shadow: 0px 4px 9px rgba(100, 68, 68, 0.1);
+    }
+    &:active {
+      outline: 1px solid $green-dark;
+    }
+  }
+  &_calc {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 2fr;
+    &_text {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      align-items: baseline;
+      justify-content: space-between;
+      grid-column: 2;
+      &_subtotal {
+        @include loud-text;
+        font-size: $sm2-font;
+        color: $grey-dark;
+      }
+      &_subtotalcost {
+        @include loud-text;
+        font-size: $sm2-font;
+        font-weight: 400;
+        color: $grey-dark;
+        justify-self: end;
+      }
+      &_ship {
+        @include loud-text;
+        font-size: $sm2-font;
+        color: $grey-dark;
+      }
+      &_shipcost {
+        @include loud-text;
+        font-size: $sm2-font;
+        color: $grey-dark;
+        font-weight: 400;
+        justify-self: end;
+      }
+
+      &_total {
+        margin-top: 1rem;
+        @include loud-text;
+        color: $grey-dark;
+      }
+      &_cost {
+        @include subtitle;
+        justify-self: flex-end;
+      }
+    }
+  }
+  &_btn {
+    margin-top: 2rem;
+    grid-column: 2;
+    &_click {
+      @include btn-black;
+      width: 100%;
+    }
+  }
+}

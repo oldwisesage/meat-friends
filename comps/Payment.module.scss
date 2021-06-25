@@ -1,0 +1,84 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  max-width: 75rem;
+}
+.title {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid $grey-pale;
+  &_text {
+    @include title;
+  }
+}
+
+.payment {
+  @include shadow-idle;
+  margin-top: 1rem;
+  border: 1px solid $grey-pale;
+  padding: 1rem 2rem;
+  border-radius: $border-radius;
+  &:hover {
+    @include shadow-active;
+  }
+  &_top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    & > * {
+      @include loud-text;
+      color: $grey-dark;
+    }
+  }
+  &_body {
+    margin-top: 1rem;
+    font-weight: 200;
+    font-size: $sm2-font;
+    color: $grey-mid;
+    display: flex;
+    align-items: center;
+    &_type {
+      margin-right: 5rem;
+      &_icon {
+        fill: $grey-pale;
+      }
+    }
+    &_info {
+      margin-right: 5rem;
+      &_mode {
+        @include bold;
+      }
+      &_num {
+      }
+    }
+    &_address {
+      border: 0.5px solid $grey-pale;
+      padding: 1rem 2rem;
+      border-radius: $border-radius;
+      @include shadow-idle;
+      @include loud-text;
+    }
+  }
+}
+.addnew {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  border: 1px solid $grey-pale;
+  padding: 1rem 2rem;
+  border-radius: $border-radius;
+  @include shadow-idle;
+  &:hover {
+    @include shadow-active;
+  }
+  &_icon {
+    margin-right: 1rem;
+    stroke: $grey-mid;
+  }
+  &_text {
+    @include loud-text;
+    color: $grey-mid;
+  }
+}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Pro&family=Lora");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 
 // COLOR VARIABLES
 $red-dark: #904d50;
@@ -32,32 +32,44 @@ $white: #fff;
 // TRANSPARENT COLORS
 
 // FONT VARIABLES
-$lora: "Lora", sans-serif;
-$nunito: "Nunito", serif;
+$lora: "Lora", serif;
+$nunito: "Nunito Sans", sans-serif;
 // $avenir: "Avenir", serif;
 
+// TYPE SCALE
+
 // FONT SIZES
-$largest-font-size: 7.451rem;
-$large-font-size: 5.96rem;
-$midlarge-font-size: 4.768rem;
-$mid-font-size: 3.815rem;
-$midsmall-font-size: 3.052rem;
-$small-font-size: 2.441rem;
-$plus-font-size: 1.953rem;
-$base-font-size: 1.563rem;
-$tiny-font-size: 1.25rem;
+// based on major third scaling
+$xl1-font: 7.451rem;
+$xl2-font: 5.96rem;
+$lg1-font: 4.768rem;
+$lg2-font: 3.815rem;
+$m1-font: 3.052rem;
+$m2-font: 2.441rem;
+$sm1-font: 1.953rem;
+$sm2-font: 1.563rem;
+$xs1-font: 1.25rem;
+
+// FONT WEIGHTS
+$heavy-font: 600;
+$bold-font: 500;
+$mid-font: 400;
+$book-font: 300;
+$light-font: 200;
+$thin-font: 100;
 
 // BORDER RADIUS
+$border-radius-base: 10px;
 $border-radius: 5px;
 
 // GRID VARIABLES
-// $grid-width: 114rem;
-// $gutter-vertical: 8rem;
-// $gutter-vertical-small: 6rem;
-// $gutter-horizontal: 3rem;
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 3rem;
 
 // RESPONSIVE BREAKPOINTS
-$bp-largest: 75em; // 1200px
-$bp-large: 62.5em; // 1000px
-$bp-medium: 50em; // 800px;
-$bp-small: 37.5em; // 600px;
+$bp-desk: 75em; // 1200px
+$bp-laptop: 62.5em; // 1000px
+$bp-tablet: 50em; // 800px;
+$bp-phone: 37.5em; // 600px;

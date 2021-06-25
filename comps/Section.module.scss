@@ -1,0 +1,13 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  display: grid;
+  grid-template-areas: "gut content gut";
+  grid-template-columns: 1fr 8fr 1fr;
+}
+
+.header {
+  &_text {
+  }
+}

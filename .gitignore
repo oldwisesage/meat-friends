@@ -5,6 +5,13 @@
 /.pnp
 .pnp.js
 
+#config
+/.vscode
+/.storybook
+
+#editor
+meat-freinds.code-workspace
+
 # testing
 /coverage
 

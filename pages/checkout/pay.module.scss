@@ -1,0 +1,133 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: white;
+  &_payment {
+  }
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  &_text {
+    @include logo-text;
+  }
+}
+
+.payment {
+  display: grid;
+  margin: 5rem 0;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+.heading {
+  margin-bottom: 2.5rem;
+  grid-column: 2;
+  &_title {
+    @include title;
+  }
+  &_subtitle {
+    @include subtext;
+  }
+}
+.card {
+  grid-column: 2;
+  display: grid;
+  grid-gap: 1.5rem;
+  &_input {
+    @include base-input;
+    min-width: 15rem;
+  }
+  &_extra {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+  }
+  &_bottom {
+    margin: 2.5rem 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    &_return {
+      &_link {
+        @include basic-link;
+      }
+    }
+    &_btn {
+      @include btn-black;
+    }
+  }
+}
+.container_cart {
+  background: $brown-pale;
+}
+
+.cart {
+  display: grid;
+  padding: 2rem 5rem;
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    &_img {
+      border-radius: $border-radius;
+    }
+    &_name {
+      font-size: $m2-font;
+      font-weight: 400;
+    }
+    &_price {
+      font-size: $m2-font;
+    }
+  }
+
+  &_promo {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 2fr 1fr;
+    border-top: 1px solid $brown-mid;
+    border-bottom: 1px solid $brown-mid;
+    padding: 2.5rem 0;
+    &_input {
+      @include base-input;
+    }
+    &_btn {
+      @include btn-black;
+    }
+  }
+  &_price {
+    border-top: 1px solid $brown-mid;
+  }
+  &_shipping {
+    margin: 2.5rem 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    &_label {
+      font-size: $sm1-font;
+      font-weight: 400;
+    }
+    &_cost {
+      width: 15rem;
+      font-size: $m2-font;
+      font-weight: 300;
+      text-align: right;
+    }
+  }
+  &_total {
+    margin: 2.5rem 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    &_label {
+      font-size: $sm1-font;
+    }
+    &_cost {
+      width: 15rem;
+      font-size: $m2-font;
+      text-align: right;
+    }
+  }
+}

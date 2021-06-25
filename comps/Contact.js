@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/Contact.module.scss";
+import styles from "./Contact.module.scss";
 
 const Contact = () => {
   return (
@@ -33,7 +33,6 @@ const Contact = () => {
             id="dropdown"
             required
           />
-          <label htmlFor="dropdown" className={styles.form__label}></label>
         </div>
         <div className={styles.form__group}>
           <h2 className={styles.form__group_title}>Subject</h2>

@@ -1,0 +1,130 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  display: grid;
+  background-color: white;
+  grid-template-columns: 1fr 85rem 1fr;
+}
+.heading {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  grid-column: 2;
+  &_title {
+    @include super-title;
+  }
+  &_subtitle {
+    @include subtitle;
+    font-weight: 300;
+  }
+}
+.lower_container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column: 2;
+  border-top: 1px solid $grey-pale;
+  grid-gap: 2.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 7.5rem;
+}
+
+.sidebar {
+  // @include border-purple;
+  grid-column: 1;
+}
+.customer {
+  &_title {
+    @include small-title;
+    display: flex;
+    align-items: center;
+  }
+  &_section {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    grid-gap: 0.5rem;
+    margin-top: 0.5em;
+    &_hr {
+      @include long-form-text;
+      @include bold;
+      &_content {
+        @include long-form-text;
+      }
+    }
+    &_phone {
+      @include long-form-text;
+      @include bold;
+      &_content {
+        @include long-form-text;
+      }
+    }
+    &_email {
+      @include long-form-text;
+      @include bold;
+      &_content {
+        @include long-form-text;
+      }
+    }
+  }
+}
+.marketing {
+  margin-top: 2.5rem;
+  &_title {
+    @include small-title;
+  }
+  &_text {
+    margin-top: 0.5rem;
+    @include long-form-text;
+    &_bold {
+      @include long-form-text;
+      @include bold;
+    }
+  }
+}
+.visit {
+  margin-top: 2.5rem;
+  &_title {
+    @include small-title;
+  }
+  &_content {
+    margin-top: 0.5rem;
+    &_logo {
+      @include small-logo-text;
+    }
+    &_address {
+      @include long-form-text;
+    }
+    &_email {
+      @include long-form-text;
+      @include bold;
+    }
+  }
+}
+.contact {
+  grid-column: 2;
+  display: grid;
+}
+.form {
+  display: grid;
+  grid-gap: 2.5rem;
+
+  &_group {
+    display: grid;
+    grid-gap: 2.5rem;
+    &_top {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 2.5rem;
+    }
+  }
+  &_input {
+    @include base-input;
+  }
+  &_msg {
+    @include base-textbox;
+  }
+  &_btn {
+    &_click {
+      @include btn-black;
+    }
+  }
+}

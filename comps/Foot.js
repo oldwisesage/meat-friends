@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/Foot.module.scss";
+import styles from "./Foot.module.scss";
 import Link from "next/link";
 
 const Foot = () => {
@@ -83,8 +83,8 @@ const Foot = () => {
       </div>
       <div className={styles.center}>
         <div className={styles.logo}>
-          <h1 className={styles.logo__text}>meat friends</h1>
-          <p className={styles.logo__tagline}>some cool slogan here</p>
+          <h1 className={styles.logo_text}>meat friends</h1>
+          <p className={styles.logo_tagline}>some cool slogan here</p>
         </div>
       </div>
       <div className={styles.right}>

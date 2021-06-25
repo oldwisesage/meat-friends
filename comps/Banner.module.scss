@@ -1,0 +1,23 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  width: 100vw;
+  max-height: 5rem;
+  background: $grey-pale;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  display: none;
+}
+.text {
+  font-size: $m1-font;
+
+  &_link {
+    text-decoration: none;
+    color: $grey-dark;
+    &:hover {
+      color: purple;
+    }
+  }
+}

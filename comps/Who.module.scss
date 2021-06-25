@@ -1,0 +1,38 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  height: 50rem;
+  width: 100vw;
+  margin-top: 5rem;
+  grid-area: who;
+  padding: 5rem;
+}
+.heading {
+  margin-top: 2.5rem;
+  &_title {
+    @include title;
+    color: $white;
+    margin-left: 10rem;
+  }
+}
+.content {
+  margin-top: 5rem;
+  margin-left: 12.5rem;
+  &_title {
+    @include subtitle;
+    color: $white;
+  }
+  &_text {
+    @include subtext;
+    margin-top: 5rem;
+    margin-left: 5rem;
+    margin-right: 20rem;
+    color: $white;
+  }
+  &_btn {
+    margin-left: 25rem;
+    margin-top: 5rem;
+    @include btn-light;
+  }
+}

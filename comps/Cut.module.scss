@@ -1,0 +1,34 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  display: grid;
+  grid-row: 2;
+  grid-template-columns: 20rem;
+  border-radius: $border-radius;
+  margin-top: 2.5rem;
+  &:hover {
+    box-shadow: 1px rgba(0, 0, 0, 0.5);
+    background: $grey-pale;
+    border: 0.5px solid $grey-pale;
+  }
+}
+.content {
+  &_container {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    padding: 0.5rem;
+  }
+  &_img {
+    border-radius: $border-radius;
+  }
+  &_title {
+    font-size: $sm1-font;
+    color: $black;
+  }
+  &_price {
+    font-size: $sm2-font;
+    color: $black;
+  }
+}

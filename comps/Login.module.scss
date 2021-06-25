@@ -1,0 +1,76 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.container {
+  background: $white;
+  padding: 4rem 4rem 0 4rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  border-radius: $border-radius;
+}
+.text {
+  padding: 2rem 0;
+  &__title {
+    font-size: $m2-font;
+    color: $black;
+  }
+  &__subtitle {
+    font-size: $sm2-font;
+    color: $grey-dark;
+  }
+}
+.form {
+  display: grid;
+
+  &__group {
+    display: grid;
+    grid-gap: 2rem;
+  }
+  &__input {
+    background: $grey-pale;
+    text-decoration: none;
+    border: none;
+    border-bottom: 1.5px solid $grey-dark;
+    height: 2.5rem;
+    padding: 0.5rem;
+  }
+}
+.forgot {
+  &__text {
+    text-decoration: none;
+    color: grey;
+    font-size: 15px;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+.submit {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin: 2rem 0;
+  &__btn {
+    @include btn-black;
+    &:hover {
+      background: #grey-dark;
+    }
+  }
+}
+.register {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  align-self: end;
+  &__text {
+    font-size: $sm2-font;
+    color: grey;
+  }
+  &__link {
+    text-decoration: none;
+    color: grey;
+    &:hover {
+      color: blue;
+    }
+  }
+}
