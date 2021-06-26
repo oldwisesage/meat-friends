@@ -1,28 +1,33 @@
-@import "../styles/mixins";
-@import "../styles/variables";
+@import '../styles/mixins';
+@import '../styles/variables';
 
 .container {
   display: grid;
-  grid-row: 2;
-  grid-template-columns: 20rem;
   border-radius: $border-radius;
-  margin-top: 2.5rem;
+  border: 0.5px solid $grey-pale;
+  @include shadow-idle;
   &:hover {
-    box-shadow: 1px rgba(0, 0, 0, 0.5);
-    background: $grey-pale;
-    border: 0.5px solid $grey-pale;
+    border: 0.5px solid $green-pale;
+    @include shadow-active;
+  }
+}
+.img {
+  height: 21rem;
+  min-width: 20rem;
+  position: relative;
+  border-bottom: 0.5px solid $grey-pale;
+  &_content {
+    border-radius: $border-radius $border-radius 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 .content {
-  &_container {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    padding: 0.5rem;
-  }
-  &_img {
-    border-radius: $border-radius;
-  }
+  display: grid;
+  margin: 0.5rem 0;
+  justify-content: center;
+  justify-items: center;
   &_title {
     font-size: $sm1-font;
     color: $black;
