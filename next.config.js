@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['placebeard.it', 'fakeimg.pl'],
+    domains: ['placebeard.it', 'fakeimg.pl', 'res.cloudinary.com'],
   },
 };
