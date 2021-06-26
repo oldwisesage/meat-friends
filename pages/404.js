@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import styles from './err.module.scss';
 
+// TODO style this 404 page
+
 const NotFound = () => {
   const router = useRouter();
   useEffect(() => {

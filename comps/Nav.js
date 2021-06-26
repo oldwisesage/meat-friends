@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Nav.module.scss';
 
+// TODO improve styling so it looks cooler
+
 const Nav = () => (
   <nav className={styles.container}>
     <div className={styles.logo}>
@@ -16,9 +18,12 @@ const Nav = () => (
     <Link href="/contact">
       <a className={styles.link}>contact</a>
     </Link>
-    <Link href="/recipes">
-      <a className={styles.link}>recipes</a>
+    <Link href="/add">
+      <a className={styles.link}>add cut</a>
     </Link>
+    {/* <Link href="/recipes">
+      <a className={styles.link}>recipes</a>
+    </Link> */}
     <div className={styles.account}>
       <Link href="/login">
         <a className={styles.account__login}>log in</a>

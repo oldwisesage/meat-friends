@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styles from './about.module.scss';
 
+// TODO complete styling maybe post design
+
 const About = () => (
   <div className={styles.container}>
     <div className={styles.heading}>
@@ -9,7 +11,6 @@ const About = () => (
     </div>
     <div className={styles.container_cards}>
       <div className={styles.card_what}>
-        {/* What is meat friends */}
         <div className={styles.card_what_title}>What is meat friends?</div>
         <div className={styles.card_what_text}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora

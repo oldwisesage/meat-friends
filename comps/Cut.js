@@ -3,6 +3,8 @@ import Link from 'next/link';
 import formatMoney from '../lib/formatMoney';
 import styles from './Cut.module.scss';
 
+// TODO add propTypes
+
 const Cut = ({ cut }) => (
   <Link href="/meats/cut">
     <div className={styles.container}>

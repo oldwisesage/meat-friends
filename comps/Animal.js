@@ -1,11 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import gql from 'graphql-tag';
-import { useQuery } from '@apollo/client';
 import styles from './Animal.module.scss';
 
-
-
+// WHAT to do with this?
 const Animal = () => (
   <div className={styles.animal}>
     <Link href="/meats/beef">
