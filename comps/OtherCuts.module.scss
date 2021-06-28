@@ -1,0 +1,11 @@
+.container_cuts {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+}
+.card_container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-items: center;
+  justify-content: space-between;
+}

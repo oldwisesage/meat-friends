@@ -1,7 +1,7 @@
 // import styled from 'styled-components';
 import React from 'react';
-
 import PropTypes from 'prop-types';
+import styles from './ErrorMessage.module.scss';
 
 // TODO style & understand this deeply enough to make my own
 
@@ -29,7 +29,7 @@ const DisplayError = ({ error }) => {
   ) {
     return error.networkError.result.errors.map((error, i) => (
       //   <ErrorStyles key={i}>
-      <div key={i}>
+      <div key={i} className={styles.error}>
         <p data-test="graphql-error">
           <strong>Shoot!</strong>
           {error.message.replace('GraphQL error: ', '')}
@@ -40,7 +40,7 @@ const DisplayError = ({ error }) => {
   }
   return (
     // <ErrorStyles>
-    <div>
+    <div className={styles.error}>
       <p data-test="graphql-error">
         <strong>Shoot!</strong>
         {error.message.replace('GraphQL error: ', '')}

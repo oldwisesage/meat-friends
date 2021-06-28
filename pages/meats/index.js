@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import Cut from '../../comps/Cut';
 import styles from './meat.module.scss';
 
-const ALL_CUTS_QUERY = gql`
+export const ALL_CUTS_QUERY = gql`
   query {
     allCuts {
       id

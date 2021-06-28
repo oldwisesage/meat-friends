@@ -36,4 +36,8 @@
     font-size: $sm2-font;
     color: $black;
   }
+  &_edit {
+    @include basic-link;
+    font-size: $sm2-font;
+  }
 }
