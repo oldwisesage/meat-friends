@@ -26,15 +26,23 @@
 .content {
   display: grid;
   margin: 0.5rem 0;
-  justify-content: center;
-  justify-items: center;
+
   &_title {
     font-size: $sm1-font;
     color: $black;
+    justify-self: center;
   }
   &_price {
+    justify-self: center;
     font-size: $sm2-font;
     color: $black;
+  }
+  &_bottom {
+    margin: 0 0.5rem;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: baseline;
+    justify-content: space-between;
   }
   &_edit {
     @include basic-link;
