@@ -1,0 +1,10 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  margin: 5rem 0;
+  grid-template-rows: auto;
+  background: white;
+}

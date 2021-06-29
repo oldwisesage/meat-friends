@@ -15,5 +15,6 @@
         "titleBar.inactiveBackground": "#44323399",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#443233"
+    "peacock.color": "#443233",
+    "todo-tree.tree.disableCompactFolders": true
 }
