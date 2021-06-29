@@ -1,10 +1,10 @@
 import { useRouter } from 'next/dist/client/router';
 import Cuts from '../../comps/Cuts';
-import Pagination from '../../comps/Pagination';
 import Heading from '../../comps/Heading';
+import Pagination from '../../comps/Pagination';
 import styles from './meat.module.scss';
 
-export default function Meat() {
+export default function MeatPage() {
   const { query } = useRouter();
   const page = parseInt(query.page);
   return (
