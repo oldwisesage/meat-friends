@@ -9,7 +9,7 @@
 }
 .container {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 50rem);
   grid-gap: 5rem;
 }
 .img {
@@ -33,10 +33,9 @@
   &_top {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
     &_title {
       @include title;
-      align-self: flex-end;
     }
     &_price {
       @include subtitle;

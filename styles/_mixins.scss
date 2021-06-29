@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 // CONTAINERS
 @mixin container {
@@ -181,6 +181,7 @@
   height: 3.5rem;
   border-radius: 50px;
   background-size: cover;
+  background: $white;
 }
 
 // FORMS

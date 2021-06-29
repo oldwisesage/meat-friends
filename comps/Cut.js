@@ -7,7 +7,7 @@ import DeleteCut from './DeleteCut';
 
 const Cut = ({ cut }) => (
   <div className={styles.container}>
-    <Link href="/meats">
+    <Link href={`/meat/${cut.id}`}>
       <div className={styles.img}>
         <img
           src={cut?.photo?.image?.publicUrlTransformed}

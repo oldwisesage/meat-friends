@@ -1,9 +1,9 @@
-@import "../styles/mixins";
-@import "../styles/variables";
+@import '../styles/mixins';
+@import '../styles/variables';
 
 .container {
   display: grid;
-  align-items: baseline;
+  align-items: center;
   align-content: center;
   height: 8rem;
   grid-template-columns: 25rem repeat(4, 1fr) 25rem;
@@ -31,15 +31,17 @@
   grid-template-columns: repeat(2, 1fr);
   grid-column: 6;
   place-items: center;
-  &__login {
+  &_login {
     @include btn-black;
-  }
-  &__user {
-    @include user-btn;
     display: none;
+  }
+  &_user {
+    @include user-btn;
     // display: none;
-    &_photo {
+    &_avatar {
       @include user-avatar;
+      &_icon {
+      }
     }
     &_name {
       font-size: $m2-font;
@@ -57,10 +59,10 @@
     padding: 0.5rem;
     border-radius: 50px;
     &:hover {
-      background-color: rgba($grey-pale, 0.1);
+      background-color: rgba($grey-mid, 0.1);
     }
     &:active {
-      background-color: rgba($grey-pale, 0.2);
+      background-color: rgba($grey-mid, 0.3);
     }
   }
 }

@@ -3,6 +3,7 @@ import Address from '../../comps/Address';
 import styles from './account.module.scss';
 
 // TODO implement functionality, backend connection
+// TODO add dynamic routing to logout, orders, payment, personal, settings
 
 const Account = () => (
   <div className={styles.container}>
@@ -42,7 +43,7 @@ const Account = () => (
       {/* <OrderHistory /> */}
       {/* PERSONAL INFORMATION */}
 
-      <Address />
+      {/* <Address /> */}
       {/* PAYMENT METHODS */}
       {/* SETTINGS */}
       {/* LOG OUT */}

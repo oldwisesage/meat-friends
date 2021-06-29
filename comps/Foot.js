@@ -5,7 +5,7 @@ import styles from './Foot.module.scss';
 const Foot = () => (
   <footer className={styles.container}>
     <div className={styles.left}>
-      {/* COMP Social */}
+      {/* COMP <Social /> */}
       <div className={styles.social}>
         <div className={styles.social_icon}>
           <svg

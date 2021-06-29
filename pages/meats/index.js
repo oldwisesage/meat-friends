@@ -1,4 +1,4 @@
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 import Cuts from '../../comps/Cuts';
 import Pagination from '../../comps/Pagination';
 import Heading from '../../comps/Heading';

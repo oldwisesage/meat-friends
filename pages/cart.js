@@ -127,11 +127,13 @@ const Cart = () => (
           <h3 className={styles.checkout_calc_text_total}>Total</h3>
           <h4 className={styles.checkout_calc_text_cost}>$66.00</h4>
         </div>
-        <div className={styles.checkout_btn}>
-          <button type="submit" className={styles.checkout_btn_click}>
-            Checkout
-          </button>
-        </div>
+        <Link href="/checkout/ship">
+          <div className={styles.checkout_btn}>
+            <button type="submit" className={styles.checkout_btn_click}>
+              Checkout
+            </button>
+          </div>
+        </Link>
       </div>
     </div>
   </div>

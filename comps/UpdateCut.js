@@ -46,10 +46,8 @@ export default function UpdateCut({ id }) {
   ] = useMutation(UPDATE_CUT_MUTATION_QUERY, {
     variables: { id },
   });
-  if (loading || loadingUpdate) return <p>loading..... </p>;
-  console.log({ data, dataUpdate });
-  const { inputs, handleChange, clearForm, resetForm } = useForm(data?.Cut);
-  console.log({ inputs });
+  if (loading) return <p>loading..... </p>;
+  const { inputs, handleChange, clearForm, resetForm } = useForm(data.Cut);
   return (
     <div className={styles.container}>
       <form
