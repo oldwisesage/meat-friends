@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { gql, useQuery } from '@apollo/client';
-import { useRouter } from 'next/dist/client/router';
 import DisplayError from './ErrorMessage';
 import { perPage } from '../config';
 import styles from './Pagination.module.scss';
@@ -22,8 +21,6 @@ export default function Pagination({ page }) {
 
   const { count } = data._allCutsMeta;
   const pageCount = Math.ceil(count / perPage);
-  console.log(page <= 1);
-  console.log(page >= pageCount);
 
   return (
     <>

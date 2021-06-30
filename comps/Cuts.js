@@ -4,7 +4,7 @@ import { perPage } from '../config';
 import Cut from './Cut';
 import styles from './Cuts.module.scss';
 
-export const ALL_CUTS_QUERY = gql`
+const ALL_CUTS_QUERY = gql`
   query ALL_CUTS_QUERY($skip: Int = 0, $first: Int) {
     allCuts(first: $first, skip: $skip) {
       id
@@ -44,3 +44,4 @@ export default function Cuts({ page }) {
     </div>
   );
 }
+export { ALL_CUTS_QUERY };

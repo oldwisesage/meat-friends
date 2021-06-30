@@ -2,7 +2,7 @@
 import { gql, useMutation } from '@apollo/client';
 import Router from 'next/router';
 import useForm from '../lib/useForm';
-import { ALL_CUTS_QUERY } from '../pages/meats';
+import { ALL_CUTS_QUERY } from './Cuts';
 import styles from './CreateCut.module.scss';
 import DisplayError from './ErrorMessage';
 
@@ -53,7 +53,7 @@ export default function CreateCut() {
           const res = await createCut();
           clearForm();
           Router.push({
-            pathname: `/meats/${res.data.createCut.id}`,
+            pathname: `/meat/${res.data.createCut.id}`,
           });
         }}
       >

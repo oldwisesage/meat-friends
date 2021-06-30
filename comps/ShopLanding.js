@@ -3,8 +3,9 @@
 import Animal from './Animal';
 import styles from './ShopLanding.module.scss';
 
-// TODO ensure that this becomes a way cooler page
 
+
+// TODO ensure that this becomes a way cooler page
 // TODO add functionality into this page
 const ShopLanding = () => (
   <div className={styles.container}>

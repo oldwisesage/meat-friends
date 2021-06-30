@@ -6,7 +6,7 @@
   align-items: center;
   align-content: center;
   height: 8rem;
-  grid-template-columns: 25rem repeat(4, 1fr) 25rem;
+  grid-template-columns: 25rem repeat(4, 1fr) 40rem;
 }
 
 .logo {
@@ -28,12 +28,11 @@
 
 .account {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-column: 6;
   place-items: center;
   &_login {
     @include btn-black;
-    display: none;
   }
   &_user {
     @include user-btn;

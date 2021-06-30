@@ -1,58 +1,115 @@
 import Link from 'next/link';
+import gql from 'graphql-tag';
+import { useMutation } from '@apollo/client';
+import Heading from './Heading';
 import styles from './Login.module.scss';
+import useForm from '../lib/useForm';
+import { CURRENT_USER_QUERY } from './User';
+import ErrorDisplay from './ErrorMessage';
 
 // TODO implement social login in - facebook? google? github?
 
-const Login = () => (
-  <>
+const SIGNUP_MUTATION = gql`
+  mutation SIGNUP_MUTATION($email: String!, $password: String!) {
+    authenticateUserWithPassword(email: $email, password: $password) {
+      ... on UserAuthenticationWithPasswordSuccess {
+        item {
+          id
+          email
+          name
+        }
+      }
+      ... on UserAuthenticationWithPasswordFailure {
+        code
+        message
+      }
+    }
+  }
+`;
+
+export default function Login() {
+  const { inputs, handleChange, clearForm, resetForm } = useForm({});
+
+  const [login, { data, loading }] = useMutation(SIGNUP_MUTATION, {
+    variables: inputs,
+    refetchQueries: [{ query: CURRENT_USER_QUERY }],
+  });
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log(inputs);
+    const res = await login();
+    console.log(data);
+    console.log(res);
+    clearForm();
+    resetForm();
+  }
+  const error =
+    data?.authenticateUserWithPassword?.__typename ===
+    'UserAuthenticationWithPasswordFailure'
+      ? data?.authenticateUserWithPassword
+      : undefined;
+  return (
     <div className={styles.container}>
-      <div className={styles.text}>
-        <h1 className={styles.text__title}>Hi! Please login</h1>
-        <p className={styles.text__subtitle}>
-          Please enter your username & password
-        </p>
-      </div>
+      <Heading title="Welcome Back!" subtitle="Please login" />
+      <ErrorDisplay error={error} />
       <div className={styles.form}>
-        <div className={styles.form__group}>
-          <input
-            type="user"
-            className={styles.form__input}
-            placeholder="username"
-            id="username"
-            required
-          />
-        </div>
-        <div className={styles.form__group}>
-          <input
-            type="password"
-            className={styles.form__input}
-            placeholder="password"
-            id="password"
-            required
-          />
-        </div>
+        <form
+          className={styles.form_group}
+          method="post"
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor="email">
+            <input
+              type="text"
+              className={styles.form_input}
+              placeholder="email"
+              id="email"
+              value={inputs.email}
+              onChange={handleChange}
+              name="email"
+              required
+            />
+          </label>
+          <label htmlFor="password">
+            <input
+              type="password"
+              className={styles.form_input}
+              placeholder="password"
+              id="password"
+              value={inputs.password}
+              onChange={handleChange}
+              name="password"
+              required
+            />
+          </label>
+          <button type="submit" className={styles.submit}>
+            Sign in
+          </button>
+        </form>
       </div>
-      <div className={styles.forgot}>
+      {/* TODO create forgot password functionality */}
+      {/* <div className={styles.forgot}>
         <Link href="/">
-          <a className={styles.forgot__text}>Forgot your password?</a>
+          <a className={styles.forgot_text}>Forgot your password?</a>
+        </Link>
+      </div> */}
+      {/* <div className={styles.twitter}>
+        <button className={styles.twitter_btn}></button>
+      </div>
+      <div className={styles.github}>
+        <button className={styles.github_btn}></button>
+      </div>
+      <div className={styles.facebook}>
+        <button className={styles.facebook_btn}></button>
+      </div> */}
+      <div className={styles.links}>
+        <Link href="/register">
+          <a className={styles.links_register}>Create new account</a>
+        </Link>
+        <Link href="/reset">
+          <a className={styles.links_reset}>Forgot your password?</a>
         </Link>
       </div>
-      <div className={styles.submit}>
-        <button type="submit" className={styles.submit__btn}>
-          Sign in
-        </button>
-      </div>
-      <div className={styles.register}>
-        <p className={styles.register__text}>
-          <span>
-            <Link href="/register">
-              <a className={styles.register__link}>Create new account</a>
-            </Link>
-          </span>
-        </p>
-      </div>
     </div>
-  </>
-);
-
-export default Login;
+  );
+}

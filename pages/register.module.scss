@@ -1,8 +1,7 @@
-@import "../styles/mixins";
-@import "../styles/variables";
+@import '../styles/mixins';
+@import '../styles/variables';
 
 .container {
-  background: $grey-pale;
   display: grid;
   grid-template-columns: 1fr;
   min-height: 80vh;
@@ -20,16 +19,6 @@
   align-items: center;
   grid-template-columns: 1fr;
   box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.04);
-}
-
-.text {
-  &_title {
-    @include title;
-  }
-  &_subtitle {
-    margin-top: 1rem;
-    @include subtext;
-  }
 }
 
 .form {

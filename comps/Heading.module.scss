@@ -1,11 +1,14 @@
 @import '../styles/mixins';
 
 .heading {
-  margin: 1rem 0;
   &_title {
     @include title;
   }
   &_subtitle {
     @include subtext;
+  }
+  &_subtext {
+    margin-top: 1rem;
+    @include loud-text;
   }
 }
