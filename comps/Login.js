@@ -36,9 +36,7 @@ export default function Login() {
   });
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(inputs);
     const res = await login();
-    console.log(data);
     console.log(res);
     clearForm();
     resetForm();

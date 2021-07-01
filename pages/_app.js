@@ -6,8 +6,7 @@ import NProgress from 'nprogress';
 import withData from '../lib/withData';
 import LayoutWrapper from '../layouts/layout-wrapper';
 import '../styles/globals.scss';
-
-// DAVE .gitignore strategy -- webpack & package-loc.json are super annoying -- do you stop server or dev server to commmit changes
+import { CartStateProvider } from '../lib/cartState';
 
 // TODO add a cool loading indication
 
@@ -20,9 +19,11 @@ Router.events.on('routeChangeError', () => NProgress.done());
 function MyApp({ Component, pageProps, apollo }) {
   return (
     <ApolloProvider client={apollo}>
-      <LayoutWrapper {...pageProps}>
-        <Component {...pageProps} />
-      </LayoutWrapper>
+      <CartStateProvider>
+        <LayoutWrapper {...pageProps}>
+          <Component {...pageProps} />
+        </LayoutWrapper>
+      </CartStateProvider>
     </ApolloProvider>
   );
 }

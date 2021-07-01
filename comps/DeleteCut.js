@@ -12,7 +12,6 @@ const DELETE_CUT_MUTATION = gql`
 `;
 
 function update(cache, payload) {
-  console.log({ cache, payload });
   cache.evict(cache.identify(payload.data.deleteCut));
 }
 

@@ -152,7 +152,7 @@
   background: $black;
   color: $white;
   &:hover {
-    background: $grey-dark;
+    @include shadow-idle;
   }
 }
 @mixin btn-light {

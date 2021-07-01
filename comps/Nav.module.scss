@@ -51,17 +51,16 @@
   }
 }
 .cart {
-  margin: auto 30px;
+  border: none;
+  background: transparent;
   display: grid;
   place-items: center;
-  &_icon {
-    padding: 0.5rem;
-    border-radius: 50px;
-    &:hover {
-      background-color: rgba($grey-mid, 0.1);
-    }
-    &:active {
-      background-color: rgba($grey-mid, 0.3);
-    }
+  border-radius: 50px;
+  padding: 0.5rem;
+  &:hover {
+    background: rgba($grey-pale, 0.1);
+  }
+  &:active {
+    background: rgba($grey-mid, 0.1);
   }
 }
