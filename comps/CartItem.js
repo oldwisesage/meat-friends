@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import formatMoney from '../lib/formatMoney';
 import styles from './CartItem.module.scss';
+import RemoveFromCart from './RemoveFromCart';
 
 export default function CartItem({ cartItem }) {
   const { cut } = cartItem;
@@ -23,6 +24,7 @@ export default function CartItem({ cartItem }) {
         <p className={styles.info_total}>
           {formatMoney(cut.price * cartItem.quantity)}
         </p>
+        <RemoveFromCart id={cartItem.id} />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import formatMoney from '../lib/formatMoney';
+import AddToCart from './AddToCart';
 import styles from './Cut.module.scss';
 import DeleteCut from './DeleteCut';
 
@@ -30,6 +31,7 @@ const Cut = ({ cut }) => (
         >
           <a className={styles.content_edit}>✎ Edit cut</a>
         </Link>
+        <AddToCart id={cut.id} />
         <DeleteCut id={cut.id}>Delete</DeleteCut>
       </div>
     </div>

@@ -7,7 +7,8 @@ const CartStyles = styled.div`
   height: 100%;
   top: 0;
   right: 0;
-  min-width: 30rem;
+  min-width: 50rem;
+  width: 40%;
   bottom: 0;
   transform: translateX(100%);
   transition: all 0.3s;
@@ -16,11 +17,6 @@ const CartStyles = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
   ${(props) => props.open && `transform: translateX(0);`};
-  /* div {
-    display: grid;
-  align-content: flex-start;
-  padding: 2rem;
-  } */
   footer {
   display: grid;
   grid-template-columns: 2fr repeat(2, 1fr) 5rem;

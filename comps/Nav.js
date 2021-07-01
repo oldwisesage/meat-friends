@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useCart } from '../lib/cartState';
 import Cart from './Cart';
+import CartCount from './CartCount';
 import Logout from './Logout';
 import styles from './Nav.module.scss';
 import useUser from './User';
@@ -10,7 +11,6 @@ import useUser from './User';
 export default function Nav() {
   const user = useUser();
   const { openCart } = useCart();
-  console.log(user);
 
   return (
     <nav className={styles.container}>
@@ -76,9 +76,15 @@ export default function Nav() {
           >
             <path d="m83.531 35.344c-0.59375-0.625-1.4375-0.96875-2.2812-0.96875h-9.375v-9.375c0-5.875-2.2812-11.375-6.4062-15.438-4.0938-4.1562-9.5938-6.4375-15.469-6.4375-12.062 0-21.875 9.8125-21.875 21.875v9.375h-9.375c-0.84375 0-1.6875 0.34375-2.2812 0.96875s-0.90625 1.4688-0.84375 2.3125l0.65625 12.5c0 0.0625 0.03125 0.125 0.0625 0.1875l2.4062 43.594c0.09375 1.6562 1.4688 2.9375 3.125 2.9375h56.25c1.6562 0 3.0312-1.2812 3.125-2.9375l2.4688-43.75 0.65625-12.5c0.03125-0.875-0.28125-1.7188-0.84375-2.3438zm-49.156-10.344c0-8.625 7-15.625 15.625-15.625 4.1875 0 8.0938 1.625 11.062 4.5938 2.9375 2.9375 4.5625 6.8438 4.5625 11.031v9.375h-31.25zm-3.125 15.625h46.719l-0.34375 6.25h-55.219l-0.34375-6.25zm-6.4062 50-2.0938-37.5h54.531l-2.0938 37.5z" />
           </svg>
+          <CartCount
+            count={user?.cart.reduce(
+              (tally, cartItem) => tally + cartItem.quantity,
+              0
+            )}
+          />
         </button>
-        <Cart />
       </div>
+      <Cart />
     </nav>
   );
 }
