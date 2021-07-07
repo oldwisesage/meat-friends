@@ -1,5 +1,5 @@
 import styles from './register.module.scss';
-import Register from '../comps/Register';
+import Register from '../comps/user/Register';
 
 export default function RegisterPage() {
   return (

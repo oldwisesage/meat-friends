@@ -2,9 +2,7 @@ import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import { useRouter } from 'next/dist/client/router';
 import Heading from '../../comps/Heading';
-import OrderSummary from '../../comps/OrderSummary';
-import OrderSummaryItem from '../../comps/OrderSummaryItem';
-import formatMoney from '../../lib/formatMoney';
+import OrderSummary from '../../comps/account/OrderSummary';
 import styles from './order.module.scss';
 
 const ORDER_ITEMS_QUERY = gql`
@@ -32,11 +30,12 @@ const ORDER_ITEMS_QUERY = gql`
 export default function OrderPage() {
   const router = useRouter();
   const { id } = router.query;
-  console.log(id);
   const { data, error, loading } = useQuery(ORDER_ITEMS_QUERY, {
     variables: { id },
   });
   if (loading) return <p>Loading.....</p>;
+  if (error) return <p>{error}</p>;
+  console.log(data.Order);
 
   return (
     <div className={styles.container}>

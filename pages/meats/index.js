@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import Cuts from '../../comps/Cuts';
-import Pagination from '../../comps/Pagination';
+import Cuts from '../../comps/shop/Cuts';
+import Pagination from '../../comps/shop/Pagination';
 import Heading from '../../comps/Heading';
 import styles from './meat.module.scss';
 

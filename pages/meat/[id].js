@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import SingleCut from '../../comps/SingleCut';
+import SingleCut from '../../comps/cut/SingleCut';
 import styles from './id.module.scss';
 
 export default function SingleCutPage() {

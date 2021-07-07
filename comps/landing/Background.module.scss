@@ -1,0 +1,23 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  height: 10rem;
+  position: absolute;
+  overflow: hidden;
+}
+.blob {
+  position: absolute;
+  margin-top: -55%;
+  margin-left: -10%;
+  z-index: -1;
+  overflow: hidden;
+  width: 135%;
+}
+.blob2 {
+  position: absolute;
+  transform: translate(-25%, 35%);
+  overflow: hidden;
+  width: 200%;
+  z-index: -1;
+}

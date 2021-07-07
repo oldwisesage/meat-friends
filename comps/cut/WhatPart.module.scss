@@ -1,0 +1,73 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  display: grid;
+  grid-row: 2;
+  grid-column: 2 / -2;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: center;
+  justify-content: center;
+}
+.meatmap {
+}
+.content {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-gap: 2rem;
+
+  &_goodfor {
+    &_title {
+      font-size: $sm2-font;
+      color: $grey-dark;
+    }
+    &_items {
+      display: grid;
+      grid-template-columns: repeat(3, auto) 1fr;
+      margin-left: 2rem;
+      grid-gap: 3rem;
+    }
+    &_item {
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: center;
+      justify-items: start;
+      grid-gap: 1rem;
+      &_img {
+        width: 2.5rem;
+        height: 2.5rem;
+        background: red;
+        justify-self: start;
+        border-radius: 50px;
+      }
+      &_title {
+        font-size: $sm2-font;
+        justify-self: start;
+      }
+    }
+  }
+
+  &_cooknotes {
+    &_title {
+      font-size: $sm2-font;
+      color: $grey-dark;
+    }
+    &_text {
+      margin-left: 1rem;
+      font-size: $xs1-font;
+      color: $grey-dark;
+    }
+  }
+  &_whyitsgood {
+    &_title {
+      font-size: $sm2-font;
+      color: $grey-dark;
+    }
+    &_text {
+      margin-left: 1rem;
+      font-size: $xs1-font;
+      color: $grey-dark;
+    }
+  }
+}

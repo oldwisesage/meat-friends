@@ -1,0 +1,6 @@
+@import '../../styles/mixins';
+
+.btn {
+  @include btn-black;
+  margin-top: 2.5rem;
+}

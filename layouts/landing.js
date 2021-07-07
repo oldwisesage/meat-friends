@@ -1,19 +1,17 @@
-import Nav from "../comps/Nav";
-import Foot from "../comps/Foot";
-import Banner from "../comps/Banner";
-import Background from "../comps/Background";
-import styles from "./landing.module.scss";
+import Nav from '../comps/nav/Nav';
+import Foot from '../comps/nav/Foot';
+import Banner from '../comps/landing/Banner';
+import Background from '../comps/landing/Background';
+import styles from './landing.module.scss';
 
-const LandingLayout = ({ children }) => {
-  return (
-    <div className={styles.content}>
-      <Background />
-      <Banner />
-      <Nav />
-      {children}
-      <Foot />
-    </div>
-  );
-};
+const LandingLayout = ({ children }) => (
+  <div className={styles.content}>
+    <Background />
+    <Banner />
+    <Nav />
+    {children}
+    <Foot />
+  </div>
+);
 
 export default LandingLayout;

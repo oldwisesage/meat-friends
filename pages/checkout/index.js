@@ -1,4 +1,4 @@
-import Checkout from '../../comps/Checkout';
+import Checkout from '../../comps/checkout/Checkout';
 import Heading from '../../comps/Heading';
 import styles from './checkout.module.scss';
 

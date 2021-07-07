@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Login from '../comps/Login';
+import Login from '../comps/user/Login';
 import styles from './login.module.scss';
 
 export default function LoginPage() {

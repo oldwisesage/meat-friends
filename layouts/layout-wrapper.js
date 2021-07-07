@@ -1,10 +1,10 @@
-import DefaultLayout from "./default";
-import LandingLayout from "./landing";
-import AdminLayout from "./admin";
-import CheckoutLayout from "./checkout";
-import PicLayout from "./pic";
-import NoLayout from "./no";
-import ErrLayout from "./err";
+import DefaultLayout from './default';
+import LandingLayout from './landing';
+import AdminLayout from './admin';
+import CheckoutLayout from './checkout';
+import PicLayout from './pic';
+import NoLayout from './no';
+import ErrLayout from './err';
 
 const layouts = {
   default: DefaultLayout,

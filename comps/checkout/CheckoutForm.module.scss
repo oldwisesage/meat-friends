@@ -1,0 +1,16 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  @include shadow-idle;
+  width: 100%;
+  display: grid;
+  grid-gap: 2.5rem;
+  height: 2.5rem;
+  border-radius: $border-radius;
+  border: 0.5px solid $grey-pale;
+  padding: 0.5rem;
+}
+.btn {
+  @include btn-black;
+}

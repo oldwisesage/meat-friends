@@ -1,0 +1,71 @@
+@import '../../styles/mixins';
+
+.summary_container {
+  @include shadow-idle;
+  border: 0.5px solid $grey-pale;
+  border-radius: 5px;
+  min-height: 50vh;
+  min-width: 50vw;
+  padding: 2.5rem;
+  margin-bottom: 5rem;
+}
+.summary_info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid $grey-pale;
+}
+.pay_layer {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+.summary_info_payment {
+  grid-row: 3;
+}
+.summary_info_payaddress {
+  grid-row: 2;
+}
+
+.info_layer {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+.order_subtotal {
+  display: grid;
+  grid-template-columns: 85px 2fr repeat(2, 1fr);
+  grid-gap: 1rem;
+  border-top: 0.5px solid $grey-pale;
+  padding: 2.5rem 0;
+  &_title {
+    @include loud-text;
+    font-weight: 500;
+    grid-column: 2;
+    justify-self: flex-end;
+    padding-right: 2.5rem;
+  }
+  &_number {
+    @include loud-text;
+    grid-column: 3;
+  }
+}
+
+.order_total {
+  display: grid;
+  grid-template-columns: 85px 2fr repeat(2, 1fr);
+  align-content: center;
+  justify-items: center;
+  border-top: 0.5px solid $grey-pale;
+  padding-top: 2.5rem;
+  &_title {
+    @include subtext;
+    grid-column: 2;
+    justify-self: flex-end;
+    padding-right: 2.5rem;
+    font-weight: 500;
+  }
+  &_number {
+    @include subtext;
+    grid-column: 3;
+    justify-self: flex-start;
+  }
+}

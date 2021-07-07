@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import RequestReset from '../comps/RequestReset';
-import Reset from '../comps/Reset';
+import RequestReset from '../comps/user/RequestReset';
+import Reset from '../comps/user/Reset';
 import styles from './reset.module.scss';
 
 export default function ResetPage() {

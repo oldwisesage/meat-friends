@@ -1,7 +1,7 @@
-import OrderHistory from '../../comps/OrderHistory';
-import Address from '../../comps/Address';
+import OrderHistory from '../../comps/account/OrderHistory';
+import Address from '../../comps/account/Address';
 import styles from './account.module.scss';
-import useUser from '../../comps/User';
+import useUser from '../../comps/user/User';
 
 // TODO add dynamic routing to logout, orders, payment, personal, settings
 

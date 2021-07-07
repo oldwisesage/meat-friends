@@ -1,5 +1,5 @@
 import { useRouter } from 'next/dist/client/router';
-import UpdateCut from '../comps/UpdateCut';
+import UpdateCut from '../comps/crud/UpdateCut';
 import styles from './add.module.scss';
 
 export default function UpdatePage() {

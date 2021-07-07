@@ -1,7 +1,0 @@
-@import '../styles/mixins';
-
-.button {
-  @include btn-black;
-  font-size: $xs1-font;
-  padding: 0.25rem 0.5rem;
-}
