@@ -39,6 +39,25 @@
   display: grid;
   grid-template-rows: repeat(3, 1fr);
 }
+.order_subtotal {
+  display: grid;
+  grid-template-columns: 85px 2fr repeat(2, 1fr);
+  grid-gap: 1rem;
+  border-top: 0.5px solid $grey-pale;
+  padding: 2.5rem 0;
+  &_title {
+    @include loud-text;
+    font-weight: 500;
+    grid-column: 2;
+    justify-self: flex-end;
+    padding-right: 2.5rem;
+  }
+  &_number {
+    @include loud-text;
+    grid-column: 3;
+  }
+}
+
 .order_total {
   display: grid;
   grid-template-columns: 85px 2fr repeat(2, 1fr);
@@ -48,7 +67,6 @@
   padding-top: 2.5rem;
   &_title {
     @include subtext;
-    text-transform: uppercase;
     grid-column: 2;
     justify-self: flex-end;
     padding-right: 2.5rem;

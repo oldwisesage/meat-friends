@@ -38,6 +38,9 @@ export default function OrderPage() {
   if (loading) return <p>Loading.....</p>;
   console.log(data);
   const orderItems = data.Order.items;
+  const taxes = data.Order.total * 0.05;
+  const shipping = 1000;
+  const total = taxes + shipping + data.Order.total;
 
   return (
     <div className={styles.container}>
@@ -84,12 +87,21 @@ export default function OrderPage() {
           {orderItems.map((orderItem) => (
             <OrderSummaryItem key={orderItem.id} orderItem={orderItem} />
           ))}
-          {/* <div className={styles.order_subtotal} /> */}
+          <div className={styles.order_subtotal}>
+            <p className={styles.order_subtotal_title}>Subtotal</p>
+            <p className={styles.order_subtotal_number}>
+              {formatMoney(data.Order.total)}
+            </p>
+            <p className={styles.order_subtotal_title}>Taxes</p>
+            <p className={styles.order_subtotal_number}>{formatMoney(taxes)}</p>
+            <p className={styles.order_subtotal_title}>Shipping</p>
+            <p className={styles.order_subtotal_number}>
+              {formatMoney(shipping)}
+            </p>
+          </div>
           <div className={styles.order_total}>
             <h3 className={styles.order_total_title}>Total</h3>
-            <h3 className={styles.order_total_number}>
-              {formatMoney(data.total)}
-            </h3>
+            <h3 className={styles.order_total_number}>{formatMoney(total)}</h3>
           </div>
         </div>
       </div>
