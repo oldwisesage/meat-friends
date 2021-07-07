@@ -7,6 +7,7 @@ import calcTotalPrice from '../lib/calcTotalPrice';
 import formatMoney from '../lib/formatMoney';
 import { useCart } from '../lib/cartState';
 import CloseCartBtn from './CloseCartBtn';
+import CheckoutBtn from './CheckoutBtn';
 
 const Container = styled.div`
   display: grid;
@@ -43,6 +44,7 @@ export default function Cart() {
           <h3>Total</h3>
           <p>{formatMoney(calcTotalPrice(me.cart))}</p>
         </footer>
+        <CheckoutBtn />
       </Container>
     </CartStyles>
   );

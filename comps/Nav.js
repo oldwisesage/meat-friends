@@ -78,7 +78,8 @@ export default function Nav() {
           </svg>
           <CartCount
             count={user?.cart.reduce(
-              (tally, cartItem) => tally + cartItem.quantity,
+              (tally, cartItem) =>
+                tally + (cartItem.cut ? cartItem.quantity : 0),
               0
             )}
           />

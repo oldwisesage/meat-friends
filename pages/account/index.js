@@ -43,7 +43,7 @@ const Account = () => (
       {/* <OrderHistory /> */}
       {/* PERSONAL INFORMATION */}
 
-      {/* <Address /> */}
+      <Address />
       {/* PAYMENT METHODS */}
       {/* SETTINGS */}
       {/* LOG OUT */}

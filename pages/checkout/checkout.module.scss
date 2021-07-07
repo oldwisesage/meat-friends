@@ -1,0 +1,13 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  display: grid;
+  padding: 2.5rem;
+  height: 80vh;
+  width: 50rem;
+  margin: 5rem;
+  border-radius: $border-radius;
+  border: 0.5px solid $grey-pale;
+  justify-content: center;
+}

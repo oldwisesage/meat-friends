@@ -1,13 +1,10 @@
+import Heading from './Heading';
 import styles from './Address.module.scss';
-
-// TODO add
 
 const Address = () => (
   <div className={styles.container}>
     {/* COMP SingleTitle */}
-    <div className={styles.title}>
-      <h1 className={styles.title_text}>Addresses</h1>
-    </div>
+    <Heading title="Addresses" />
     {/* COMP AddressBtn */}
     <div className={styles.address}>
       <div className={styles.address_top}>
