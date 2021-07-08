@@ -63,7 +63,7 @@ export default function SingleCut({ id }) {
         </div>
       </div>
       <Why />
-      {/* <OtherCuts cut={Cut} /> */}
+      <OtherCuts />
     </div>
   );
 }

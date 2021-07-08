@@ -2,12 +2,11 @@ import { useMutation } from '@apollo/client';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import gql from 'graphql-tag';
 import { useRouter } from 'next/dist/client/router';
-import nProgress from 'nprogress';
 import { useState } from 'react';
-import { CartStateProvider } from '../lib/cartState';
+import { CartStateProvider } from '../../lib/cartState';
 import styles from './CheckoutForm.module.scss';
-import DisplayError from './ErrorMessage';
-import { CURRENT_USER_QUERY } from './User';
+import DisplayError from '../error/ErrorMessage';
+import { CURRENT_USER_QUERY } from '../user/User';
 
 const CREATE_ORDER_MUTATION = gql`
   mutation CREATE_ORDER_MUTATION($token: String!) {

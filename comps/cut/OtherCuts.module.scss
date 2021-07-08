@@ -4,8 +4,13 @@
   padding-top: 5rem;
 }
 .card_container {
+  margin-top: 2.5rem;
+  grid-column: 2 / -2;
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  justify-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  grid-gap: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: row;
+  width: 100rem;
 }

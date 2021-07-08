@@ -41,7 +41,7 @@ export default function OrderPage() {
     <div className={styles.container}>
       <div className={styles.order_container}>
         <Heading title="Order Summary" />
-        <OrderSummary orderData={data.Order} />
+        <OrderSummary key={data.Order.id} orderData={data.Order} />
       </div>
     </div>
   );

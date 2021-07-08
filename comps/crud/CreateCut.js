@@ -2,9 +2,9 @@
 import { gql, useMutation } from '@apollo/client';
 import Router from 'next/router';
 import useForm from '../../lib/useForm';
-import { ALL_CUTS_QUERY } from './Cuts';
+import { ALL_CUTS_QUERY } from '../shop/Cuts';
 import styles from './CreateCut.module.scss';
-import DisplayError from './ErrorMessage';
+import DisplayError from '../error/ErrorMessage';
 
 // LEARN understand how mutations work much better
 // DAVE have a conversation about how graphql mutations work  - and understand how this is not working

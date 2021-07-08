@@ -16,7 +16,9 @@ const Who = () => (
         Something far more in depth about the company & how it should be
         presented to all the people out there.
       </p>
-      <button className={styles.content_btn}>Click me!</button>
+      <button type="button" className={styles.content_btn}>
+        Click me!
+      </button>
     </div>
   </div>
 );

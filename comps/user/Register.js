@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { gql, useMutation } from '@apollo/client';
 import styles from './Register.module.scss';
-import Heading from './Heading';
-import ErrorDisplay from './ErrorMessage';
+import Heading from '../Heading';
+import ErrorDisplay from '../error/ErrorMessage';
 import { CURRENT_USER_QUERY } from './User';
-import useForm from '../lib/useForm';
+import useForm from '../../lib/useForm';
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
@@ -30,7 +30,7 @@ export default function Login() {
   const [signup, { data, loading, error }] = useMutation(SIGNUP_MUTATION, {
     variables: inputs,
     // TODO Refetch currently logged in user
-    // refetchQueries: [{ query: CURRENT_USER_QUERY }],
+    refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
   async function handleSubmit(e) {
     e.preventDefault();
@@ -41,6 +41,7 @@ export default function Login() {
     clearForm();
     resetForm();
   }
+  // LEARN understand how this actually works
   // const error =
   //   data?.authenticateUserWithPassword?.__typename ===
   //   'UserAuthenticationWithPasswordFailure'

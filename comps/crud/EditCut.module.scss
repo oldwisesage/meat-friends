@@ -1,0 +1,6 @@
+@import '../../styles/mixins';
+
+&_edit {
+  @include basic-link;
+  font-size: $sm2-font;
+}

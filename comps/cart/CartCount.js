@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import useUser from '../user/User';
 
 const Dot = styled.div`
   background: red;
@@ -42,6 +43,9 @@ const AnimationStyles = styled.span`
 `;
 
 export default function CartCount({ count }) {
+  const me = useUser();
+
+  if (!me) return null;
   return (
     <AnimationStyles>
       <TransitionGroup>

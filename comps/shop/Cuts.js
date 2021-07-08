@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
-import { perPage } from '../config';
+import { perPage } from '../../config';
 import Cut from './Cut';
 import styles from './Cuts.module.scss';
 

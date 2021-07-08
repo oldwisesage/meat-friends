@@ -2,7 +2,6 @@ import Link from 'next/link';
 import formatMoney from '../../lib/formatMoney';
 import AddToCart from './AddToCart';
 import styles from './Cut.module.scss';
-import DeleteCut from '../DeleteCut';
 
 // TODO add propTypes
 
@@ -21,18 +20,7 @@ const Cut = ({ cut }) => (
       <div className={styles.content_title}>{cut.name}</div>
       <p className={styles.content_price}>{formatMoney(cut.price)}</p>
       <div className={styles.content_bottom}>
-        <Link
-          href={{
-            pathname: 'update',
-            query: {
-              id: cut.id,
-            },
-          }}
-        >
-          <a className={styles.content_edit}>✎ Edit cut</a>
-        </Link>
         <AddToCart id={cut.id} />
-        <DeleteCut id={cut.id}>Delete</DeleteCut>
       </div>
     </div>
   </div>
