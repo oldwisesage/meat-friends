@@ -21,7 +21,7 @@ const OTHER_CUTS_QUERY = gql`
 
 export default function OtherCuts() {
   const { data, error, loading } = useQuery(OTHER_CUTS_QUERY);
-  // TODO add loading situation here
+  // TODO add loading & error situation here
   if (loading) return <p>Loading....</p>;
   const cuts = data.allCuts;
   console.log(data);
