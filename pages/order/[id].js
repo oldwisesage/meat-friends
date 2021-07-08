@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { useRouter } from 'next/dist/client/router';
 import Heading from '../../comps/Heading';
 import OrderSummary from '../../comps/account/OrderSummary';
+import ErrorMessage from '../../comps/error/ErrorMessage';
 import styles from './order.module.scss';
 
 const ORDER_ITEMS_QUERY = gql`
@@ -34,7 +35,7 @@ export default function OrderPage() {
     variables: { id },
   });
   if (loading) return <p>Loading.....</p>;
-  if (error) return <p>{error}</p>;
+  if (error) return <ErrorMessage error={error} />;
   console.log(data.Order);
 
   return (
