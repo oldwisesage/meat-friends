@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import OrderHistory from '../../comps/account/OrderHistory';
+import PersonalInfo from '../../comps/account/PersonalInfo';
 import Address from '../../comps/account/Address';
 import styles from './account.module.scss';
 import useUser from '../../comps/user/User';
@@ -8,6 +9,7 @@ import Heading from '../../comps/Heading';
 import PaymentMethods from '../../comps/account/PaymentMethods';
 import AccountNavBtn from '../../comps/account/AccoutNavBtn';
 import Settings from '../../comps/account/Settings';
+import AccountArt from '../../comps/account/AccountArt';
 
 // TODO add dynamic routing to logout, orders, payment, personal, settings
 
@@ -41,7 +43,7 @@ export default function Account() {
         </div>
       </div>
       <div className={styles.container_comp}>
-        {/* COMP <AccountArt /> */}
+        <AccountArt />
         <OrderHistory id={user.id} />
         <PersonalInfo />
         <Address />

@@ -1,7 +1,8 @@
 import Heading from '../Heading';
 import styles from './Settings.module.scss';
 
-export default function Settings({ name }) {
+export default function Settings({ active, name }) {
+  if (!active) return null;
   return (
     <div className={styles.container}>
       <Heading title="Settings" />
