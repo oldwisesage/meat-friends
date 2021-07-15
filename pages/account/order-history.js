@@ -38,13 +38,7 @@ export default function Account() {
         </div>
       </div>
       <div className={styles.container_comp}>
-        {/* COMP some illustration component to render */}
         <OrderHistory id={user.id} active />
-        {/* COMP PERSONAL INFORMATION */}
-        <Address />
-        <PaymentMethods />
-        {/* COMP SETTINGS */}
-        {/* COMP LOG OUT */}
       </div>
     </div>
   );

@@ -40,13 +40,7 @@ export default function Account() {
         </div>
       </div>
       <div className={styles.container_comp}>
-        {/* COMP <AccountIllustation /> */}
-        <OrderHistory id={user.id} />
-        <PersonalInfo />
-        <Address />
-        <PaymentMethods />
         <Settings name={user.name} active />
-        {/* COMP <Logout /> */}
       </div>
     </div>
   );

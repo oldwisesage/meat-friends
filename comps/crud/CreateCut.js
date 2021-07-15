@@ -6,8 +6,6 @@ import { ALL_CUTS_QUERY } from '../shop/Cuts';
 import styles from './CreateCut.module.scss';
 import DisplayError from '../error/ErrorMessage';
 
-// LEARN understand how mutations work much better
-
 const CREATE_CUT_MUTATION = gql`
   mutation CREATE_CUT_MUTATION(
     $name: String!
@@ -39,7 +37,6 @@ export default function CreateCut() {
     description: 'What a picture',
     image: '',
   });
-  // LEARN understand this a bit better
   const [createCut, { error, loading, data }] = useMutation(
     CREATE_CUT_MUTATION,
     { variables: inputs, refetchQueries: [{ query: ALL_CUTS_QUERY }] }

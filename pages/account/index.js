@@ -7,6 +7,7 @@ import useUser from '../../comps/user/User';
 import Heading from '../../comps/Heading';
 import PaymentMethods from '../../comps/account/PaymentMethods';
 import AccountNavBtn from '../../comps/account/AccoutNavBtn';
+import Settings from '../../comps/account/Settings';
 
 // TODO add dynamic routing to logout, orders, payment, personal, settings
 
@@ -40,13 +41,12 @@ export default function Account() {
         </div>
       </div>
       <div className={styles.container_comp}>
-        {/* COMP some illustration component to render */}
+        {/* COMP <AccountArt /> */}
         <OrderHistory id={user.id} />
-        {/* COMP PERSONAL INFORMATION */}
+        <PersonalInfo />
         <Address />
         <PaymentMethods />
-        {/* COMP SETTINGS */}
-        {/* COMP LOG OUT */}
+        <Settings />
       </div>
     </div>
   );

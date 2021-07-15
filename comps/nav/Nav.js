@@ -17,7 +17,6 @@ export default function Nav() {
   return (
     <nav className={styles.container}>
       <Logo />
-      {/* COMP <NavLink /> */}
       <NavLink link="meat" text="shop" />
       <NavLink link="about" text="about" />
       <NavLink link="contact" text="contact" />

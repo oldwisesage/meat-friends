@@ -30,6 +30,7 @@ export default function PersonalInfo({ active }) {
             </div>
           </div>
         </div>
+        {/* TODO really style this out so it's potentially really fun */}
         <div className={styles.edit_container}>
           <div className={styles.edit_name}>
             <div className={styles.edit_name_first}>first name</div>

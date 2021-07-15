@@ -9,7 +9,7 @@ const Contact = () => (
         customer support
       </p>
     </div>
-    {/* COMP Form */}
+    {/* TOOD implement formik */}
     <div className={styles.form}>
       <div className={styles.form__group}>
         <h2 className={styles.form__group_title}>Email</h2>
@@ -57,7 +57,9 @@ const Contact = () => (
         <p className={styles.submit_text}>
           A customer service rep will be in touch shortly to assist you!
         </p>
-        <button type="submit" className={styles.submit_btn}>Submit</button>
+        <button type="submit" className={styles.submit_btn}>
+          Submit
+        </button>
       </div>
     </div>
   </div>

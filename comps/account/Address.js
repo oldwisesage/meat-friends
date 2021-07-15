@@ -11,7 +11,6 @@ export default function Address({ active }) {
   return (
     <div className={styles.container}>
       <Heading title="Addresses" />
-      {/* COMP AddressBtn */}
       <AddressBtn />
       <AddNewButton text="address" />
     </div>
