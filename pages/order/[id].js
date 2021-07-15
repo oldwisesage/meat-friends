@@ -12,13 +12,15 @@ const ORDER_ITEMS_QUERY = gql`
       id
       total
       charge
+      user {
+        id
+      }
       items {
         name
         description
         price
         quantity
         photo {
-          id
           image {
             publicUrlTransformed
           }
@@ -42,7 +44,7 @@ export default function OrderPage() {
     <div className={styles.container}>
       <div className={styles.order_container}>
         <Heading title="Order Summary" />
-        <OrderSummary key={data.Order.id} orderData={data.Order} />
+        <OrderSummary key={id} orderData={data.Order} />
       </div>
     </div>
   );

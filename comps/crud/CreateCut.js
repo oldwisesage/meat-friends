@@ -7,7 +7,6 @@ import styles from './CreateCut.module.scss';
 import DisplayError from '../error/ErrorMessage';
 
 // LEARN understand how mutations work much better
-// DAVE have a conversation about how graphql mutations work  - and understand how this is not working
 
 const CREATE_CUT_MUTATION = gql`
   mutation CREATE_CUT_MUTATION(

@@ -1,10 +1,10 @@
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/client';
 import styles from './RequestReset.module.scss';
-import Heading from './Heading';
-import ErrorDisplay from './ErrorMessage';
+import Heading from '../Heading';
+import ErrorDisplay from '../error/ErrorMessage';
 import { CURRENT_USER_QUERY } from './User';
-import useForm from '../lib/useForm';
+import useForm from '../../lib/useForm';
 
 const REQUEST_RESET_MUTATION = gql`
   mutation REQUEST_RESET_MUTATION($email: String!) {
@@ -24,8 +24,7 @@ export default function RequestReset() {
     REQUEST_RESET_MUTATION,
     {
       variables: inputs,
-      // TODO Refetch currently logged in user
-      // refetchQueries: [{ query: CURRENT_USER_QUERY }],
+      refetchQueries: [{ query: CURRENT_USER_QUERY }],
     }
   );
   async function handleSubmit(e) {

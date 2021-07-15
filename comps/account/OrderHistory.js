@@ -18,13 +18,15 @@ const ALL_ORDERS_QUERY = gql`
   }
 `;
 
-export default function OrderHistory({ id }) {
+export default function OrderHistory({ id, active }) {
   // TODO add error handling
+  if (!active) return null;
   const { data, error, loading } = useQuery(ALL_ORDERS_QUERY, {
     variables: { id },
   });
   if (loading) return <p>Loading... </p>;
   const { orders } = data.User;
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>

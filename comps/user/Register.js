@@ -29,7 +29,6 @@ export default function Login() {
 
   const [signup, { data, loading, error }] = useMutation(SIGNUP_MUTATION, {
     variables: inputs,
-    // TODO Refetch currently logged in user
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
   async function handleSubmit(e) {
@@ -52,7 +51,6 @@ export default function Login() {
       <Heading title="New here?" subtitle="Create an account below" />
       <ErrorDisplay error={error} />
       <div className={styles.form}>
-        {/* TODO figure out how this actually works  */}
         {data?.createUser && (
           <p>
             Signed up with {data.createUser.email} - Please go ahead and sign

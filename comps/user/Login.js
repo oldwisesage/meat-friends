@@ -85,21 +85,6 @@ export default function Login() {
           </button>
         </form>
       </div>
-      {/* TODO create forgot password functionality */}
-      {/* <div className={styles.forgot}>
-        <Link href="/">
-          <a className={styles.forgot_text}>Forgot your password?</a>
-        </Link>
-      </div> */}
-      {/* <div className={styles.twitter}>
-        <button className={styles.twitter_btn}></button>
-      </div>
-      <div className={styles.github}>
-        <button className={styles.github_btn}></button>
-      </div>
-      <div className={styles.facebook}>
-        <button className={styles.facebook_btn}></button>
-      </div> */}
       <div className={styles.links}>
         <Link href="/register">
           <a className={styles.links_register}>Create new account</a>

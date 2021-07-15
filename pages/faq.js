@@ -1,9 +1,13 @@
+import Heading from '../comps/Heading';
 import styles from './faq.module.scss';
 
 const FaqPage = () => (
   <div className={styles.container}>
     <div className={styles.faq}>
-      {/* COMP <Title /> */}
+      <Heading
+        title="Frequently Asked Questions"
+        subtitle="Here are the answers to our most commonly asked questions"
+      />
       <div className={styles.faq_heading}>
         <h1 className={styles.faq_heading_title}>Frequently Asked Questions</h1>
         <h3 className={styles.faq_heading_subtitle}>

@@ -2,19 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Animal.module.scss';
 
-// WHAT to do with this?
-const Animal = () => (
-  <div className={styles.animal}>
-    <Link href="/meats/beef">
-      <Image
-        src="/../public/placeholder.png"
-        className={styles.animal__img}
-        width="300"
-        height="300"
-      />
-    </Link>
-    <h3 className={styles.animal_title}>Beef</h3>
-  </div>
+const Animal = ({ ...props }) => (
+  <Link href="/meats/beef">
+    <div className={styles.animal_card}>
+      <div className={styles.animal_card_img} />
+      <div className={styles.animal_card_title}>{props.title}</div>
+    </div>
+  </Link>
 );
 
 export default Animal;

@@ -1,11 +1,9 @@
+import Heading from '../Heading';
 import styles from './Payment.module.scss';
 
 const Payment = () => (
   <div className={styles.container}>
-    {/* COMP Title */}
-    <div className={styles.title}>
-      <h1 className={styles.title_text}>Payment Methods</h1>
-    </div>
+    <Heading title="Payment Methods" />
     <div className={styles.payment}>
       <div className={styles.payment_top}>
         <h3 className={styles.payment_top_name}>Payment name</h3>

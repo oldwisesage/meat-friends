@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import FootLogo from '../FootLogo';
 import styles from './Foot.module.scss';
 
 const Foot = () => (
@@ -82,11 +83,7 @@ const Foot = () => (
       </div>
     </div>
     <div className={styles.center}>
-      {/* COMP Logo */}
-      <div className={styles.logo}>
-        <h1 className={styles.logo_text}>meat friends</h1>
-        <p className={styles.logo_tagline}>some cool slogan here</p>
-      </div>
+      <FootLogo slogan="some cool slogan here" />
     </div>
     <div className={styles.right}>
       <div className={styles.help}>

@@ -5,6 +5,8 @@ import CartCount from '../cart/CartCount';
 import Logout from '../user/Logout';
 import styles from './Nav.module.scss';
 import useUser from '../user/User';
+import Logo from '../Logo';
+import NavLink from '../NavLink';
 
 // TODO improve styling so it looks coo ler
 
@@ -14,25 +16,12 @@ export default function Nav() {
 
   return (
     <nav className={styles.container}>
-      {/* COMP <Logo /> */}
-      <Link href="/">
-        <div className={styles.logo}>
-          <h1 className={styles.logo_text}>meat friends</h1>
-        </div>
-      </Link>
+      <Logo />
       {/* COMP <NavLink /> */}
-      <Link href="/meats">
-        <a className={styles.link}>shop</a>
-      </Link>
-      <Link href="/about">
-        <a className={styles.link}>about</a>
-      </Link>
-      <Link href="/contact">
-        <a className={styles.link}>contact</a>
-      </Link>
-      <Link href="/add">
-        <a className={styles.link}>add cut</a>
-      </Link>
+      <NavLink link="meat" text="shop" />
+      <NavLink link="about" text="about" />
+      <NavLink link="contact" text="contact" />
+      <NavLink link="add" text="add cut" />
       {/* COMP <Login /> */}
       <div className={styles.account}>
         {user ? (

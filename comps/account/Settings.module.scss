@@ -1,0 +1,143 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+}
+
+.container_settings {
+  @include shadow-idle;
+  border: 0.5px solid $grey-pale;
+  border-radius: $border-radius;
+  padding: 2.5rem;
+  min-height: 25rem;
+  display: grid;
+  grid-gap: 2.5rem;
+}
+
+.greeting {
+  @include subtitle;
+  font-weight: 100;
+  border-bottom: 0.5px solid $grey-pale;
+  padding-bottom: 2.5rem;
+}
+
+.darkmode {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  &_label {
+    @include subtext;
+    font-weight: 300;
+    align-self: center;
+  }
+  &_options {
+    display: grid;
+    grid-template-columns: repeat(3, 15rem);
+    place-items: center flex-start;
+    grid-gap: 2.5rem;
+
+    & > * {
+      @include subtext;
+      @include shadow-idle;
+      padding: 0.5rem 1rem;
+      background-color: rgba($grey-pale, 0.4);
+      border-radius: $border-radius;
+
+      &:hover {
+        background-color: $grey-pale;
+      }
+      &:active {
+        background-color: $grey-mid;
+      }
+    }
+    &_light {
+      &:hover {
+        background-color: rgba($grey-mid, 0.5);
+      }
+      &:active {
+        background-color: $grey-pale;
+      }
+    }
+    &_dark {
+      &:hover {
+        background-color: rgba($black, 0.8);
+        color: $white;
+      }
+      &:active {
+        background-color: $black;
+        color: $white;
+      }
+    }
+    &_system {
+    }
+  }
+}
+.animation {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  &_label {
+    @include subtext;
+    font-weight: 300;
+    align-self: center;
+  }
+  &_options {
+    display: grid;
+    grid-template-columns: repeat(3, 15rem);
+    place-items: center flex-start;
+    grid-gap: 2.5rem;
+
+    & > * {
+      @include subtext;
+      @include shadow-idle;
+      padding: 0.5rem 1rem;
+      background-color: rgba($grey-pale, 0.4);
+      border-radius: $border-radius;
+      &:hover {
+        background-color: $grey-pale;
+      }
+      &:active {
+        background-color: $grey-mid;
+      }
+    }
+    &_low {
+      // TODO animate this to show less animation
+    }
+    &_high {
+      // TODO Animate this one
+    }
+  }
+}
+.font {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  &_label {
+    @include subtext;
+    font-weight: 300;
+    align-self: center;
+  }
+  &_options {
+    display: grid;
+    grid-template-columns: repeat(3, 15rem);
+    place-items: center flex-start;
+    grid-gap: 2.5rem;
+
+    & > * {
+      @include subtext;
+      @include shadow-idle;
+      padding: 0.5rem 1rem;
+      background-color: rgba($grey-pale, 0.4);
+      border-radius: $border-radius;
+      &:hover {
+        background-color: $grey-pale;
+      }
+      &:active {
+        background-color: $grey-mid;
+      }
+    }
+    &_standard {
+    }
+    &_large {
+    }
+    &_massive {
+    }
+  }
+}

@@ -20,6 +20,8 @@ const ContainerTop = styled.div`
   align-items: center;
 `;
 
+// TODO fix cart styling
+
 export default function Cart() {
   const me = useUser();
   const { cartOpen } = useCart();

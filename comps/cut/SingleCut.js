@@ -22,8 +22,6 @@ const SINGLE_ITEM_QUERY = gql`
   }
 `;
 
-// DAVE ask about nuxt and whether it has a similar function that passes query as a prop when rendering a dynamic route
-
 export default function SingleCut({ id }) {
   const { data, loading, error } = useQuery(SINGLE_ITEM_QUERY, {
     variables: { id },

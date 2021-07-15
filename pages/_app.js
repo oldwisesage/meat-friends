@@ -10,8 +10,6 @@ import { CartStateProvider } from '../lib/cartState';
 
 // TODO add a cool loading indication
 
-// TODO add nprogress bar here at some point
-
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
@@ -29,7 +27,7 @@ function MyApp({ Component, pageProps, apollo }) {
 }
 
 MyApp.getInitialProp = async function ({ Component, ctx }) {
-  // TODO understand better
+  // LEARN understand better
   let pageProps = {};
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);

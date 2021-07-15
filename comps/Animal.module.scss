@@ -1,22 +1,22 @@
-@import "../styles/mixins";
-@import "../styles/variables";
+@import '../styles/mixins';
+@import '../styles/variables';
 
 .animal {
-  display: grid;
-  grid-auto-flow: row;
-  align-items: center;
-
-  &:hover {
-    border-radius: $border-radius-base;
-  }
-  &__img {
-    border-radius: $border-radius-base;
-  }
-  &_title {
-    font-size: $sm1-font;
-    color: $black;
-    font-weight: 800;
-    text-align: center;
-    padding-top: 0.5rem;
+  &_card {
+    padding: 0.2rem;
+    &:hover {
+      background: rgba($grey-pale, 0.5);
+      border-radius: $border-radius;
+    }
+    &_img {
+      height: 32rem;
+      width: 32rem;
+      border-radius: $border-radius;
+      background-color: $grey-pale;
+    }
+    &_title {
+      @include subtext;
+      font-weight: 500;
+    }
   }
 }

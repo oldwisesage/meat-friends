@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import styles from './about.module.scss';
 
-// TODO complete styling maybe post design
-
 const About = () => (
   <div className={styles.container}>
     <div className={styles.heading}>

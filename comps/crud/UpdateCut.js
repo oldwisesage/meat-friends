@@ -1,9 +1,7 @@
 import { useMutation, useQuery, gql } from '@apollo/client';
-import DisplayError from './ErrorMessage';
+import DisplayError from '../error/ErrorMessage';
 import styles from './UpdateCut.module.scss';
-import useForm from '../lib/useForm';
-
-// DAVE another situation with the query prop id thing
+import useForm from '../../lib/useForm';
 
 const SINGLE_CUT_QUERY = gql`
   query SINGLE_CUT_QUERY($id: ID!) {
@@ -53,7 +51,6 @@ export default function UpdateCut({ id }) {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          // TODO handle submit
           const res = await updateCut({
             variables: {
               id,

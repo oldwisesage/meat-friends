@@ -8,12 +8,10 @@ import Heading from '../../comps/Heading';
 import PaymentMethods from '../../comps/account/PaymentMethods';
 import AccountNavBtn from '../../comps/account/AccoutNavBtn';
 
-// TODO add dynamic routing to logout, orders, payment, personal, settings
-
 export default function Account() {
   const user = useUser();
   const [state, setState] = useState([
-    { comp: 'Order History', isActive: false, link: 'order-history' },
+    { comp: 'Order History', isActive: true, link: 'order-history' },
     { comp: 'Personal Information', isActive: false, link: 'info' },
     { comp: 'Addresses', isActive: false, link: 'address' },
     { comp: 'Payment Methods', isActive: false, link: 'payment-method' },
@@ -41,7 +39,7 @@ export default function Account() {
       </div>
       <div className={styles.container_comp}>
         {/* COMP some illustration component to render */}
-        <OrderHistory id={user.id} />
+        <OrderHistory id={user.id} active />
         {/* COMP PERSONAL INFORMATION */}
         <Address />
         <PaymentMethods />

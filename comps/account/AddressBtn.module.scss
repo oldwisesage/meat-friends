@@ -1,17 +1,6 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
 
-.container {
-  max-width: 75rem;
-}
-.title {
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid $grey-pale;
-  &_text {
-    @include title;
-  }
-}
-
 .address {
   margin-top: 1rem;
   border: 1px solid $grey-pale;
@@ -25,6 +14,16 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    &_edit {
+      border: none;
+      background-color: transparent;
+      &:hover {
+        font-weight: 500;
+      }
+      &:active {
+        font-weight: 300;
+      }
+    }
     & > * {
       @include loud-text;
       color: $grey-dark;

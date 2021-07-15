@@ -15,17 +15,6 @@
   align-items: center;
   margin-top: -2rem;
 }
-.logo {
-  text-align: center;
-  color: $white;
-  &_text {
-    @include logo-text;
-  }
-  &_tagline {
-    @include subtext;
-    color: $grey-pale;
-  }
-}
 
 .left {
   display: grid;

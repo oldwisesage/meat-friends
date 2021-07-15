@@ -1,0 +1,83 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+}
+.info_container {
+  @include shadow-idle;
+  border: 0.5px solid $grey-pale;
+  border-radius: $border-radius;
+  padding: 2.5rem;
+}
+.avatar {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  &_img {
+    border-radius: 50%;
+    &_content {
+      border-radius: 50%;
+    }
+    &_edit {
+      @include loud-text;
+    }
+  }
+  &_user {
+    justify-self: flex-start;
+    align-self: center;
+    &_name {
+      @include subtitle;
+    }
+    &_fact {
+      @include loud-text;
+    }
+  }
+}
+.edit {
+  &_container {
+    display: grid;
+    grid-auto-flow: row;
+    max-width: 80%;
+    grid-gap: 1rem;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+  }
+  &_name {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    &_first {
+      @include base-input;
+    }
+    &_last {
+      @include base-input;
+    }
+  }
+  &_email {
+    @include base-input;
+  }
+  &_birthday {
+    @include base-input;
+  }
+  &_location {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    &_city {
+      @include base-input;
+    }
+    &_state {
+      @include base-input;
+    }
+  }
+  &_favorite {
+    display: grid;
+    grid-gap: 1rem;
+    &_cut {
+      @include base-input;
+    }
+    &_animal {
+      @include base-input;
+    }
+  }
+}

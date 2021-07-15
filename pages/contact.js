@@ -52,6 +52,7 @@ const ContactUs = () => (
         </div>
       </div>
       <div className={styles.contact}>
+        {/* TODO formik */}
         {/* COMP <Contact /> */}
         <div className={styles.form}>
           <div className={styles.form_group_top}>
@@ -96,7 +97,9 @@ const ContactUs = () => (
             />
           </div>
           <div className={styles.form_btn}>
-            <button className={styles.form_btn_click}>Send message</button>
+            <button type="submit" className={styles.form_btn_click}>
+              Send message
+            </button>
           </div>
         </div>
       </div>

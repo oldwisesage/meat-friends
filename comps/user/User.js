@@ -1,8 +1,6 @@
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
-// TODO add shopping cart fucntionality
-
 const CURRENT_USER_QUERY = gql`
   query {
     authenticatedItem {
