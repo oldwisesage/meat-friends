@@ -28,7 +28,6 @@ export default function CheckoutForm() {
   const [loading, setLoading] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
-  const { closeCart } = CartStateProvider();
   const router = useRouter();
   const [checkout, { error: graphQLError }] = useMutation(
     CREATE_ORDER_MUTATION,
@@ -70,7 +69,6 @@ export default function CheckoutForm() {
     });
 
     // TODO close cart alternative due to not needing to actually close the cart
-    closeCart();
     // turn loader off
     setLoading(false);
     // TODO Understand & implement nProgress.done();

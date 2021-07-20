@@ -12,7 +12,7 @@ import Settings from '../../comps/account/Settings';
 import AccountArt from '../../comps/account/AccountArt';
 
 // TODO add dynamic routing to logout, orders, payment, personal, settings
-
+// TODO add graphql query for all user data 
 export default function Account() {
   const user = useUser();
   const [state, setState] = useState([
