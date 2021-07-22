@@ -1,11 +1,7 @@
-import styles from './play.module.scss';
+import RegisterForm from '../comps/forms/RegisterForm';
 
-export default function PlayPage() {
-  return (
-    <div className={styles.container}>
+const PlayPage = () => <RegisterForm />;
 
-    </div>
-  );
-}
+PlayPage.layout = 'checkout';
 
-PlayPage.layout = '';
+export default PlayPage;

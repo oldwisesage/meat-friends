@@ -1,11 +1,11 @@
-import styles from './register.module.scss';
-import Register from '../comps/user/Register';
+import { FormSection } from '../comps/container/Form';
+import RegisterForm from '../comps/forms/RegisterForm';
 
 export default function RegisterPage() {
   return (
-    <div className={styles.container}>
-      <Register />
-    </div>
+    <FormSection>
+      <RegisterForm />
+    </FormSection>
   );
 }
 

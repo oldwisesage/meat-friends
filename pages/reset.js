@@ -1,26 +1,14 @@
 import { useRouter } from 'next/router';
-import RequestReset from '../comps/user/RequestReset';
-import Reset from '../comps/user/Reset';
-import styles from './reset.module.scss';
+import ForgotPassword from '../comps/forms/ForgotPassword';
+import ResetPassword from '../comps/forms/ResetPassword';
 
 export default function ResetPage() {
-  ResetPage.layout = 'pic';
   const { query } = useRouter();
   console.log(query.token);
 
   if (!query?.token) {
-    return (
-      <div className={styles.container}>
-        <p className={styles.notification}>You must supple a token!</p>
-        <RequestReset />
-      </div>
-    );
+    return <ForgotPassword />;
   }
 
-  return (
-    <div className={styles.container}>
-      <Reset token={query.token} />
-    </div>
-  );
+  return <ResetPassword token={query.token} />;
 }
-ResetPage.layout = 'pic';

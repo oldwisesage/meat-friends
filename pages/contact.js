@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Contact from '../comps/Contact';
+import ContactForm from '../comps/forms/ContactForm';
 import styles from './contact.module.scss';
 
 const ContactUs = () => (
@@ -53,60 +53,10 @@ const ContactUs = () => (
       </div>
       <div className={styles.contact}>
         {/* TODO formik */}
-        {/* COMP <Contact /> */}
-        <div className={styles.form}>
-          <div className={styles.form_group_top}>
-            <input
-              type="text"
-              className={styles.form_input}
-              placeholder="First name"
-              id="first-name"
-              required
-            />
-            <input
-              type="text"
-              className={styles.form_input}
-              placeholder="Last name"
-              id="last-name"
-              required
-            />
-          </div>
-          <div className={styles.form_group}>
-            <input
-              type="email"
-              className={styles.form_input}
-              placeholder="Email"
-              id="username"
-              required
-            />
-          </div>
-          <div className={styles.form_group}>
-            <input
-              type="dropdown"
-              className={styles.form_input}
-              placeholder="Choose a topic or category! ▾"
-              id="new-password"
-              required
-            />
-          </div>
-          <div className={styles.form_group}>
-            <textarea
-              className={styles.form_msg}
-              placeholder="Enter your message here"
-              required
-            />
-          </div>
-          <div className={styles.form_btn}>
-            <button type="submit" className={styles.form_btn_click}>
-              Send message
-            </button>
-          </div>
-        </div>
+        <ContactForm />
       </div>
     </div>
   </div>
 );
-
-ContactUs.layout = 'default';
 
 export default ContactUs;

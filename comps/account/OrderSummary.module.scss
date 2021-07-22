@@ -58,10 +58,10 @@
   padding-top: 2.5rem;
   &_title {
     @include subtext;
+    font-weight: 500;
     grid-column: 2;
     justify-self: flex-end;
     padding-right: 2.5rem;
-    font-weight: 500;
   }
   &_number {
     @include subtext;

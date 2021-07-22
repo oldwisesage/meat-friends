@@ -1,6 +1,5 @@
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/client';
-import styles from './RequestReset.module.scss';
 import Heading from '../Heading';
 import ErrorDisplay from '../error/ErrorMessage';
 import { CURRENT_USER_QUERY } from './User';

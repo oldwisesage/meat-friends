@@ -1,13 +1,12 @@
-import Link from 'next/link';
-import Login from '../comps/user/Login';
-import styles from './login.module.scss';
+import { FormSection } from '../comps/container/Form';
+import LoginForm from '../comps/forms/LoginForm';
 
 export default function LoginPage() {
   LoginPage.layout = 'pic';
   return (
-    <div className={styles.container}>
-      <Login />
-    </div>
+    <FormSection>
+      <LoginForm />
+    </FormSection>
   );
 }
 LoginPage.layout = 'pic';

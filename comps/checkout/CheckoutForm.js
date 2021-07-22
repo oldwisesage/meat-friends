@@ -22,6 +22,14 @@ const CREATE_ORDER_MUTATION = gql`
   }
 `;
 
+const states = [
+  { state: 'MD' },
+  { state: 'NY' },
+  { state: 'PA' },
+  { state: 'VA' },
+  { state: 'DE' },
+];
+
 // LEARN understand how this functions way better
 export default function CheckoutForm() {
   const [error, setError] = useState();
@@ -70,7 +78,7 @@ export default function CheckoutForm() {
 
     // TODO close cart alternative due to not needing to actually close the cart
     // turn loader off
-    setLoading(false);
+    // setLoading(false);
     // TODO Understand & implement nProgress.done();
   }
   return (

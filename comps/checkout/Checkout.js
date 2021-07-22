@@ -1,15 +1,25 @@
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-import CheckoutForm from './CheckoutForm';
+import styled from 'styled-components';
+import CheckoutForm from '../forms/CheckoutForm';
+import CheckoutCart from './CheckoutCart';
 
 const stripeLib = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
 
-// TODO redo how I do all of this checkout structure
+const CheckoutSection = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+`;
 
 export default function Checkout() {
   return (
-    <Elements stripe={stripeLib}>
-      <CheckoutForm />
-    </Elements>
+    <CheckoutSection>
+      <Elements stripe={stripeLib}>
+        <CheckoutForm />
+      </Elements>
+      <CheckoutCart />
+    </CheckoutSection>
   );
 }
