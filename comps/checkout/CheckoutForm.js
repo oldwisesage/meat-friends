@@ -3,10 +3,10 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import gql from 'graphql-tag';
 import { useRouter } from 'next/dist/client/router';
 import { useState } from 'react';
-import { CartStateProvider } from '../../lib/cartState';
-import styles from './CheckoutForm.module.scss';
 import DisplayError from '../error/ErrorMessage';
 import { CURRENT_USER_QUERY } from '../user/User';
+
+// DEPRECIATED
 
 const CREATE_ORDER_MUTATION = gql`
   mutation CREATE_ORDER_MUTATION($token: String!) {
@@ -31,7 +31,7 @@ const states = [
 ];
 
 // LEARN understand how this functions way better
-export default function CheckoutForm() {
+const CheckoutForm = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const stripe = useStripe();
@@ -90,4 +90,5 @@ export default function CheckoutForm() {
       </button>
     </form>
   );
-}
+};
+export default CheckoutForm;

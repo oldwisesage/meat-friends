@@ -20,7 +20,6 @@ export default function Nav() {
       <NavLink link="meats" text="shop" />
       <NavLink link="about" text="about" />
       <NavLink link="contact" text="contact" />
-      <NavLink link="add" text="add cut" />
       {/* COMP <Login /> */}
       <div className={styles.account}>
         {user ? (

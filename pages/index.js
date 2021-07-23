@@ -1,8 +1,6 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Cta from '../comps/landing/Cta';
-import HowItWorks from '../comps/landing/HowItWorks';
-import ShopLanding from '../comps/landing/ShopLanding';
+import AnimalsSection from '../comps/landing/AnimalsSection';
+import Cta from '../comps/landing/CallToAction';
+import HowItWorksSection from '../comps/landing/HowItWorksSection';
 import Who from '../comps/landing/Who';
 import styles from './landing.module.scss';
 
@@ -11,14 +9,14 @@ const Home = () => (
     <main>
       <div className={styles.container}>
         <Cta />
-        <HowItWorks />
-        <ShopLanding />
+        <HowItWorksSection />
+        <AnimalsSection />
         <Who />
       </div>
     </main>
   </div>
 );
 
-Home.layout = 'landing';
+Home.layout = 'default';
 
 export default Home;

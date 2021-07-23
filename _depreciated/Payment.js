@@ -1,4 +1,4 @@
-import Heading from '../Heading';
+import Heading from '../comps/Heading';
 import styles from './Payment.module.scss';
 
 const Payment = () => (
@@ -38,5 +38,4 @@ const Payment = () => (
     </div>
   </div>
 );
-
 export default Payment;

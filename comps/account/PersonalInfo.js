@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Heading from '../Heading';
 import styles from './PersonalInfo.module.scss';
 
-// TODO add crud ability with this address situation
+// TODO add crud ability with this personal infomation
 
 export default function PersonalInfo({ active }) {
   if (!active) return null;

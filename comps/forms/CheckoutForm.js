@@ -12,10 +12,11 @@ import {
   FormContainer,
   FormSection,
   NamesInputContainer,
-} from '../container/Form';
+} from '../ui/Form';
 import Heading from '../Heading';
 import { Input } from './Input';
 import { SelectSubject } from './SelectSubject';
+import OtherPayButtons from './OtherPayButtons';
 
 const AddressInputContainer = styled.div`
   display: grid;
@@ -35,23 +36,9 @@ const PayContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
-const OtherPayContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 1rem;
-  border: 0.5px solid #e0e0e0;
-  border-radius: 5px;
-  grid-gap: 0.5rem;
-  margin-top: 0.5rem;
-`;
-const ApplePay = styled(Button)``;
-const PayPal = styled(Button)`
-  background-color: darkblue;
-`;
-const GooglePay = styled(Button)`
-  background-color: goldenrod;
-`;
 // TODO add a backlink into here
+// TODO add actual states selection into validation
+// TODO Complete functionality here to fully implement
 
 const CREATE_ORDER_MUTATION = gql`
   mutation CREATE_ORDER_MUTATION($token: String!) {
@@ -80,11 +67,11 @@ const CheckoutForm = () => {
   );
   return (
     <FormSection>
-      <BackLink href="/">
+      {/* TODO add some sort of backlink & a logo here<BackLink href="/">
         <a>⬅️ Return</a>
-      </BackLink>
+      </BackLink> */}
       <Formik
-        intialValues={{
+        initialValues={{
           firstName: '',
           lastName: '',
           street: '',
@@ -97,9 +84,7 @@ const CheckoutForm = () => {
           lastName: Yup.string().required('Please enter your last name'),
           street: Yup.string().required('Please enter your street address'),
           city: Yup.string().required('Please enter your city'),
-          state: Yup.string()
-            .oneOf([], 'Please select your state')
-            .required('Please select your state'),
+          state: Yup.string().required('Please select your state'),
           zip: Yup.string().required('Please enter a zip code'),
         })}
         onSubmit={async (values) => {
@@ -128,8 +113,8 @@ const CheckoutForm = () => {
           <Heading title="Checkout" subtitle="Enter your payment details" />
           <NamesInputContainer>
             <Input
-              name="firstName"
               type="text"
+              name="firstName"
               label="First name"
               placeholder="First name"
             />
@@ -181,11 +166,7 @@ const CheckoutForm = () => {
             />
           </PayContainer>
           <Button type="submit">Submit your order</Button>
-          <OtherPayContainer>
-            <ApplePay type="submit">Apple</ApplePay>
-            <PayPal type="submit">PayPal</PayPal>
-            <GooglePay type="submit">GPay</GooglePay>
-          </OtherPayContainer>
+          <OtherPayButtons />
         </FormContainer>
       </Formik>
     </FormSection>

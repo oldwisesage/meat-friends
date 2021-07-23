@@ -1,26 +1,22 @@
-import Image from 'next/image';
-import styles from './Who.module.scss';
-
 // TODO implement far more interesting styling
 
+import styled from 'styled-components';
+import { color } from '../../theme/Variables';
+import Heading from '../Heading';
+import { LandingContainer } from './HowItWorksSection';
+
+const WhoContainer = styled(LandingContainer)`
+  grid-area: who;
+  padding: 0 5rem;
+`;
+const WhoHeading = styled(Heading)`
+  color: ${color.white};
+`;
+
 const Who = () => (
-  <div className={styles.container}>
-    <div className={styles.heading}>
-      <h1 className={styles.heading_title}>What drives us?</h1>
-    </div>
-    <div className={styles.content}>
-      <h2 className={styles.content_title}>
-        Something about our cool about the company.
-      </h2>
-      <p className={styles.content_text}>
-        Something far more in depth about the company & how it should be
-        presented to all the people out there.
-      </p>
-      <button type="button" className={styles.content_btn}>
-        Click me!
-      </button>
-    </div>
-  </div>
+  <WhoContainer>
+    <WhoHeading title="Who is meat friends?" />
+  </WhoContainer>
 );
 
 export default Who;

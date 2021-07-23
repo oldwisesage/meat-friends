@@ -15,9 +15,9 @@ const CartContainer = styled.div`
   display: grid;
   padding: 2.5rem;
   align-items: flex-start;
-  grid-template-rows: repeat(3, auto) 1fr;
+  v
 `;
-const CartItemContainer = styled.div`
+export const CartItemContainer = styled.div`
   margin-top: 2.5rem;
 `;
 

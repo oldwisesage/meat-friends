@@ -42,7 +42,7 @@ const AnimationStyles = styled.span`
   }
 `;
 
-export default function CartCount({ count }) {
+const CartCount = ({ count }) => {
   const me = useUser();
 
   if (!me) return null;
@@ -61,4 +61,5 @@ export default function CartCount({ count }) {
       </TransitionGroup>
     </AnimationStyles>
   );
-}
+};
+export default CartCount;

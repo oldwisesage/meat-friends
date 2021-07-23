@@ -1,19 +1,37 @@
 import styled from 'styled-components';
-import CartStyles from './CartStyles';
 import useUser from '../user/User';
 import Heading from '../Heading';
 import CartItem from './CartItem';
 import calcTotalPrice from '../../lib/calcTotalPrice';
 import formatMoney from '../../lib/formatMoney';
 import { useCart } from '../../lib/cartState';
-import CloseCartBtn from './CloseCartBtn';
-import CheckoutBtn from '../checkout/CheckoutBtn';
+import CloseCartButton from './CloseCartButton';
+import CheckoutButton from '../checkout/CheckoutButton';
+import CartFooter from './CartFooter';
+import { CartItemContainer } from '../checkout/CheckoutCart';
+import OtherPayButtons from '../forms/OtherPayButtons';
 
-const Container = styled.div`
+const CartDrawer = styled.div`
+  position: relative;
+  background: white;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  right: 0;
+  min-width: 50rem;
+  width: 40%;
+  bottom: 0;
+  padding: 2.5rem;
+  transform: translateX(100%);
+  transition: all 0.3s;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+  z-index: 5;
   display: grid;
-  align-content: flex-start;
-  margin: 2rem;
+  grid-template-rows: repeat(3, auto) 1fr;
+  ${(props) => props.open && `transform: translateX(0);`};
+  border-left: 3px solid #000;
 `;
+
 const ContainerTop = styled.div`
   display: grid;
   grid-auto-flow: column;
@@ -29,25 +47,23 @@ export default function Cart() {
   if (!me) return null;
 
   return (
-    <CartStyles open={cartOpen}>
-      <Container>
-        <ContainerTop>
-          <Heading
-            title="Shopping Cart"
-            subtitle={`${me.name}, your current cart:`}
-          />
-          <CloseCartBtn />
-        </ContainerTop>
+    <CartDrawer open={cartOpen}>
+      <ContainerTop>
+        <Heading
+          title="Shopping Cart"
+          subtitle={`${me.name}, your current cart:`}
+        />
+        <CloseCartButton />
+      </ContainerTop>
+      <CartItemContainer>
         {me.cart.map((cartItem) => (
           <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
-        {/* COMP <CartFooter /> */}
-        <footer>
-          <h3>Total</h3>
-          <p>{formatMoney(calcTotalPrice(me.cart))}</p>
-        </footer>
-        <CheckoutBtn />
-      </Container>
-    </CartStyles>
+      </CartItemContainer>
+      <CartFooter me={me}>
+        <CheckoutButton />
+        <OtherPayButtons />
+      </CartFooter>
+    </CartDrawer>
   );
 }

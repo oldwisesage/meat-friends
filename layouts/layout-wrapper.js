@@ -1,5 +1,4 @@
 import DefaultLayout from './default';
-import LandingLayout from './landing';
 import AdminLayout from './admin';
 import CheckoutLayout from './checkout';
 import PicLayout from './pic';
@@ -8,7 +7,6 @@ import ErrLayout from './err';
 
 const layouts = {
   default: DefaultLayout,
-  landing: LandingLayout,
   admin: AdminLayout,
   checkout: CheckoutLayout,
   pic: PicLayout,

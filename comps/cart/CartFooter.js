@@ -4,11 +4,10 @@ import formatMoney from '../../lib/formatMoney';
 
 const CartFooterContainer = styled.div`
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto) 1fr;
   grid-auto-flow: column;
   margin-top: 2.5rem;
   border-top: 1px solid dark-grey;
-  align-items: baseline;
 `;
 
 const SubtotalContainer = styled.div`
@@ -55,11 +54,16 @@ const TotalNumber = styled.p`
   grid-column: 3;
   justify-self: flex-start;
 `;
+const PayContainer = styled.div`
+  display: grid;
+  grid-gap: 2.5rem;
+  margin-top: 2.5rem;
+`;
 
-const CartFooter = ({ me }) => {
+const CartFooter = ({ me, children }) => {
   const subtotal = calcTotalPrice(me.cart);
   const taxes = subtotal * 0.05;
-  const shipping = 10;
+  const shipping = 1000;
   const total = taxes + shipping + subtotal;
   return (
     <CartFooterContainer>
@@ -75,6 +79,7 @@ const CartFooter = ({ me }) => {
         <TotalLabel>Total</TotalLabel>
         <TotalNumber>{formatMoney(total)}</TotalNumber>
       </TotalContainer>
+      <PayContainer>{children}</PayContainer>
     </CartFooterContainer>
   );
 };

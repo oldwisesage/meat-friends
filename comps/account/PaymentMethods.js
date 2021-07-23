@@ -3,7 +3,7 @@ import AddNewButton from './AddNewButton';
 import styles from './PaymentMethods.module.scss';
 import PaymentMethodBtn from './PaymentMethodBtn';
 
-// TODO add crud ability with this address situation
+// TODO add crud ability with this payment situation
 
 export default function PaymentMethods({ active }) {
   console.log(active);

@@ -13,7 +13,7 @@ const CheckoutSection = styled.div`
   grid-template-columns: 3fr 2fr;
 `;
 
-export default function Checkout() {
+const Checkout = () => {
   return (
     <CheckoutSection>
       <Elements stripe={stripeLib}>
@@ -23,3 +23,4 @@ export default function Checkout() {
     </CheckoutSection>
   );
 }
+export default Checkout;
