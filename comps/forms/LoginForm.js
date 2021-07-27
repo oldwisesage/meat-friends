@@ -8,7 +8,7 @@ import {
   FormContainer,
   FormSection,
   NamesInputContainer,
-} from '../container/Form';
+} from '../ui/Form';
 import Heading from '../Heading';
 import { CURRENT_USER_QUERY } from '../user/User';
 import { Input } from './Input';

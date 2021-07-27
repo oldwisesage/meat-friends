@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import * as Yup from 'yup';
-import Link from 'next/link';
+// import Link from 'next/link';
 import {
   Button,
   FormContainer,
@@ -87,7 +87,7 @@ const CheckoutForm = () => {
           state: Yup.string().required('Please select your state'),
           zip: Yup.string().required('Please enter a zip code'),
         })}
-        onSubmit={async (values) => {
+        onSubmit={async () => {
           console.log(`✅ Stripe checkout initialized`);
           const cardElement = elements.getElement(CardElement);
           const { error, paymentMethod } = await stripe.createPaymentMethod({

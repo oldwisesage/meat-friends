@@ -1,39 +1,100 @@
+import styled from 'styled-components';
+import {
+  border,
+  borderRadius,
+  boxShadow,
+  color,
+  fontSize,
+  fontWeight,
+  spacing,
+} from '../../theme/Variables';
 import Heading from '../Heading';
-import styles from './Settings.module.scss';
 
-export default function Settings({ active, name }) {
+const SettingsSection = styled.section``;
+
+const SettingsContainer = styled.div`
+  border: ${border.base};
+  border-radius: ${borderRadius.default};
+  padding: ${spacing.base};
+  display: grid;
+  grid-gap: ${spacing.base};
+  min-height: 25rem;
+`;
+
+const Greeting = styled.p`
+  font-size: ${fontSize.body};
+  font-weight: ${fontWeight.light};
+  border-bottom: ${border.base};
+  padding-bottom: ${spacing.base};
+`;
+
+const Label = styled.h4`
+  font-size: ${fontSize.h4};
+  font-weight: ${fontWeight.light};
+  align-self: center;
+`;
+
+const Setting = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+`;
+
+const OptionContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center flex-start;
+  grid-gap: ${spacing.base};
+`;
+
+const OptionButton = styled.button`
+  font-size: ${fontSize.h4};
+  font-weight: ${fontWeight.light};
+  box-shadow: ${boxShadow.default};
+  padding: 0.5rem 1rem;
+  background-color: rgba(${color.greyPale}, 0.4);
+  border-radius: ${borderRadius.default};
+  text-decoration: none;
+  border: none;
+  &:hover {
+    background-color: ${color.greyPale};
+  }
+  &:active {
+    background-color: ${color.greyMid};
+  }
+`;
+
+const Settings = ({ active, name }) => {
   if (!active) return null;
   return (
-    <div className={styles.container}>
+    <SettingsSection>
       <Heading title="Settings" />
-      <div className={styles.container_settings}>
-        <h4 className={styles.greeting}>
-          Hi {name}, change your experience here!
-        </h4>
-        <div className={styles.darkmode}>
-          <h4 className={styles.darkmode_label}>Dark mode: </h4>
-          <div className={styles.darkmode_options}>
-            <p className={styles.darkmode_options_light}>Light</p>
-            <p className={styles.darkmode_options_dark}>Dark</p>
-            <p className={styles.darkmode_options_system}>System</p>
-          </div>
-        </div>
-        <div className={styles.animation}>
-          <h4 className={styles.animation_label}>Animation mode: </h4>
-          <div className={styles.animation_options}>
-            <p className={styles.animation_options_low}>Low</p>
-            <p className={styles.animation_options_high}>High</p>
-          </div>
-        </div>
-        <div className={styles.font}>
-          <h4 className={styles.font_label}>Font size: </h4>
-          <div className={styles.font_options}>
-            <p className={styles.font_options_standard}>Standard</p>
-            <p className={styles.font_options_large}>Large</p>
-            <p className={styles.font_options_massive}>I can't read</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <SettingsContainer>
+        <Greeting>Hi {name}, change your experience here!</Greeting>
+        <Setting>
+          <Label>Dark mode:</Label>
+          <OptionContainer>
+            <OptionButton type="button">Light</OptionButton>
+            <OptionButton type="button">Dark</OptionButton>
+            <OptionButton type="button">System</OptionButton>
+          </OptionContainer>
+        </Setting>
+        <Setting>
+          <Label>Animation mode:</Label>
+          <OptionContainer>
+            <OptionButton type="button">Low</OptionButton>
+            <OptionButton type="button">High</OptionButton>
+          </OptionContainer>
+        </Setting>
+        <Setting>
+          <Label>Font size:</Label>
+          <OptionContainer>
+            <OptionButton type="button">Standard</OptionButton>
+            <OptionButton type="button">Large</OptionButton>
+            <OptionButton type="button">I can't read</OptionButton>
+          </OptionContainer>
+        </Setting>
+      </SettingsContainer>
+    </SettingsSection>
   );
-}
+};
+export default Settings;

@@ -1,24 +1,37 @@
-import styles from './AddNewButton.module.scss';
+import styled from 'styled-components';
+import {
+  borderRadius,
+  boxShadow,
+  color,
+  fontSize,
+  fontWeight,
+} from '../../theme/Variables';
 
-export default function AddNewButton({ text }) {
-  return (
-    <button className={styles.addnew} type="button">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={styles.addnew_icon}
-      >
-        <line x1="12" y1="5" x2="12" y2="19" />
-        <line x1="5" y1="12" x2="19" y2="12" />
-      </svg>
-      <p className={styles.addnew_text}>Add new {text}</p>
-    </button>
-  );
-}
+const DaAddNewButton = styled.button`
+  width: 100%;
+  background-color: ${color.white};
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  border: 1px solid ${color.greyPale};
+  padding: 1rem 2rem;
+  border-radius: ${borderRadius.default};
+  box-shadow: ${boxShadow.idle};
+  &:hover {
+    box-shadow: ${boxShadow.active};
+  }
+  p {
+    font-size: ${fontSize.body};
+    font-weight: ${fontWeight.light};
+    color: ${color.greyMid};
+  }
+`;
+
+const AddNewButton = ({ text }) => (
+  <DaAddNewButton type="button">
+    <p>Add new {text}</p>
+  </DaAddNewButton>
+);
+export default AddNewButton;

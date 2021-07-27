@@ -1,7 +1,9 @@
 import { gql, useQuery } from '@apollo/client';
+import styled from 'styled-components';
 import Cut from '../shop/Cut';
 import Heading from '../Heading';
-import styles from './OtherCuts.module.scss';
+
+// TODO Figure out some sort of algorithm that will bring in cuts that are similar
 
 const OTHER_CUTS_QUERY = gql`
   query {
@@ -19,6 +21,25 @@ const OTHER_CUTS_QUERY = gql`
   }
 `;
 
+const CutsSection = styled.section`
+  min-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+`;
+
+const CutsContainer = styled.div`
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 2.5rem;
+  grid-column: 2 / -2;
+  display: grid;
+  justify-content: center;
+  grid-gap: 2.5rem;
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: row;
+  width: 100rem;
+`;
+
 export default function OtherCuts() {
   const { data, error, loading } = useQuery(OTHER_CUTS_QUERY);
   // TODO add loading & error situation here
@@ -26,16 +47,16 @@ export default function OtherCuts() {
   const cuts = data.allCuts;
   console.log(data);
   return (
-    <div className={styles.container}>
+    <CutsSection>
       <Heading
         title="Other Cuts"
         subtitle="Similar cuts you are currently looking at"
       />
-      <div className={styles.card_container}>
+      <CutsContainer>
         {cuts.map((cut) => (
           <Cut key={cut.id} cut={cut} />
         ))}
-      </div>
-    </div>
+      </CutsContainer>
+    </CutsSection>
   );
 }

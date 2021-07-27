@@ -1,22 +1,31 @@
+import styled from 'styled-components';
 import AnimalsSection from '../comps/landing/AnimalsSection';
-import Cta from '../comps/landing/CallToAction';
+import CallToAction from '../comps/landing/CallToAction';
+import FarmSection from '../comps/landing/FarmSection';
 import HowItWorksSection from '../comps/landing/HowItWorksSection';
-import Who from '../comps/landing/Who';
-import styles from './landing.module.scss';
+import WhoSection from '../comps/landing/WhoSection';
 
-const Home = () => (
-  <div>
-    <main>
-      <div className={styles.container}>
-        <Cta />
-        <HowItWorksSection />
-        <AnimalsSection />
-        <Who />
-      </div>
-    </main>
-  </div>
+const LandingContainer = styled.main`
+  display: grid;
+  overflow-y: visible;
+  overflow-x: hidden;
+  min-height: 50rem;
+  grid-template-areas:
+    'cta'
+    'shop'
+    'how'
+    'who'
+    'farm';
+`;
+
+const LandingPage = () => (
+  <LandingContainer>
+    <CallToAction />
+    <HowItWorksSection />
+    <AnimalsSection />
+    <WhoSection />
+    <FarmSection />
+  </LandingContainer>
 );
 
-Home.layout = 'default';
-
-export default Home;
+export default LandingPage;

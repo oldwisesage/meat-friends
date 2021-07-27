@@ -60,7 +60,7 @@ export default function Cart() {
           <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
       </CartItemContainer>
-      <CartFooter me={me}>
+      <CartFooter orderSubtotal={calcTotalPrice(me.cart)}>
         <CheckoutButton />
         <OtherPayButtons />
       </CartFooter>

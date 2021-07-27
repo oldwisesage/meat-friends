@@ -1,36 +1,60 @@
 import { useState } from 'react';
+import styled from 'styled-components';
+import useUser from '../../comps/user/User';
+import Heading from '../../comps/Heading';
+import Settings from '../../comps/account/Settings';
+import PaymentMethods from '../../comps/account/PayMethods';
 import OrderHistory from '../../comps/account/OrderHistory';
 import PersonalInfo from '../../comps/account/PersonalInfo';
 import Address from '../../comps/account/Address';
-import styles from './account.module.scss';
-import useUser from '../../comps/user/User';
-// import AccountNav from '../../comps/account/AccountNav';
-import Heading from '../../comps/Heading';
-import PaymentMethods from '../../comps/account/PaymentMethods';
-import AccountNavBtn from '../../comps/account/AccoutNavBtn';
-import Settings from '../../comps/account/Settings';
-import AccountArt from '../../comps/account/AccountArt';
+import AccountNavBtn from '../../comps/account/AccountNavBtn';
 
 // TODO add dynamic routing to logout, orders, payment, personal, settings
-// TODO add graphql query for all user data 
-export default function Account() {
+// TODO add graphql query for all user data
+
+const AccountSection = styled.div`
+  width: 100vw;
+  display: grid;
+  place-items: center center;
+  padding: 10rem;
+`;
+const AccountContainer = styled.div`
+  min-width: 100rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 5rem;
+`;
+const InfoContainer = styled.div``;
+
+const NavContainer = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  margin-top: 2.5rem;
+`;
+const ComponentContainer = styled.div`
+  grid-column: 2;
+`;
+
+const AccountPage = () => {
   const user = useUser();
   const [state, setState] = useState([
-    { comp: 'Order History', isActive: false, link: 'order-history' },
-    { comp: 'Personal Information', isActive: false, link: 'info' },
-    { comp: 'Addresses', isActive: false, link: 'address' },
-    { comp: 'Payment Methods', isActive: false, link: 'payment-method' },
-    { comp: 'Settings', isActive: false, link: 'settings' },
+    { id: '95933', comp: 'Order History' },
+    { id: '32423', comp: 'Personal information' },
+    { id: '12423', comp: 'Address' },
+    { id: '11233', comp: 'Payment methods' },
+    { id: '04933', comp: 'Settings' },
   ]);
 
   if (!user) return null;
-  console.log(user);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.container_acc}>
-        <Heading title={`Hello ${user.name}!`} subtitle={user.email} />
-        <div className={styles.container_nav}>
-          <div className={styles.nav}>
+    <AccountSection>
+      {/* COMP AccountNav */}
+      <AccountContainer>
+        <InfoContainer>
+          <Heading title={`Hello ${user.name}!`} subtitle={user.email} />
+          {/* COMP AccountNav */}
+          <NavContainer>
             {state.map((accLink, index) => (
               <AccountNavBtn
                 comp={accLink.comp}
@@ -39,19 +63,18 @@ export default function Account() {
                 link={accLink.link}
               />
             ))}
-          </div>
-        </div>
-      </div>
-      <div className={styles.container_comp}>
-        <AccountArt />
-        <OrderHistory id={user.id} />
-        <PersonalInfo />
-        <Address />
-        <PaymentMethods />
-        <Settings />
-      </div>
-    </div>
+          </NavContainer>
+        </InfoContainer>
+        <ComponentContainer>
+          <Settings active />
+          <PaymentMethods />
+          <Address />
+          <OrderHistory id={user.id} />
+          <PersonalInfo />
+        </ComponentContainer>
+      </AccountContainer>
+    </AccountSection>
   );
-}
+};
 
-Account.layout = 'default';
+export default AccountPage;

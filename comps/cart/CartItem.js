@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import formatMoney from '../../lib/formatMoney';
 import { fontSize } from '../../theme/Variables';
-import CartItemInfo from '../forms/CartItemInfo';
+import CartItemInfo from './CartItemInfo';
 import RemoveFromCartButton from './RemoveFromCartButton';
 
 const CartItemContainer = styled.div`

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import ContactForm from '../comps/forms/ContactForm';
 import styles from './contact.module.scss';
 
-const ContactUs = () => (
+const ContactPage = () => (
   <div className={styles.container}>
     <div className={styles.heading}>
       <h1 className={styles.heading_title}>Need to reach out?</h1>
@@ -59,4 +59,4 @@ const ContactUs = () => (
   </div>
 );
 
-export default ContactUs;
+export default ContactPage;

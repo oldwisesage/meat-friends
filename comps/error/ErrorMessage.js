@@ -1,24 +1,26 @@
 // import styled from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './ErrorMessage.module.scss';
+import styled from 'styled-components';
 
-// TODO style & understand this deeply enough to make my own
+// TODO understand this deeply enough to make my own
 
-// const ErrorStyles = styled.div`
-//   padding: 2rem;
-//   background: white;
-//   margin: 2rem 0;
-//   border: 1px solid rgba(0, 0, 0, 0.05);
-//   border-left: 5px solid red;
-//   p {
-//     margin: 0;
-//     font-weight: 100;
-//   }
-//   strong {
-//     margin-right: 1rem;
-//   }
-// `;
+const Error = styled.div`
+  padding: 2rem;
+  background: white;
+  margin: 2rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 5px solid $red-mid;
+  font-size: $m2-font;
+  border-radius: $border-radius;
+  p {
+    margin: 0;
+    font-weight: 100;
+  }
+  strong {
+    margin-right: 1rem;
+  }
+`;
 
 const DisplayError = ({ error }) => {
   if (!error || !error.message) return null;
@@ -27,26 +29,22 @@ const DisplayError = ({ error }) => {
     error.networkError.result &&
     error.networkError.result.errors.length
   ) {
-    return error.networkError.result.errors.map((error, i) => (
-      //   <ErrorStyles key={i}>
-      <div key={i} className={styles.error}>
+    return error.networkError.result.errors.map((error, index) => (
+      <Error key={index}>
         <p data-test="graphql-error">
           <strong>Shoot!</strong>
           {error.message.replace('GraphQL error: ', '')}
         </p>
-      </div>
-      //   </ErrorStyles>
+      </Error>
     ));
   }
   return (
-    // <ErrorStyles>
-    <div className={styles.error}>
+    <Error>
       <p data-test="graphql-error">
         <strong>Shoot!</strong>
         {error.message.replace('GraphQL error: ', '')}
       </p>
-    </div>
-    // </ErrorStyles>
+    </Error>
   );
 };
 

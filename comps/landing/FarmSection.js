@@ -5,18 +5,16 @@ import { color } from '../../theme/Variables';
 import Heading from '../Heading';
 import { LandingContainer } from './HowItWorksSection';
 
-const WhoContainer = styled(LandingContainer)`
-  grid-area: who;
+const FarmContainer = styled(LandingContainer)`
+  grid-area: farm;
   padding: 0 5rem;
-`;
-const WhoHeading = styled(Heading)`
-  color: ${color.white};
+  background-color: ${color.bluePale};
 `;
 
-const Who = () => (
-  <WhoContainer>
-    <WhoHeading title="Who is meat friends?" />
-  </WhoContainer>
+const FarmSection = () => (
+  <FarmContainer>
+    <Heading title="Meet the farms!" />
+  </FarmContainer>
 );
 
-export default Who;
+export default FarmSection;

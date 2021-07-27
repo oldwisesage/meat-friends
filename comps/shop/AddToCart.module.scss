@@ -1,7 +1,0 @@
-@import '../../styles/mixins';
-
-.btn {
-  @include btn-black;
-  @include long-form-text;
-  margin: 0.5rem 0;
-}

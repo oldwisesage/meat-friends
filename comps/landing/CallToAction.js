@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontSize, fontWeight, padding } from '../../theme/Variables';
+import { color, fontSize, fontWeight, spacing } from '../../theme/Variables';
 import { Button } from '../ui/Form';
 import { LandingContainer } from './HowItWorksSection';
 
@@ -11,6 +11,7 @@ const CtaContainer = styled(LandingContainer)`
   align-content: end;
   justify-content: start;
   min-height: 60rem;
+  background-color: ${color.greenPale};
 `;
 const InnerContainer = styled.div`
   padding: 5rem;
@@ -32,7 +33,7 @@ const Text = styled.p`
   font-weight: ${fontWeight.light};
 `;
 const ButtonContainer = styled.div`
-  padding-top: ${padding.skinny};
+  padding-top: ${spacing.skinny};
 `;
 
 const CallToAction = () => (

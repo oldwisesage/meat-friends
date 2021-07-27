@@ -1,21 +1,57 @@
-import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
+import styled from 'styled-components';
 import formatMoney from '../../lib/formatMoney';
-import styles from './OrderHistoryItem.module.scss';
+import { color, fontSize, fontWeight } from '../../theme/Variables';
 
-export default function OrderHistoryItem({ order }) {
+const ItemRowContainer = styled.div`
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(2, 1fr) repeat(2, 2fr) 1fr;
+  &:hover {
+    background: ${color.greyPale};
+  }
+  &:active {
+    background: ${color.white};
+  }
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: ${fontSize.caption};
+    font-weight: ${fontWeight.light};
+  }
+`;
+
+const OrderId = styled.p``;
+const OrderDate = styled.p``;
+const OrderStatus = styled.div`
+  p {
+    font-weight: ${fontWeight.bold};
+    border-radius: 50px;
+    color: ${color.greenDark};
+    background-color: ${color.greenPale};
+    padding: 0.25rem 1rem;
+  }
+`;
+const OrderTotal = styled.p``;
+const OrderIcon = styled.div`
+  fill: ${color.greyPale};
+  align-self: center;
+`;
+
+const OrderHistoryItem = ({ order }) => {
   const { id, total } = order;
 
   return (
     <Link href={`/order/${id}`}>
-      <div className={styles.item}>
-        <div className={styles.item_num}>{id}</div>
-        <div className={styles.item_date}>6/9/2021</div>
-        <div className={`${styles.item_status} ${styles.item_status_complete}`}>
-          complete
-        </div>
-        <div className={styles.item_total}>{formatMoney(total)}</div>
-        <div className={styles.item_arrow}>
+      <ItemRowContainer>
+        <OrderId>{id}</OrderId>
+        <OrderDate>6/9/2021</OrderDate>
+        <OrderStatus complete>
+          <p>Complete</p>
+        </OrderStatus>
+        <OrderTotal>{formatMoney(total)}</OrderTotal>
+        <OrderIcon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="15"
@@ -29,8 +65,9 @@ export default function OrderHistoryItem({ order }) {
           >
             <polyline points="9 18 15 12 9 6" />
           </svg>
-        </div>
-      </div>
+        </OrderIcon>
+      </ItemRowContainer>
     </Link>
   );
-}
+};
+export default OrderHistoryItem;

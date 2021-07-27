@@ -70,24 +70,21 @@ export const boxShadow = {
   active: `0px 4px 9px rgba(${color.black}, 0.1)`,
 };
 
-// MARGINS
-export const margin = {
+// BORDER
+export const border = {
+  base: `0.5px solid ${color.greyPale}`,
+  fig: `3px solid ${color.black}`,
+};
+
+// SPACING
+export const spacing = {
   skinny: '1rem',
-  standard: '2.5rem',
+  base: '2.5rem',
   more: '5rem',
 };
 
-// PADDING
-export const padding = {
-  skinny: '1rem',
-  standard: '2.5rem',
-  more: '5rem',
-};
-
-// GRID VARIABLES
-export const grid = {
-  full: '114rem',
-  gap: '2.5rem',
+export const container = {
+  full: `114rem`,
 };
 
 // RESPONSIVE BREAKPOINTS

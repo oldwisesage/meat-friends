@@ -1,12 +1,19 @@
 import { useRouter } from 'next/router';
+import styled from 'styled-components';
 import SingleCut from '../../comps/cut/SingleCut';
-import styles from './id.module.scss';
 
-export default function SingleCutPage() {
+const SingleCutSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto;
+`;
+const SingleCutPage = () => {
   const { query } = useRouter();
   return (
-    <div className={styles.container}>
+    <SingleCutSection>
       <SingleCut id={query.id} />
-    </div>
+    </SingleCutSection>
   );
-}
+};
+
+export default SingleCutPage;

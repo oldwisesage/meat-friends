@@ -1,13 +1,16 @@
-import Link from 'next/link';
-import styles from './FootLogo.module.scss';
+import styled from 'styled-components';
+import { color, fontSize, fontWeight } from '../theme/Variables';
+import Logo from './Logo';
 
-export default function FootLogo({ ...props }) {
-  return (
-    <Link href="/">
-      <div className={styles.logo}>
-        <h1 className={styles.logo_text}>meat friends</h1>
-        <p className={styles.logo_tagline}>{props.slogan}</p>
-      </div>
-    </Link>
-  );
-}
+const Slogan = styled.div`
+  font-weight: ${fontWeight.light};
+  font-size: ${fontSize.body};
+  color: ${color.greyPale};
+`;
+
+const FootLogo = ({ ...props }) => (
+  <Logo color="white">
+    <Slogan>{props.slogan}</Slogan>
+  </Logo>
+);
+export default FootLogo;

@@ -1,8 +1,30 @@
-import Link from 'next/link';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import styles from './err.module.scss';
+import styled from 'styled-components';
 import Logo from '../comps/Logo';
+import Heading from '../comps/Heading';
+import { fontSize, fontWeight } from '../theme/Variables';
+
+const ErrorContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  max-height: 100vh;
+`;
+const MessageContainer = styled.div`
+  position: absolute;
+  display: grid;
+  top: 325px;
+  left: 40%;
+`;
+const FourOhFour = styled.h1`
+  font-size: ${fontSize.xxl};
+  span {
+    font-weight: ${fontWeight.light};
+  }
+`;
+const Illustration = styled.div`
+  position: aboslute;
+`;
 
 const NotFound = () => {
   const router = useRouter();
@@ -10,22 +32,22 @@ const NotFound = () => {
     setTimeout(() => {
       router.push('/');
     }, 2000);
-  }, []);
+  });
   return (
-    <div className={styles.error}>
-      <div className={styles.error_container}>
-        <h1 className={styles.error_title}>Uh Oh!</h1>
-        <h3 className={styles.error_subtitle}>Looks like you might be lost</h3>
-        <p className={styles.error_content}>
-          You will be return to the homepage in 2 seconds
-        </p>
-        <Link href="/">
-          <div className={styles.logo}>
-            <h1 className={styles.logo_text}>meat friends</h1>
-          </div>
-        </Link>
-      </div>
-      <div className={styles.error_illustration}>
+    <ErrorContainer>
+      <Logo />
+      <MessageContainer>
+        <Heading
+          title={
+            <FourOhFour>
+              <span>Error </span>404
+            </FourOhFour>
+          }
+          subtitle="It looks like you might be lost"
+          subtext="You will be returned to the home page in 2 seconds"
+        />
+      </MessageContainer>
+      <Illustration>
         <svg viewBox="0 25 300 300" xmlns="http://www.w3.org/2000/svg">
           <path
             fill="#ADADAD"
@@ -33,8 +55,8 @@ const NotFound = () => {
             transform="translate(100 100)"
           />
         </svg>
-      </div>
-    </div>
+      </Illustration>
+    </ErrorContainer>
   );
 };
 

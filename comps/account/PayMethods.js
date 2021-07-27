@@ -1,18 +1,22 @@
+import styled from 'styled-components';
 import Heading from '../Heading';
 import AddNewButton from './AddNewButton';
-import styles from './PaymentMethods.module.scss';
-import PaymentMethodBtn from './PaymentMethodBtn';
+import PayMethod from './PayMethod';
 
 // TODO add crud ability with this payment situation
+const PayMethodsContainer = styled.div`
+  max-width: 75rem;
+`;
 
-export default function PaymentMethods({ active }) {
+const PayMethods = ({ active }) => {
   console.log(active);
   if (!active) return null;
   return (
-    <div className={styles.container}>
+    <PayMethodsContainer>
       <Heading title="Payment Methods" />
-      <PaymentMethodBtn />
+      <PayMethod />
       <AddNewButton text="payment method" />
-    </div>
+    </PayMethodsContainer>
   );
-}
+};
+export default PayMethods;

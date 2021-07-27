@@ -1,7 +1,0 @@
-@import '../styles/mixins';
-
-.link {
-  @include center-items-container;
-  @include basic-link;
-  padding-top: 0.5rem;
-}

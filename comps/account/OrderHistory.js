@@ -1,7 +1,14 @@
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
+import styled from 'styled-components';
 import OrderHistoryItem from './OrderHistoryItem';
-import styles from './OrderHistory.module.scss';
+import Heading from '../Heading';
+import {
+  borderRadius,
+  boxShadow,
+  color,
+  fontSize,
+} from '../../theme/Variables';
 
 const ALL_ORDERS_QUERY = gql`
   query($id: ID!) {
@@ -18,31 +25,55 @@ const ALL_ORDERS_QUERY = gql`
   }
 `;
 
-export default function OrderHistory({ id, active }) {
+const OrderContainer = styled.div``;
+
+const OrderBody = styled.div`
+  border: 1px solid ${color.greyPale};
+  border-radius: ${borderRadius.default};
+  min-height: 25rem;
+  box-shadow: ${boxShadow.idle};
+`;
+
+const OrderHeader = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) repeat(2, 2fr) 1fr;
+  padding: 1rem;
+  border-bottom: 1px solid ${color.greyPale};
+  min-width: 15rem;
+  p {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    color: ${color.greyDark};
+    text-transform: uppercase;
+    font-size: ${fontSize.caption};
+  }
+`;
+
+const OrderHistory = ({ id, active }) => {
   // TODO add error handling
-  if (!active) return null;
-  const { data, error, loading } = useQuery(ALL_ORDERS_QUERY, {
+  const { data, loading } = useQuery(ALL_ORDERS_QUERY, {
     variables: { id },
   });
+  if (!active) return null;
   if (loading) return <p>Loading... </p>;
   const { orders } = data.User;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>
-        <h1 className={styles.title_text}>Order History</h1>
-      </div>
-      <div className={styles.body}>
-        <div className={styles.body_head}>
-          <h4 className={styles.body_head_text}>Order</h4>
-          <h4 className={styles.body_head_text}>Date</h4>
-          <h4 className={styles.body_head_text}>Status</h4>
-          <h4 className={styles.body_head_text}>Total</h4>
-        </div>
+    <OrderContainer>
+      <Heading title="Order History" />
+      <OrderBody>
+        <OrderHeader>
+          <p>Order</p>
+          <p>Date</p>
+          <p>Status</p>
+          <p>Total</p>
+        </OrderHeader>
         {orders.map((orderItem) => (
           <OrderHistoryItem key={orderItem.id} order={orderItem} />
         ))}
-      </div>
-    </div>
+      </OrderBody>
+    </OrderContainer>
   );
-}
+};
+export default OrderHistory;

@@ -1,7 +1,8 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
+import styled from 'styled-components';
 import { CURRENT_USER_QUERY } from '../user/User';
-import styles from './AddToCart.module.scss';
+import { Button } from '../ui/Form';
 
 const ADD_TO_CART_MUTATION = gql`
   mutation ADD_TO_CART_MUTATION($id: ID!) {
@@ -11,7 +12,11 @@ const ADD_TO_CART_MUTATION = gql`
   }
 `;
 
-export default function AddToCart({ id }) {
+const AddButton = styled(Button)`
+  margin: 0.5rem 0;
+`;
+
+const AddToCartButton = ({ id }) => {
   const [addToCart, { loading }] = useMutation(ADD_TO_CART_MUTATION, {
     variables: { id },
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
@@ -20,13 +25,9 @@ export default function AddToCart({ id }) {
   // do something;
 
   return (
-    <button
-      type="button"
-      disabled={loading}
-      onClick={addToCart}
-      className={styles.btn}
-    >
+    <AddButton type="button" disabled={loading} onClick={addToCart}>
       Add{loading && 'ing'} to cart
-    </button>
+    </AddButton>
   );
-}
+};
+export default AddToCartButton;

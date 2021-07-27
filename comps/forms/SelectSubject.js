@@ -1,8 +1,6 @@
 import { useField } from 'formik';
 import styled from 'styled-components';
 
-// BOOKMARK Figure out how to do a customized dropdown menu for form
-
 const SelectSubjectStyles = styled.div`
   select {
     font-size: 1.563rem;
