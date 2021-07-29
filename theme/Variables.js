@@ -72,9 +72,10 @@ export const boxShadow = {
 
 // BORDER
 export const border = {
-  base: `0.5px solid ${color.greyPale}`,
-  thicker: `1px solid ${color.greyPale}`,
-  fig: `3px solid ${color.black}`,
+  base: `0.5px solid #000`,
+  thicker: `1px solid #000`,
+  thickest: `2px solid #000`,
+  fig: `3px solid #000`,
 };
 
 // SPACING

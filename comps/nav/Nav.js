@@ -3,10 +3,11 @@ import Cart from '../cart/Cart';
 import Logout from './Logout';
 import useUser from '../user/useUser';
 import Logo from '../Logo';
-import NavLink from '../NavLink';
+import NavLink from './NavLink';
 import CartIcon from './CartIcon';
 import Login from './Login';
 import User from './User';
+import UserMenuModal from '../ui/UserMenuModal';
 
 // TODO improve styling so it looks coo ler
 
@@ -44,8 +45,6 @@ const Nav = () => {
       {/*  COMP <Account /> */}
       <AccountContainer>
         <User />
-        <Login />
-        <Logout />
         <CartIcon user={user} />
       </AccountContainer>
       <Cart />

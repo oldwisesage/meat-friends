@@ -3,7 +3,6 @@ import useUser from '../user/useUser';
 import Heading from '../Heading';
 import CartItem from './CartItem';
 import calcTotalPrice from '../../lib/calcTotalPrice';
-import formatMoney from '../../lib/formatMoney';
 import { useCart } from '../../lib/cartState';
 import CloseCartButton from './CloseCartButton';
 import CheckoutButton from '../checkout/CheckoutButton';
@@ -37,8 +36,6 @@ const ContainerTop = styled.div`
   grid-auto-flow: column;
   align-items: center;
 `;
-
-// TODO fix cart styling
 
 export default function Cart() {
   const me = useUser();

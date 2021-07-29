@@ -17,15 +17,12 @@ const LogoText = styled.h3`
   }
 `;
 
-const Logo = ({ children, color }) => {
-  console.log(color);
-  return (
-    <Link href="/">
-      <LogoContainer color={color}>
-        <LogoText>meat friends</LogoText>
-        {children}
-      </LogoContainer>
-    </Link>
-  );
-};
+const Logo = ({ children, color }) => (
+  <Link href="/">
+    <LogoContainer color={color}>
+      <LogoText>meat friends</LogoText>
+      {children}
+    </LogoContainer>
+  </Link>
+);
 export default Logo;

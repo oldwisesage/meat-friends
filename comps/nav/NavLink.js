@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { fontSize, color } from '../theme/Variables';
+import { fontSize, color } from '../../theme/Variables';
 
 const NavLinkContainer = styled.div`
   display: grid;

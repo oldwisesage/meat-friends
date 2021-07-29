@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import FaqItem from '../comps/FaqItem';
 import Heading from '../comps/Heading';
@@ -17,8 +18,11 @@ const FaqContainer = styled.div`
 `;
 
 const FaqHeading = styled(Heading)`
-  padding-bottom: 2.5rem;
   grid-column: 2;
+`;
+
+const Padding = styled.div`
+  padding-top: 2.5rem;
 `;
 
 const FaqPage = () => (
@@ -28,6 +32,7 @@ const FaqPage = () => (
         title="Frequently Asked Questions"
         subtitle="Here are the answers to our most commonly asked questions"
       />
+      <Padding />
       <FaqItem
         active
         question="How will my order be shipped?"
