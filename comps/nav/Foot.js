@@ -1,123 +1,129 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import styled from 'styled-components';
+import { color, fontSize, fontWeight } from '../../theme/Variables';
 import FootLogo from '../FootLogo';
-import styles from './Foot.module.scss';
+import Social from './Social';
+
+const FooterContainer = styled.footer`
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  grid-gap: 5rem;
+  background: ${color.greyDark};
+  min-height: 15rem;
+`;
+
+const LeftContainer = styled.div`
+  display: grid;
+  justify-content: center;
+  height: 100%;
+`;
+
+const Copyright = styled.div`
+  display: grid;
+  height: 100%;
+  font-weight: ${fontWeight.light};
+  p {
+    color: ${color.white};
+    font-size: ${fontSize.body};
+    align-self: end;
+  }
+  a {
+    text-decoration: none;
+    color: ${color.white};
+    font-weight: ${fontWeight.bold};
+    &:hover {
+      color: ${color.greyPale};
+    }
+  }
+`;
+const CenterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: -2rem;
+`;
+
+const RightContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  padding-top: 1rem;
+`;
+
+const SitemapCol = styled.div`
+  margin-top: 2rem;
+  display: grid;
+  grid-template-rows: 3rem repeat(3, 2rem);
+`;
+
+const SitemapTitle = styled.h4`
+  font-size: ${fontSize.body};
+  font-weight: ${fontWeight.heavy};
+  color: ${color.white};
+`;
+
+const SitemapLink = styled.a`
+  color: red;
+  text-decoration: none;
+  color: ${color.white};
+  font-size: ${fontSize.caption};
+  &:hover {
+    color: ${color.greyPale};
+  }
+`;
 
 const Foot = () => (
-  <footer className={styles.container}>
-    <div className={styles.left}>
-      {/* COMP <Social /> */}
-      <div className={styles.social}>
-        <div className={styles.social_icon}>
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-          >
-            <title>youtube</title>
-            <path d="M31.681 9.6c0 0-0.313-2.206-1.275-3.175-1.219-1.275-2.581-1.281-3.206-1.356-4.475-0.325-11.194-0.325-11.194-0.325h-0.012c0 0-6.719 0-11.194 0.325-0.625 0.075-1.987 0.081-3.206 1.356-0.963 0.969-1.269 3.175-1.269 3.175s-0.319 2.588-0.319 5.181v2.425c0 2.587 0.319 5.181 0.319 5.181s0.313 2.206 1.269 3.175c1.219 1.275 2.819 1.231 3.531 1.369 2.563 0.244 10.881 0.319 10.881 0.319s6.725-0.012 11.2-0.331c0.625-0.075 1.988-0.081 3.206-1.356 0.962-0.969 1.275-3.175 1.275-3.175s0.319-2.587 0.319-5.181v-2.425c-0.006-2.588-0.325-5.181-0.325-5.181zM12.694 20.15v-8.994l8.644 4.513-8.644 4.481z" />
-          </svg>
-        </div>
-        <div className={styles.social_icon}>
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-          >
-            <title>instagram</title>
-            <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z" />
-            <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z" />
-            <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z" />
-          </svg>
-        </div>
-        <div className={styles.social_icon}>
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-          >
-            <title>facebook</title>
-            <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z" />
-          </svg>
-        </div>
-        <div className={styles.social_icon}>
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-          >
-            <title>twitter</title>
-            <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z" />
-          </svg>
-        </div>
-        <div className={styles.social_icon}>
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-          >
-            <title>reddit</title>
-            <path d="M8 20c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM20 20c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM20.097 24.274c0.515-0.406 1.262-0.317 1.668 0.198s0.317 1.262-0.198 1.668c-1.434 1.13-3.619 1.86-5.567 1.86s-4.133-0.73-5.567-1.86c-0.515-0.406-0.604-1.153-0.198-1.668s1.153-0.604 1.668-0.198c0.826 0.651 2.46 1.351 4.097 1.351s3.271-0.7 4.097-1.351zM32 16c0-2.209-1.791-4-4-4-1.504 0-2.812 0.83-3.495 2.057-2.056-1.125-4.561-1.851-7.29-2.019l2.387-5.36 4.569 1.319c0.411 1.167 1.522 2.004 2.83 2.004 1.657 0 3-1.343 3-3s-1.343-3-3-3c-1.142 0-2.136 0.639-2.642 1.579l-5.091-1.47c-0.57-0.164-1.173 0.116-1.414 0.658l-3.243 7.282c-2.661 0.187-5.102 0.907-7.114 2.007-0.683-1.227-1.993-2.056-3.496-2.056-2.209 0-4 1.791-4 4 0 1.635 0.981 3.039 2.387 3.659-0.252 0.751-0.387 1.535-0.387 2.341 0 5.523 6.268 10 14 10s14-4.477 14-10c0-0.806-0.134-1.589-0.387-2.34 1.405-0.62 2.387-2.025 2.387-3.66zM27 5.875c0.621 0 1.125 0.504 1.125 1.125s-0.504 1.125-1.125 1.125-1.125-0.504-1.125-1.125 0.504-1.125 1.125-1.125zM2 16c0-1.103 0.897-2 2-2 0.797 0 1.487 0.469 1.808 1.145-1.045 0.793-1.911 1.707-2.552 2.711-0.735-0.296-1.256-1.016-1.256-1.856zM16 29.625c-6.42 0-11.625-3.414-11.625-7.625s5.205-7.625 11.625-7.625c6.42 0 11.625 3.414 11.625 7.625s-5.205 7.625-11.625 7.625zM28.744 17.856c-0.641-1.003-1.507-1.918-2.552-2.711 0.321-0.676 1.011-1.145 1.808-1.145 1.103 0 2 0.897 2 2 0 0.84-0.52 1.56-1.256 1.856z" />
-          </svg>
-        </div>
-      </div>
-
-      <div className={styles.copyright}>
-        <p className={styles.copyright__text}>
+  <FooterContainer>
+    <LeftContainer>
+      <Social />
+      <Copyright>
+        <p>
           ©{' '}
           <Link href="/">
-            <a className={styles.copyright__link}>Meat Friends</a>
+            <a>Meat Friends</a>
           </Link>{' '}
           2020. All rights reserved
         </p>
-      </div>
-    </div>
-    <div className={styles.center}>
+      </Copyright>
+    </LeftContainer>
+    <CenterContainer>
       <FootLogo slogan="some cool slogan here" />
-    </div>
-    <div className={styles.right}>
-      <div className={styles.help}>
-        <h2 className={styles.help__title}>Help</h2>
+    </CenterContainer>
+    <RightContainer>
+      <SitemapCol>
+        <SitemapTitle>Help</SitemapTitle>
         <Link href="/">
-          <a className={styles.link}>Contact us</a>
+          <SitemapLink>Contact us</SitemapLink>
         </Link>
         <Link href="/">
-          <a className={styles.link}>FAQ</a>
+          <SitemapLink>FAQ</SitemapLink>
         </Link>
-      </div>
-      <div className={styles.company}>
-        <h2 className={styles.company__title}>Company</h2>
+      </SitemapCol>
+      <SitemapCol>
+        <SitemapTitle>Company</SitemapTitle>
         <Link href="/">
-          <a className={styles.link}>About</a>
-        </Link>
-        <Link href="/">
-          <a className={styles.link}>Careers</a>
+          <SitemapLink>About</SitemapLink>
         </Link>
         <Link href="/">
-          <a className={styles.link}>Our process</a>
-        </Link>
-      </div>
-      <div className={styles.legal}>
-        <h2 className={styles.legal__title}>Legal</h2>
-        <Link href="/">
-          <a className={styles.link}>Terms</a>
+          <SitemapLink>Careers</SitemapLink>
         </Link>
         <Link href="/">
-          <a className={styles.link}>Privacy</a>
+          <SitemapLink>Our Process</SitemapLink>
         </Link>
-      </div>
-    </div>
-  </footer>
+      </SitemapCol>
+      <SitemapCol>
+        <SitemapTitle>Legal</SitemapTitle>
+        <Link href="/">
+          <SitemapLink>Terms</SitemapLink>
+        </Link>
+        <Link href="/">
+          <SitemapLink>Privacy</SitemapLink>
+        </Link>
+      </SitemapCol>
+    </RightContainer>
+  </FooterContainer>
 );
 
 export default Foot;

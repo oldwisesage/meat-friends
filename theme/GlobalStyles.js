@@ -1,14 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-// FONTS
-@font-face {
-  font-family: 'Nunito Sans';
-  src: url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
-  font-family: 'Lora';
-  src: url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
-}
-
 // DOCUMENT
 // 1. Correct the line height in all browsers.
 // 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -18,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
   -webkit-text-size-adjust: 100%; /* 2 */
   box-sizing: border-box;
   font-size: 10px; /* 3 */
-  font-family: 'Nunito Sans';
 }
 
 *,
@@ -32,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
 // SECTIONS
 // Remove the margin in all browsers.
 body {
+  font-family: 'Nunito Sans', sans-serif;
   margin: 0;
 }
 

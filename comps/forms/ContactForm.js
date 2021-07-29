@@ -4,7 +4,9 @@ import * as Yup from 'yup';
 import { Input } from './Input';
 import { MessageInput } from './MessageInput';
 import { SelectSubject } from './SelectSubject';
-import { Button, FormContainer, NamesInputContainer } from '../container/Form';
+import { Button, FormContainer, NamesInputContainer } from '../ui/Form';
+
+
 
 const ContactForm = () => (
   <Formik

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import useUser from '../../comps/user/User';
+import useUser from '../../comps/user/useUser';
 import Heading from '../../comps/Heading';
 import Settings from '../../comps/account/Settings';
 import PaymentMethods from '../../comps/account/PayMethods';

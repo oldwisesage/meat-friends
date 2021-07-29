@@ -66,13 +66,14 @@ export const borderRadius = {
 
 // BOX SHADOW
 export const boxShadow = {
-  idle: `0px 4px 9px rgba(${color.black}, 0.04)`,
-  active: `0px 4px 9px rgba(${color.black}, 0.1)`,
+  idle: `0px 4px 9px #1A000000`,
+  active: `0px 4px 9px #0A000000`,
 };
 
 // BORDER
 export const border = {
   base: `0.5px solid ${color.greyPale}`,
+  thicker: `1px solid ${color.greyPale}`,
   fig: `3px solid ${color.black}`,
 };
 

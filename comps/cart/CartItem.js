@@ -32,8 +32,8 @@ export default function CartItem({ cartItem }) {
     <CartItemContainer>
       <CartImage
         src={cut.photo.image.publicUrlTransformed}
-        width="70"
-        height="70"
+        height={70}
+        width={70}
       />
       <InfoContainer>
         <CartItemInfo cut={cut} quantity={cartItem.quantity} />

@@ -1,62 +1,88 @@
-import Image from 'next/image';
+import styled from 'styled-components';
 import ContactForm from '../comps/forms/ContactForm';
-import styles from './contact.module.scss';
+import Heading from '../comps/Heading';
+import { border, fontSize, fontWeight, spacing } from '../theme/Variables';
+
+const ContactSection = styled.section`
+  display: grid;
+  place-items: center center;
+`;
+
+const HeadingContainer = styled.div`
+  display: grid;
+  justify-content: flex-start;
+  width: 77.5rem;
+  padding: 5rem 0 2.5rem 0;
+`;
+
+const ContactContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-top: ${border.thicker};
+  grid-gap: 2.5rem;
+  padding: 2.5rem 0 10rem 0;
+`;
+
+const SidebarContainer = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  align-content: flex-start;
+`;
+
+const BusinessInfo = styled.div`
+  display: grid;
+  grid-gap: 0.5rem;
+  h3 {
+    font-weight: ${fontWeight.bold};
+    font-size: ${fontSize.body};
+  }
+  p {
+    font-weight: ${fontWeight.light};
+    font-size: ${fontSize.caption};
+  }
+`;
+
+const SmallLogo = styled.h4`
+  font-weight: 900;
+  font-size: ${fontSize.body};
+  letter-spacing: -0.5px;
+`;
+
+const Address = styled.div`
+  p {
+    font-size: ${fontSize.caption};
+    font-weight: ${fontWeight.light};
+  }
+`;
 
 const ContactPage = () => (
-  <div className={styles.container}>
-    <div className={styles.heading}>
-      <h1 className={styles.heading_title}>Need to reach out?</h1>
-      <h3 className={styles.heading_subtitle}>
-        Anything you need, we're here to help!
-      </h3>
-    </div>
-    <div className={styles.lower_container}>
-      <div className={styles.sidebar}>
-        {/* // <Image src="" width="250" height="250" /> */}
-        <div className={styles.customer}>
-          <div className={styles.customer_title}>Customer Service</div>
-          <div className={styles.customer_section}>
-            <div className={styles.customer_section_hr}>Hours:</div>
-            <div className={styles.customer_section_hr_content}>
-              Friday 10am to 6pm EST
-            </div>
-            <div className={styles.customer_section_phone}>Call:</div>
-            <div className={styles.customer_section_phone_content}>
-              (301) GET-MEAT
-            </div>
-            <div className={styles.customer_section_email}>Email:</div>
-            <div className={styles.customer_section_email_content}>
-              help@meatfriends.co
-            </div>
-          </div>
-        </div>
-        <div className={styles.marketing}>
-          <div className={styles.marketing_title}>Collab? Want to chat?</div>
-          <div className={styles.marketing_text}>
-            <span className={styles.marketing_text_bold}>Email us:</span>{' '}
-            marketing@meatfriends.co
-          </div>
-        </div>
-        <div className={styles.visit}>
-          <div className={styles.visit_title}>Come see us!</div>
-          <div className={styles.visit_content}>
-            <div className={styles.visit_content_logo}>meat friends</div>
-            <div className={styles.visit_content_address}>
-              40 E. Patrick St. <br />
-              Frederick, MD 21701
-            </div>
-            <div className={styles.visit_content_email}>
-              butcher@meatfriends.co
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.contact}>
-        {/* TODO formik */}
-        <ContactForm />
-      </div>
-    </div>
-  </div>
+  <ContactSection>
+    <HeadingContainer>
+      <Heading
+        title="Need to reach out?"
+        subtitle="Anything you need, we're here to help"
+      />
+    </HeadingContainer>
+    <ContactContainer>
+      <SidebarContainer>
+        <BusinessInfo>
+          <h3>Customer Service</h3>
+          <p>⏳ Friday 10am to 6pm EST</p>
+          <p>📞 (301) GET-MEAT</p>
+          <p>✉️ help@meatfriends.co</p>
+        </BusinessInfo>
+        <Address>
+          <SmallLogo>meat friends</SmallLogo>
+          <p>
+            40 E. Patrick St. <br />
+            Frederick, MD 21701
+          </p>
+          <p>butcher@meatfriends.co</p>
+        </Address>
+      </SidebarContainer>
+      <ContactForm />
+    </ContactContainer>
+  </ContactSection>
 );
 
 export default ContactPage;

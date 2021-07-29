@@ -1,7 +1,7 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
-import { CURRENT_USER_QUERY } from '../user/User';
+import { CURRENT_USER_QUERY } from '../user/useUser';
 import { Button } from '../ui/Form';
 
 const ADD_TO_CART_MUTATION = gql`

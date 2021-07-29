@@ -10,7 +10,7 @@ import {
   NamesInputContainer,
 } from '../ui/Form';
 import Heading from '../Heading';
-import { CURRENT_USER_QUERY } from '../user/User';
+import { CURRENT_USER_QUERY } from '../user/useUser';
 import { Input } from './Input';
 
 const LoginLinksContainer = styled.div`

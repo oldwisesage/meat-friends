@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import useUser from '../user/User';
+import useUser from '../user/useUser';
 
 const Dot = styled.div`
   background: red;
   color: white;
-  position: aboslute;
-  top: -53px;
-  left: 15px;
+  position: absolute;
+  top: -45px;
+  left: 35px;
   border-radius: 50%;
   padding: 0.35rem;
   font-size: 1.5rem;
@@ -20,7 +20,6 @@ const AnimationStyles = styled.span`
   position: relative;
   .count {
     display: block;
-    position: relative;
     transition: transform 0.4s;
     backface-visibility: hidden;
   }

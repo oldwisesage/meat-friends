@@ -12,8 +12,6 @@ export const FormContainer = styled(Form)`
   display: grid;
   grid-gap: 2rem;
   width: 50rem;
-  padding: 3rem;
-  border: 0.5px solid #e0e0e0;
   border-radius: 5px;
   background-color: #fff;
 `;

@@ -1,11 +1,12 @@
 // import App from 'next/app';
-import Router from 'next/router';
+// import Router from 'next/router';
 import { ApolloProvider } from '@apollo/client';
 import { Normalize } from 'styled-normalize';
 import withData from '../lib/withData';
-import LayoutWrapper from '../layouts/layout-wrapper';
+import LayoutWrapper from '../layouts/LayoutWrapper';
 import { CartStateProvider } from '../lib/cartState';
 import { GlobalStyle } from '../theme/GlobalStyles';
+import FontStyles from '../theme/FontStyles';
 
 // Router.events.on('routeChangeStart', () => NProgress.start());
 // Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -14,6 +15,7 @@ import { GlobalStyle } from '../theme/GlobalStyles';
 function MyApp({ Component, pageProps, apollo }) {
   return (
     <>
+      <FontStyles />
       <GlobalStyle />
       <Normalize />
       <ApolloProvider client={apollo}>

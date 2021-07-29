@@ -4,7 +4,6 @@ import { useRouter } from 'next/dist/client/router';
 import Heading from '../../comps/Heading';
 import OrderSummary from '../../comps/account/OrderSummary';
 import ErrorMessage from '../../comps/error/ErrorMessage';
-import styles from './order.module.scss';
 
 const ORDER_ITEMS_QUERY = gql`
   query ORDER_ITEMS_QUERY($id: ID!) {
@@ -30,6 +29,12 @@ const ORDER_ITEMS_QUERY = gql`
   }
 `;
 
+const OrderContainer = styled.div`
+  display: grid;
+  place-items: center;
+  min-height: 80vh;
+`;
+
 export default function OrderPage() {
   const router = useRouter();
   const { id } = router.query;
@@ -41,11 +46,9 @@ export default function OrderPage() {
   console.log(data.Order);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.order_container}>
-        <Heading title="Order Summary" />
-        <OrderSummary key={id} orderData={data.Order} />
-      </div>
-    </div>
+    <OrderContainer>
+      <Heading title="Order Summary" />
+      <OrderSummary key={id} orderData={data.Order} />
+    </OrderContainer>
   );
 }

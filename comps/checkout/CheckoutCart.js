@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import useUser from '../user/User';
+import useUser from '../user/useUser';
 import Heading from '../Heading';
 import CartItem from '../cart/CartItem';
 import CartFooter from '../cart/CartFooter';
