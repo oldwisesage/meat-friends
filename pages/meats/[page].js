@@ -23,10 +23,12 @@ const MeatPage = () => {
   const page = parseInt(query.page);
   return (
     <MeatsContainer>
+      {/* COMP SortTopBar */}
       <MeatsTitleContainer>
         <Heading title="Beef" subtitle="Locally sourced beef" />
         <Pagination page={page || 1} />
       </MeatsTitleContainer>
+      {/* COMP SortSideBar */}
       <Cuts page={page || 1} />
     </MeatsContainer>
   );

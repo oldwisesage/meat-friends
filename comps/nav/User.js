@@ -83,9 +83,9 @@ const User = () => {
         <Avatar />
       </UserButton>
       <UserMenu ref={userMenuRef} active={isActive}>
-        <UserMenuItem link="Account" />
-        <UserMenuItem link="Help" />
-        <UserMenuItem link="Logout" />
+        <UserMenuItem label="Account" link="account" />
+        <UserMenuItem label="Help" link="faq" />
+        <UserMenuItem label="Logout" link />
       </UserMenu>
     </UserMenuContainer>
   );

@@ -60,6 +60,6 @@ const NotFound = () => {
   );
 };
 
-NotFound.layout = 'err';
+NotFound.layout = 'no';
 
 export default NotFound;

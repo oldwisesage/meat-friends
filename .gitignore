@@ -8,6 +8,7 @@
 #config
 /.vscode
 /.storybook
+.babelrc
 
 #editor
 meat-freinds.code-workspace

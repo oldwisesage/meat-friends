@@ -21,13 +21,6 @@ const SettingsContainer = styled.div`
   min-height: 25rem;
 `;
 
-const Greeting = styled.p`
-  font-size: ${fontSize.body};
-  font-weight: ${fontWeight.light};
-  border-bottom: ${border.base};
-  padding-bottom: ${spacing.base};
-`;
-
 const Label = styled.h4`
   font-size: ${fontSize.h4};
   font-weight: ${fontWeight.light};
@@ -69,7 +62,6 @@ const Settings = ({ active, name }) => {
     <SettingsSection>
       <Heading title="Settings" />
       <SettingsContainer>
-        <Greeting>Hi {name}, change your experience here!</Greeting>
         <Setting>
           <Label>Dark mode:</Label>
           <OptionContainer>

@@ -1,12 +1,12 @@
 import DefaultLayout from './DefaultLayout';
-import AdminLayout from './AdminLayout';
 import CheckoutLayout from './CheckoutLayout';
 import PicLayout from './PicLayout';
+import NoLayout from './NoLayout';
 
 const layouts = {
   default: DefaultLayout,
-  admin: AdminLayout,
   checkout: CheckoutLayout,
+  no: NoLayout,
   pic: PicLayout,
 };
 

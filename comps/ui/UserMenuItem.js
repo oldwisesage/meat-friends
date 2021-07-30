@@ -16,10 +16,10 @@ const MenuItem = styled.div`
   }
 `;
 
-const UserMenuItem = ({ link }) => (
+const UserMenuItem = ({ link, label }) => (
   <MenuItem>
     <Link href={`/${link}`}>
-      <a>{link}</a>
+      <a>{label}</a>
     </Link>
   </MenuItem>
 );

@@ -22,14 +22,12 @@ const ModalContainer = styled.div`
 `;
 
 const UserMenu = styled.div`
-  display-radius: ${borderRadius.default};
   background-color: ${color.white};
   border-radius: ${borderRadius.default};
   border: ${border.thickest};
   box-shadow: ${boxShadow.idle};
   overflow: hidden;
 `;
-
 
 // LEARN understand aria better
 const UserMenuModal = ({ isShowing, hide }) =>

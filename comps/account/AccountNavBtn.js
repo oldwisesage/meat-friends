@@ -10,7 +10,9 @@ import {
 const NavButton = styled.button`
   font-size: ${fontSize.h4};
   font-weight: ${fontWeight.book};
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: flex-start;
   border: none;
   background-color: white;
   &:hover {

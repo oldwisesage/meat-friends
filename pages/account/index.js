@@ -37,13 +37,7 @@ const ComponentContainer = styled.div`
 
 const AccountPage = () => {
   const user = useUser();
-  const [state, setState] = useState([
-    { id: '95933', comp: 'Order History' },
-    { id: '32423', comp: 'Personal information' },
-    { id: '12423', comp: 'Address' },
-    { id: '11233', comp: 'Payment methods' },
-    { id: '04933', comp: 'Settings' },
-  ]);
+  const [activeComp, setActiveComp] = useState('');
 
   if (!user) return null;
 
