@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   borderRadius,
   boxShadow,
@@ -7,7 +8,6 @@ import {
   fontWeight,
 } from '../../theme/Variables';
 import Heading from '../Heading';
-
 // TODO add crud ability with this personal infomation
 
 const UserInfoContainer = styled.div``;
@@ -70,7 +70,7 @@ const UserContainer = styled.div`
   margin-bottom: 2.5rem;
 `;
 
-export default function PersonalInfo({ active }) {
+const PersonalInfo = ({ active }) => {
   if (!active) return null;
   // TODO add formik here
   return (
@@ -95,4 +95,10 @@ export default function PersonalInfo({ active }) {
       </InnerInfoContainer>
     </UserInfoContainer>
   );
-}
+};
+
+PersonalInfo.propTypes = {
+  active: PropTypes.bool,
+};
+
+export default PersonalInfo;

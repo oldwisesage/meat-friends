@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import formatMoney from '../../lib/formatMoney';
 import { color, fontSize, fontWeight } from '../../theme/Variables';
 
@@ -70,4 +71,11 @@ const OrderHistoryItem = ({ order }) => {
     </Link>
   );
 };
+
+OrderHistoryItem.propTypes = {
+  order: PropTypes.object.isRequired,
+  id: PropTypes.string.isRequired,
+  total: PropTypes.number.isRequired,
+};
+
 export default OrderHistoryItem;

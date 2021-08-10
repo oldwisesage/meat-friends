@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import formatMoney from '../../lib/formatMoney';
 import { color } from '../../theme/Variables';
 
@@ -80,6 +81,10 @@ const CartFooter = ({ orderSubtotal, children }) => {
       {children ? <PayContainer>{children}</PayContainer> : null}
     </CartFooterContainer>
   );
+};
+
+CartFooter.propTypes = {
+  orderSubtotal: PropTypes.number.isRequired,
 };
 
 export default CartFooter;

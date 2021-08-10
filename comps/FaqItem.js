@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { border, color, fontSize, fontWeight } from '../theme/Variables';
 
 const FaqContainer = styled.div`
@@ -73,4 +74,10 @@ const FaqItem = ({ question, answer }) => {
     </FaqContainer>
   );
 };
+
+FaqItem.propTypes = {
+  question: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired,
+};
+
 export default FaqItem;

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import formatMoney from '../../lib/formatMoney';
 import { fontSize } from '../../theme/Variables';
 import CartItemInfo from './CartItemInfo';
@@ -25,7 +26,7 @@ const Total = styled.p`
   font-size: ${fontSize.h4};
 `;
 
-export default function CartItem({ cartItem }) {
+const CartItem = ({ cartItem }) => {
   const { cut } = cartItem;
 
   return (
@@ -42,4 +43,10 @@ export default function CartItem({ cartItem }) {
       </InfoContainer>
     </CartItemContainer>
   );
-}
+};
+
+CartItem.propTypes = {
+  cartItem: PropTypes.object.isRequired,
+};
+
+export default CartItem;

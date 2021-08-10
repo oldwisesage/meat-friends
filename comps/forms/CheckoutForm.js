@@ -23,6 +23,14 @@ const AddressInputContainer = styled.div`
   grid-template-columns: 4fr 2fr 2fr;
   grid-gap: 2rem;
 `;
+
+const CheckoutFormContainer = styled.div`
+  border: 2px solid #000;
+  padding: 2.5rem;
+  border-radius: 5px;
+  background-color: white;
+`;
+
 const PayContainer = styled.div`
   display: grid;
   border: 0.5px solid #e0e0e0;
@@ -80,6 +88,9 @@ const CheckoutForm = () => {
           zip: '',
         }}
         validationSchema={Yup.object({
+          email: Yup.string()
+            .email()
+            .required('Please enter your email address'),
           firstName: Yup.string().required('Please enter your first name'),
           lastName: Yup.string().required('Please enter your last name'),
           street: Yup.string().required('Please enter your street address'),
@@ -109,65 +120,74 @@ const CheckoutForm = () => {
           });
         }}
       >
-        <FormContainer>
-          <Heading title="Checkout" subtitle="Enter your payment details" />
-          <NamesInputContainer>
+        <CheckoutFormContainer>
+          <FormContainer>
+            <Heading title="Checkout" subtitle="Enter your payment details" />
             <Input
-              type="text"
-              name="firstName"
-              label="First name"
-              placeholder="First name"
+              name="email"
+              type="email"
+              label="Email address"
+              placeholder="Email address"
             />
-            <Input
-              name="lastName"
-              type="text"
-              label="Last name"
-              placeholder="Last name"
-            />
-          </NamesInputContainer>
-          <AddressInputContainer>
+            <NamesInputContainer>
+              <Input
+                type="text"
+                name="firstName"
+                label="First name"
+                placeholder="First name"
+              />
+              <Input
+                name="lastName"
+                type="text"
+                label="Last name"
+                placeholder="Last name"
+              />
+            </NamesInputContainer>
             <Input
               name="street"
               type="text"
               label="Street address"
               placeholder="Street address"
             />
-            <SelectSubject name="state" label="state">
-              <option value="">State</option>
-              {states.map((state, index) => (
-                <option value="state" key={index}>
-                  {state}
-                </option>
-              ))}
-            </SelectSubject>
-            <Input
-              name="zip"
-              type="text"
-              label="Zip code"
-              placeholder="Zip code"
-            />
-          </AddressInputContainer>
-          <PayContainer>
-            <CardElement
-              options={{
-                style: {
-                  base: {
-                    fontSize: '16px',
-                    color: '#000',
-                    fontWeight: '100',
-                    '::placeholder': {
-                      color: '#e0e0e0',
+            <AddressInputContainer>
+              <Input name="city" type="text" label="City" placeholder="City" />
+              <SelectSubject name="state" label="state">
+                <option value="">State</option>
+                {states.map((state, index) => (
+                  <option value="state" key={index}>
+                    {state}
+                  </option>
+                ))}
+              </SelectSubject>
+              <Input
+                name="zip"
+                type="text"
+                label="Zip code"
+                placeholder="Zip code"
+              />
+            </AddressInputContainer>
+            <PayContainer>
+              <CardElement
+                options={{
+                  style: {
+                    base: {
+                      fontSize: '16px',
+                      color: '#000',
+                      fontWeight: '100',
+                      '::placeholder': {
+                        color: '#e0e0e0',
+                      },
                     },
+                    invalid: { color: '#904d50' },
+                    complete: { color: '#798465' },
                   },
-                  invalid: { color: '#904d50' },
-                  complete: { color: '#798465' },
-                },
-              }}
-            />
-          </PayContainer>
-          <Button type="submit">Submit your order</Button>
-          <OtherPayButtons />
-        </FormContainer>
+                }}
+              />
+            </PayContainer>
+            <Button type="submit">Submit your order</Button>
+            <OtherPayButtons />
+          </FormContainer>
+        </CheckoutFormContainer>
       </Formik>
     </FormSection>
   );

@@ -37,8 +37,7 @@ const ComponentContainer = styled.div`
 
 const AccountPage = () => {
   const user = useUser();
-  const [activeComp, setActiveComp] = useState('');
-
+  // const [activeComp, setActiveComp] = useState('');
   if (!user) return null;
 
   return (
@@ -49,14 +48,12 @@ const AccountPage = () => {
           <Heading title={`Hello ${user.name}!`} subtitle={user.email} />
           {/* COMP AccountNav */}
           <NavContainer>
-            {state.map((accLink, index) => (
-              <AccountNavBtn
-                comp={accLink.comp}
-                key={index}
-                active={accLink.isActive}
-                link={accLink.link}
-              />
-            ))}
+            <AccountNavBtn comp="Order History" />
+            <AccountNavBtn comp="Subscriptions" />
+            <AccountNavBtn comp="Payment Methods" />
+            <AccountNavBtn comp="Address" />
+            <AccountNavBtn comp="Settings" active />
+            <AccountNavBtn comp="Logout" />
           </NavContainer>
         </InfoContainer>
         <ComponentContainer>

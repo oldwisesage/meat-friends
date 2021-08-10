@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   borderRadius,
   color,
@@ -37,5 +38,9 @@ const Animal = ({ title }) => (
     </AnimalCard>
   </Link>
 );
+
+Animal.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default Animal;

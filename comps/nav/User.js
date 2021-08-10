@@ -17,6 +17,7 @@ const UserButton = styled.button`
   padding: 0.5rem;
   border-radius: 50rem;
   border: ${border.thickest};
+  cursor: pointer;
   &:hover {
     background-color: ${color.greyPale};
   }

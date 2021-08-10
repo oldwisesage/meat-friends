@@ -13,14 +13,12 @@ const CheckoutSection = styled.div`
   grid-template-columns: 3fr 2fr;
 `;
 
-const Checkout = () => {
-  return (
-    <CheckoutSection>
-      <Elements stripe={stripeLib}>
-        <CheckoutForm />
-      </Elements>
-      <CheckoutCart />
-    </CheckoutSection>
-  );
-}
+const Checkout = () => (
+  <CheckoutSection>
+    <Elements stripe={stripeLib}>
+      <CheckoutForm />
+    </Elements>
+    <CheckoutCart />
+  </CheckoutSection>
+);
 export default Checkout;

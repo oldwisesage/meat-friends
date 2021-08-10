@@ -1,14 +1,14 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Heading from '../Heading';
 import AddNewButton from './AddNewButton';
 import AddressBtn from './AddressBtn';
-
 // TODO add crud ability with this address situation
 const AccountContainer = styled.div`
   max-width: 75rem;
 `;
 
-export default function Address({ active }) {
+const Address = ({ active }) => {
   if (!active) return null;
   return (
     <AccountContainer>
@@ -17,4 +17,10 @@ export default function Address({ active }) {
       <AddNewButton text="address" />
     </AccountContainer>
   );
-}
+};
+
+Address.propTypes = {
+  active: PropTypes.bool,
+};
+
+export default Address;

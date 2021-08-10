@@ -1,5 +1,6 @@
 import { useQuery, gql } from '@apollo/client';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import DisplayError from '../error/ErrorMessage';
 import CutInfo from './CutInfo';
 import OtherCuts from './OtherCuts';
@@ -46,4 +47,9 @@ const SingleCut = ({ id }) => {
     </SingleCutSection>
   );
 };
+
+SingleCut.propTypes = {
+  id: PropTypes.string.isRequired,
+};
+
 export default SingleCut;

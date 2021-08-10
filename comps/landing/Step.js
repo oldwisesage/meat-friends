@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { borderRadius, fontSize } from '../../theme/Variables';
 
 const StepContainer = styled.div`
@@ -35,4 +36,10 @@ const Step = ({ number, whatStep }) => (
     </ContentContainer>
   </StepContainer>
 );
+
+Step.propTypes = {
+  number: PropTypes.string.isRequired,
+  whatStep: PropTypes.string.isRequired,
+};
+
 export default Step;

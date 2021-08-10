@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { gql, useQuery } from '@apollo/client';
 import styled from 'styled-components';
-import { isNullableType } from 'graphql';
+import PropTypes from 'prop-types';
 import DisplayError from '../error/ErrorMessage';
 import { perPage } from '../../config';
 import {
@@ -51,7 +51,7 @@ const LinkText = styled.a`
   }
 `;
 
-export default function Pagination({ page }) {
+const Pagination = ({ page }) => {
   const { error, loading, data } = useQuery(PAGINATION_QUERY);
 
   if (loading) return <p>Loading.....</p>;
@@ -85,4 +85,10 @@ export default function Pagination({ page }) {
       </PageContainer>
     </>
   );
-}
+};
+
+Pagination.propTypes = {
+  page: PropTypes.number,
+};
+
+export default Pagination;

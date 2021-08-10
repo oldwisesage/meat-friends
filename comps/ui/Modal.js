@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { color } from '../../theme/Variables';
 
 const ModalOverlay = styled.div`
@@ -76,4 +77,8 @@ const Modal = ({ isShowing, hide }) =>
       )
     : null;
 
+Modal.propTypes = {
+  isShowing: PropTypes.bool.isRequired,
+  hide: PropTypes.bool.isRequired,
+};
 export default Modal;

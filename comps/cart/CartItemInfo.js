@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import formatMoney from '../../lib/formatMoney';
 
 const CartItemInfoContainer = styled.div`
@@ -25,5 +26,10 @@ const CartItemInfo = ({ cut, quantity }) => (
     </CutPrice>
   </CartItemInfoContainer>
 );
+
+CartItemInfo.propTypes = {
+  cut: PropTypes.object.isRequired,
+  quantity: PropTypes.number.isRequired,
+};
 
 export default CartItemInfo;

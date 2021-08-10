@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   borderRadius,
   boxShadow,
@@ -34,4 +35,9 @@ const AddNewButton = ({ text }) => (
     <p>Add new {text}</p>
   </DaAddNewButton>
 );
+
+AddNewButton.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
 export default AddNewButton;

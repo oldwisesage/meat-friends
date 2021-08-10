@@ -1,6 +1,8 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { color } from '../../theme/Variables';
 
 const REMOVE_FROM_CART = gql`
   mutation REMOVE_FROM_CART($id: ID!) {
@@ -15,16 +17,16 @@ const HoverClickable = styled.button`
   justify-self: center;
   border: none;
   background: none;
-  border-radius: 50%;
+  border-radius: 50px;
+  cursor: pointer;
   &:hover {
-    background: rgba($grey-pale, 0.5);
+    background-color: rgba(${color.greyPale}, 0.5);
   }
   &:active {
-    background: rgba($grey-mid, 0.5);
+    background: rgba(${color.greyMid}, 0.5);
   }
 `;
 
-// LEARN understand apollo cache
 function update(cache, payload) {
   cache.evict(cache.identify(payload.data.deleteCartItem));
 }
@@ -53,5 +55,10 @@ const RemoveFromCartButton = ({ id }) => {
       </svg>
     </HoverClickable>
   );
-}
+};
+
+RemoveFromCartButton.propTypes = {
+  id: PropTypes.string.isRequired,
+};
+
 export default RemoveFromCartButton;

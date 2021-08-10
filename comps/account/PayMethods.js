@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Heading from '../Heading';
 import AddNewButton from './AddNewButton';
 import PayMethod from './PayMethod';
@@ -19,4 +20,9 @@ const PayMethods = ({ active }) => {
     </PayMethodsContainer>
   );
 };
+
+PayMethods.propTypes = {
+  active: PropTypes.bool,
+};
+
 export default PayMethods;

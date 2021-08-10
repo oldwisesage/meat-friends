@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { color, fontSize } from '../theme/Variables';
 
 const LogoContainer = styled.div`
@@ -25,4 +26,9 @@ const Logo = ({ children, color }) => (
     </LogoContainer>
   </Link>
 );
+
+Logo.propTypes = {
+  color: PropTypes.string.isRequired,
+};
+
 export default Logo;

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { color, fontSize, fontWeight } from '../../theme/Variables';
 
 const MenuItem = styled.div`
@@ -23,4 +24,10 @@ const UserMenuItem = ({ link, label }) => (
     </Link>
   </MenuItem>
 );
+
+UserMenuItem.propTypes = {
+  link: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+};
+
 export default UserMenuItem;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { useCart } from '../../lib/cartState';
 import {
   border,
@@ -19,6 +20,7 @@ const CartIconButton = styled.button`
   place-items: center;
   padding: 0.4rem 2.5rem;
   position: relative;
+  cursor: pointer;
   &:hover {
     box-shadow: ${boxShadow.idle};
   }
@@ -41,6 +43,10 @@ const CartIcon = ({ user }) => {
       />
     </CartIconButton>
   );
+};
+
+CartIcon.propTypes = {
+  user: PropTypes.object,
 };
 
 export default CartIcon;

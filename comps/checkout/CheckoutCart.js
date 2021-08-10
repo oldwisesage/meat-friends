@@ -3,6 +3,7 @@ import useUser from '../user/useUser';
 import Heading from '../Heading';
 import CartItem from '../cart/CartItem';
 import CartFooter from '../cart/CartFooter';
+import calcTotalPrice from '../../lib/calcTotalPrice';
 
 const CartContainer = styled.div`
   background: white;
@@ -15,7 +16,6 @@ const CartContainer = styled.div`
   display: grid;
   padding: 2.5rem;
   align-items: flex-start;
-  v
 `;
 export const CartItemContainer = styled.div`
   margin-top: 2.5rem;
@@ -38,7 +38,7 @@ const CheckoutCart = () => {
           <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
       </CartItemContainer>
-      <CartFooter me={me} />
+      <CartFooter me={me} subtotal={calcTotalPrice(me.cart)} />
     </CartContainer>
   );
 };

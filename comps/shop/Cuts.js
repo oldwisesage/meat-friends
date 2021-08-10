@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { perPage } from '../../config';
 import Cut from './Cut';
 
@@ -56,4 +57,9 @@ export default function Cuts({ page }) {
     </CutsContainer>
   );
 }
+
+Cuts.propTypes = {
+  page: PropTypes.number,
+};
+
 export { ALL_CUTS_QUERY };

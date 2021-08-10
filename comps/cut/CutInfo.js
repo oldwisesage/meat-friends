@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import formatMoney from '../../lib/formatMoney';
 import {
   borderRadius,
@@ -53,11 +54,12 @@ const Size = styled.div`
   color: ${color.greyDark};
   font-size: ${fontSize.body};
   font-weight: ${fontWeight.light};
+  margin-top: 0.5rem;
 `;
 
 const Rating = styled.div`
   font-size: ${fontSize.h3};
-  margin-top: ${spacing.less};
+  margin-top: 1rem;
 `;
 
 const Desc = styled.div`
@@ -85,4 +87,9 @@ const CutInfo = ({ cut }) => (
     </InfoContainer>
   </CutInfoContainer>
 );
+
+CutInfo.propTypes = {
+  cut: PropTypes.object.isRequired,
+};
+
 export default CutInfo;

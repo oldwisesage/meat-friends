@@ -1,5 +1,6 @@
 import { useField } from 'formik';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const SelectSubjectStyles = styled.div`
   select {
@@ -27,7 +28,7 @@ const SelectSubjectStyles = styled.div`
   }
 `;
 
-export const SelectSubject = ({ label, ...props }) => {
+const SelectSubject = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <SelectSubjectStyles>
@@ -39,3 +40,9 @@ export const SelectSubject = ({ label, ...props }) => {
     </SelectSubjectStyles>
   );
 };
+
+SelectSubject.propTypes = {
+  label: PropTypes.string.isRequired,
+};
+
+export default SelectSubject;

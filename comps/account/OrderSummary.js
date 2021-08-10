@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   borderRadius,
   boxShadow,
@@ -92,4 +93,9 @@ const OrderSummary = ({ orderData }) => {
     </OrderContainer>
   );
 };
+
+OrderSummary.propTypes = {
+  orderData: PropTypes.object.isRequired,
+};
+
 export default OrderSummary;

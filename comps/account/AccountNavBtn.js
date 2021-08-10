@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   borderRadius,
   color,
@@ -15,14 +16,6 @@ const NavButton = styled.button`
   justify-content: flex-start;
   border: none;
   background-color: white;
-  &:hover {
-    padding: 0 0.5rem;
-    border-radius: ${borderRadius.default};
-    background: ${color.greyPale};
-  }
-  &:active {
-    background: ${color.greyMid};
-  }
 `;
 
 const InnerButton = styled.p`
@@ -32,12 +25,23 @@ const InnerButton = styled.p`
   border-radius: ${borderRadius.default};
   background: ${color.greyMid};`
       : null}
+  &:hover {
+    padding: 0 1rem;
+    border-radius: ${borderRadius.default};
+    background: ${color.greyPale};
+  }
+  &:active {
+    padding: 0 1rem;
+    border-radius: ${borderRadius.default};
+    background: ${color.greyMid};
+  }
 `;
-const AccountNavBtn = ({ comp, active, link }) => {
+const AccountNavBtn = ({ comp, active }) => {
   const router = useRouter();
 
   function handleClick() {
-    router.push({ pathname: `/account/${link}` });
+    console.log(`⏳ Render a god damn component`);
+    // router.push({ pathname: `/account/${link}` });
   }
 
   return (
@@ -50,4 +54,10 @@ const AccountNavBtn = ({ comp, active, link }) => {
     </NavButton>
   );
 };
+
+AccountNavBtn.propTypes = {
+  comp: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
+};
+
 export default AccountNavBtn;

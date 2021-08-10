@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import formatMoney from '../../lib/formatMoney';
 import AddToCartButton from './AddToCartButton';
 import {
@@ -61,7 +62,7 @@ const ButtonContainer = styled.div`
 
 const Cut = ({ cut }) => (
   <CutContainer>
-    <Link href={`/meat/${cut.id}`}>
+    <Link href={`/cut/${cut.id}`}>
       <CutImageContainer>
         <CutImage
           src={cut?.photo?.image?.publicUrlTransformed}
@@ -78,5 +79,9 @@ const Cut = ({ cut }) => (
     </BottomContainer>
   </CutContainer>
 );
+
+Cut.propTypes = {
+  cut: PropTypes.object.isRequired,
+};
 
 export default Cut;

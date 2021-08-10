@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import PropTypes from 'prop-types';
 import useUser from '../user/useUser';
 
 const Dot = styled.div`
@@ -61,4 +62,9 @@ const CartCount = ({ count }) => {
     </AnimationStyles>
   );
 };
+
+CartCount.propTypes = {
+  count: PropTypes.number,
+};
+
 export default CartCount;

@@ -1,6 +1,7 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { CURRENT_USER_QUERY } from '../user/useUser';
 import { Button } from '../ui/Form';
 
@@ -30,4 +31,9 @@ const AddToCartButton = ({ id }) => {
     </AddButton>
   );
 };
+
+AddToCartButton.propTypes = {
+  id: PropTypes.string.isRequired,
+};
+
 export default AddToCartButton;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   border,
   borderRadius,
@@ -56,7 +57,7 @@ const OptionButton = styled.button`
   }
 `;
 
-const Settings = ({ active, name }) => {
+const Settings = ({ active }) => {
   if (!active) return null;
   return (
     <SettingsSection>
@@ -89,4 +90,9 @@ const Settings = ({ active, name }) => {
     </SettingsSection>
   );
 };
+
+Settings.propTypes = {
+  active: PropTypes.bool,
+};
+
 export default Settings;

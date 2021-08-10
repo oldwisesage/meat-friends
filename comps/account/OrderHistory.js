@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import OrderHistoryItem from './OrderHistoryItem';
 import Heading from '../Heading';
 import {
@@ -76,4 +77,10 @@ const OrderHistory = ({ id, active }) => {
     </OrderContainer>
   );
 };
+
+OrderHistory.propTypes = {
+  id: PropTypes.string.isRequired,
+  active: PropTypes.bool,
+};
+
 export default OrderHistory;

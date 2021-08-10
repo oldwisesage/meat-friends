@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import formatMoney from '../../lib/formatMoney';
 import { fontSize } from '../../theme/Variables';
 import OrderItemInfo from './OrderItemInfo';
@@ -37,4 +38,9 @@ const OrderSummaryItem = ({ item }) => (
     </InfoContainer>
   </OrderItemContainer>
 );
+
+OrderSummaryItem.propTypes = {
+  item: PropTypes.object.isRequired,
+};
+
 export default OrderSummaryItem;
