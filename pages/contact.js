@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import ContactForm from '../comps/forms/ContactForm';
 import Heading from '../comps/Heading';
-import { border, fontSize, fontWeight, spacing } from '../theme/Variables';
+import { border, fontSize, fontWeight } from '../theme/Variables';
 
 const ContactSection = styled.section`
   display: grid;

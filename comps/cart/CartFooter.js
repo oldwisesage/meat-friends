@@ -59,8 +59,7 @@ const PayContainer = styled.div`
   margin-top: 2.5rem;
 `;
 
-const CartFooter = ({ orderSubtotal, children }) => {
-  const subtotal = orderSubtotal;
+const CartFooter = ({ subtotal, children }) => {
   const taxes = subtotal * 0.05;
   const shipping = 1000;
   const total = taxes + shipping + subtotal;
@@ -84,7 +83,7 @@ const CartFooter = ({ orderSubtotal, children }) => {
 };
 
 CartFooter.propTypes = {
-  orderSubtotal: PropTypes.number.isRequired,
+  subtotal: PropTypes.number.isRequired,
 };
 
 export default CartFooter;

@@ -15,7 +15,7 @@ import {
 } from '../ui/Form';
 import Heading from '../Heading';
 import { Input } from './Input';
-import { SelectSubject } from './SelectSubject';
+import SelectSubject from './SelectSubject';
 import OtherPayButtons from './OtherPayButtons';
 
 const AddressInputContainer = styled.div`

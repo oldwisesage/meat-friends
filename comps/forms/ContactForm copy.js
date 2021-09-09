@@ -6,14 +6,13 @@ import { MessageInput } from './MessageInput';
 import SelectSubject from './SelectSubject';
 import { Button, FormContainer, NamesInputContainer } from '../ui/Form';
 
-const ContactForm = () => (
+const WelcomeForm = () => (
   <Formik
     initialValues={{
       firstName: '',
       lastName: '',
       email: '',
-      subject: '',
-      message: '',
+      story: '',
     }}
     validationSchema={Yup.object({
       firstName: Yup.string()
@@ -23,11 +22,8 @@ const ContactForm = () => (
         .max(20, 'Must be 20 characters or more')
         .required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
-      subject: Yup.string()
-        .oneOf(['shipping', 'payment', 'order'], 'Please choose a subject')
-        .required('Required'),
-      message: Yup.string()
-        .min(5, 'Please enter a detailed message')
+      story: Yup.string()
+        .min(5, 'Tell us a story!')
         .required('Required'),
     })}
     onSubmit={(values) => {
@@ -75,4 +71,4 @@ const ContactForm = () => (
   </Formik>
 );
 
-export default ContactForm;
+export default WelcomeForm;

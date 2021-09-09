@@ -24,9 +24,8 @@ export const CartItemContainer = styled.div`
 // TODO fix cart styling
 const CheckoutCart = () => {
   const me = useUser();
-
   if (!me) return null;
-
+  console.log(calcTotalPrice(me.cart));
   return (
     <CartContainer>
       <Heading

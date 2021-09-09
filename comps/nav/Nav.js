@@ -35,7 +35,6 @@ const AccountContainer = styled.div`
 
 const Nav = () => {
   const user = useUser();
-
   return (
     <>
       <NavContainer>

@@ -58,7 +58,6 @@ const OrderSummary = ({ orderData }) => {
   return (
     <OrderContainer>
       <OrderInfo>
-        {/* COMP OrderInfoItem  */}
         <OrderInfoItem>
           <h3>Order #</h3>
           <p>12jdklsaf98439f0d</p>
