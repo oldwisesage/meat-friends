@@ -44,6 +44,7 @@ export const fontSize = {
   h2: '3.815rem',
   h3: '3.052rem',
   h4: '2.441rem',
+  bigbody: '2.21rem',
   body: '1.953rem',
   caption: '1.563rem',
   finePrint: '1.25rem',

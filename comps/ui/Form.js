@@ -1,25 +1,37 @@
 import { Form } from 'formik';
 import styled from 'styled-components';
+import { device } from '../../theme/Breakpoints';
+import { borderRadius, color, fontSize } from '../../theme/Variables';
 
 export const FormSection = styled.div`
   display: grid;
   place-items: center center;
-  min-height: 50rem;
   width: 100%;
+  @media ${device.tablet} {
+    min-height: 50rem;
+  }
 `;
 
 export const FormContainer = styled(Form)`
   display: grid;
-  grid-gap: 2rem;
-  width: 50rem;
   border-radius: 5px;
-  background-color: #fff;
+  @media ${device.phone} {
+    width: 100%;
+    grid-gap: 1.5rem;
+  }
+  @media ${device.tablet} {
+    width: 50rem;
+    grid-gap: 2rem;
+  }
 `;
 
 export const NamesInputContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 1.5rem;
+  @media ${device.tablet} {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -27,12 +39,11 @@ export const Button = styled.button`
   border: none;
   padding: 0.4rem 2rem;
   max-height: 5rem;
-  font-size: 1.958rem;
-  border-radius: $border-radius;
-  color: #fff;
-  background-color: #000;
-  font-size: 1.563rem;
-  border-radius: 5px;
+  font-size: ${fontSize.h4};
+  border-radius: ${borderRadius.default};
+  color: ${color.black};
+  background-color: ${color.white};
+  border: 2px solid ${color.black};
   cursor: pointer;
   &:hover {
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.04);

@@ -1,10 +1,14 @@
-import { Formik, Form } from 'formik';
+import { Formik } from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
-import { Input } from './Input';
-import { MessageInput } from './MessageInput';
-import SelectSubject from './SelectSubject';
+import { Input } from '../forms/Input';
+import { MessageInput } from '../forms/MessageInput';
 import { Button, FormContainer, NamesInputContainer } from '../ui/Form';
+
+const WelcomeButton = styled(Button)`
+  margin-top: 2rem;
+  padding: 1rem;
+`;
 
 const WelcomeForm = () => (
   <Formik
@@ -12,7 +16,8 @@ const WelcomeForm = () => (
       firstName: '',
       lastName: '',
       email: '',
-      story: '',
+      subject: '',
+      message: '',
     }}
     validationSchema={Yup.object({
       firstName: Yup.string()
@@ -22,8 +27,8 @@ const WelcomeForm = () => (
         .max(20, 'Must be 20 characters or more')
         .required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
-      story: Yup.string()
-        .min(5, 'Tell us a story!')
+      message: Yup.string()
+        .min(5, 'Please enter a detailed message')
         .required('Required'),
     })}
     onSubmit={(values) => {
@@ -53,20 +58,13 @@ const WelcomeForm = () => (
         type="text"
         placeholder="Email address"
       />
-      <SelectSubject label="subject" name="subject">
-        <option value="">Please choose a subject</option>
-        <option value="shipping">Shipping information</option>
-        <option value="payment">Payment issue</option>
-        <option value="order">Order issue</option>
-      </SelectSubject>
       <MessageInput
         label="Message"
         name="message"
         type="text"
         placeholder="Please enter your message here"
       />
-
-      <Button type="submit">Submit</Button>
+      <WelcomeButton type="submit">Join the waitlist</WelcomeButton>
     </FormContainer>
   </Formik>
 );

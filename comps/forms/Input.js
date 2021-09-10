@@ -1,23 +1,29 @@
 import { useField } from 'formik';
 import styled from 'styled-components';
+import {
+  borderRadius,
+  color,
+  fontSize,
+  fontWeight,
+} from '../../theme/Variables';
 
 export const InputStyles = styled.div`
   .text-input {
     color: #000;
   }
   input {
-    font-size: 1.563rem;
-    font-weight: 200;
+    font-size: ${fontSize.h4};
+    font-weight: ${fontWeight.light};
     background: #fff;
     color: #000;
     padding: 0.25rem 0.5rem;
     text-decoration: none;
-    border: 0.5px solid #e0e0e0;
+    border: 2px solid ${color.black};
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.04);
     width: 100%;
-    border-radius: 5px;
+    border-radius: ${borderRadius.default};
     &::placeholder {
-      color: #adadad;
+      color: ${color.grayPale};
     }
     &:focus {
       outline: 0.5px solid #798465;
