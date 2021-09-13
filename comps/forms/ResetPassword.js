@@ -3,8 +3,8 @@ import { Formik } from 'formik';
 import gql from 'graphql-tag';
 import * as Yup from 'yup';
 import { Input } from './Input';
-import { FormSection, FormContainer, Button } from '../container/Form';
-import { CURRENT_USER_QUERY } from '../user/User';
+import { FormSection, FormContainer, Button } from '../ui/Form';
+import { CURRENT_USER_QUERY } from '../user/useUser';
 import Heading from '../Heading';
 
 const RESET_MUTATION = gql`

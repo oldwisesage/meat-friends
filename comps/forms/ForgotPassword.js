@@ -2,9 +2,9 @@ import { useMutation } from '@apollo/client';
 import { Formik } from 'formik';
 import gql from 'graphql-tag';
 import * as Yup from 'yup';
-import { Button, FormContainer, FormSection } from '../container/Form';
+import { Button, FormContainer, FormSection } from '../ui/Form';
 import Heading from '../Heading';
-import { CURRENT_USER_QUERY } from '../user/User';
+import { CURRENT_USER_QUERY } from '../user/useUser';
 import { Input } from './Input';
 
 const FORGOT_PASSWORD_MUTATION = gql`

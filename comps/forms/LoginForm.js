@@ -3,12 +3,7 @@ import { Formik } from 'formik';
 import Link from 'next/link';
 import styled from 'styled-components';
 import * as Yup from 'yup';
-import {
-  Button,
-  FormContainer,
-  FormSection,
-  NamesInputContainer,
-} from '../ui/Form';
+import { Button, FormContainer, FormSection } from '../ui/Form';
 import Heading from '../Heading';
 import { CURRENT_USER_QUERY } from '../user/useUser';
 import { Input } from './Input';

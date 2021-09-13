@@ -1,5 +1,4 @@
-import { Formik, Form } from 'formik';
-import styled from 'styled-components';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Input } from './Input';
 import { MessageInput } from './MessageInput';
