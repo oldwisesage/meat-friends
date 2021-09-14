@@ -43,3 +43,6 @@ yarn-error.log*
 
 # depriciated 
 /_depreciated
+
+# Local Netlify folder
+.netlify
