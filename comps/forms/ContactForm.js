@@ -5,15 +5,16 @@ import { MessageInput } from './MessageInput';
 import SelectSubject from './SelectSubject';
 import { Button, FormContainer, NamesInputContainer } from '../ui/Form';
 
+const initialValues = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  message: '',
+};
+
 const ContactForm = () => (
   <Formik
-    initialValues={{
-      firstName: '',
-      lastName: '',
-      email: '',
-      subject: '',
-      message: '',
-    }}
+    initialValues={initialValues}
     validationSchema={Yup.object({
       firstName: Yup.string()
         .max(15, 'Must be 15 characters or more')

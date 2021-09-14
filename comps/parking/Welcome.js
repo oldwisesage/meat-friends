@@ -76,7 +76,7 @@ const Welcome = () => (
         <p>We are your friendly neighborhood, magic internet butcher.</p>
         <p>
           Our aim is to bring healthy, delicious meats from local farms right to
-          you doorstep.
+          your doorstep.
         </p>
       </Mission>
       <WelcomeForm />
