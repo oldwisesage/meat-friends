@@ -17,7 +17,7 @@ const WelcomeContainer = styled.div`
     width: 100%;
   }
   @media ${device.tablet} {
-    width: 450px;
+    width: 50rem;
   }
 `;
 
