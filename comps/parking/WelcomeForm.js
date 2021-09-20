@@ -8,8 +8,12 @@ import { Input } from '../forms/Input';
 import { MessageInput } from '../forms/MessageInput';
 import { Button, FormContainer, NamesInputContainer } from '../ui/Form';
 import { fontSize, fontWeight } from '../../theme/Variables';
+import { SimpleLoader } from '../ui/Loader';
 
-const WelcomeFormContainer = styled.div``;
+const WelcomeFormContainer = styled.div`
+  height: 31.6rem;
+  width: 50rem;
+`;
 
 const WelcomeButton = styled(Button)`
   margin-top: 2rem;
@@ -18,15 +22,14 @@ const WelcomeButton = styled(Button)`
 
 const FinishedMessage = styled.div`
   padding-top: 2rem;
-  width: 500px;
   h2 {
-    font-size: ${fontSize.h4};
+    font-size: ${fontSize.h2};
     font-weight: ${fontWeight.mid};
   }
   p {
     padding-top: 1rem;
-    font-size: ${fontSize.body};
-    font-weight: ${fontWeight.book};
+    font-size: ${fontSize.h4};
+    font-weight: ${fontWeight.light};
   }
 `;
 
@@ -45,6 +48,7 @@ init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
 
 const WelcomeForm = () => {
   const [finished, setFinished] = useState(false);
+  const [loading, setLoading] = useState(false);
   const postToAirtable = (values) => {
     base('WelcomeForm').create(
       [
@@ -77,7 +81,7 @@ const WelcomeForm = () => {
 
   return (
     <WelcomeFormContainer>
-      {finished ? (
+      {finished && (
         <FinishedMessage>
           <h2>Welcome email sent, thank you!</h2>
           <p>
@@ -85,7 +89,9 @@ const WelcomeForm = () => {
             & updates on our progress.
           </p>
         </FinishedMessage>
-      ) : (
+      )}
+      {loading && <SimpleLoader />}
+      {!finished && !loading && (
         <Formik
           initialValues={initialValues}
           validationSchema={Yup.object({
@@ -107,8 +113,10 @@ const WelcomeForm = () => {
             sendWelcomeEmail(values);
             resetForm();
             setLoading(true);
-            setTimeout(() => setLoading(false), 500);
-            setFinished(true);
+            setTimeout(() => {
+              setLoading(false);
+              setFinished(true);
+            }, 1000);
           }}
         >
           <FormContainer>

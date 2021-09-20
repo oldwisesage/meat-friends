@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { borderRadius } from '../../theme/Variables';
 
 export const Button = styled.button`
   text-decoration: none;
@@ -6,7 +7,7 @@ export const Button = styled.button`
   padding: 0.4rem 2rem;
   max-height: 5rem;
   font-size: 1.958rem;
-  border-radius: $border-radius;
+  border-radius: ${borderRadius.default};
   color: #fff;
   background-color: #000;
   font-size: 1.563rem;

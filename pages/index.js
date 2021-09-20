@@ -1,35 +1,9 @@
 import styled from 'styled-components';
-// import AnimalsSection from '../comps/landing/AnimalsSection';
-// import CallToAction from '../comps/landing/CallToAction';
-// import FarmSection from '../comps/landing/FarmSection';
+import { useState } from 'react';
+import CallToAction from '../comps/landing/CallToAction';
 // import HowItWorksSection from '../comps/landing/HowItWorksSection';
-// import WhoSection from '../comps/landing/WhoSection';
-
-// const LandingContainer = styled.main`
-//   display: grid;
-//   overflow-y: visible;
-//   overflow-x: hidden;
-//   min-height: 50rem;
-//   grid-template-areas:
-//     'cta'
-//     'shop'
-//     'how'
-//     'who'
-//     'farm';
-// `;
-
-// const LandingPage = () => (
-//   <LandingContainer>
-//     <CallToAction />
-//     <HowItWorksSection />
-//     <AnimalsSection />
-//     <WhoSection />
-//     <FarmSection />
-//   </LandingContainer>
-// );
-
-// export default LandingPage;
-
+import MeatSection from '../comps/landing/AnimalsSection';
+import WhatSection from '../comps/landing/What';
 import PicCollage from '../comps/parking/PicCollage';
 import Welcome from '../comps/parking/Welcome';
 import { device } from '../theme/Breakpoints';
@@ -46,13 +20,38 @@ const WelcomeGrid = styled.div`
   }
 `;
 
-const WelcomePage = () => (
-  <WelcomeGrid>
-    <Welcome />
-    <PicCollage />
-  </WelcomeGrid>
-);
+const LandingContainer = styled.main`
+  display: grid;
+  overflow-y: visible;
+  overflow-x: hidden;
+  min-height: 50rem;
+  grid-template-areas:
+    'cta'
+    'what'
+    'animal'
+    'cooking';
+`;
 
-WelcomePage.layout = 'no';
+const parkingPage = false;
 
-export default WelcomePage;
+const LandingPage = () => {
+  const [parking, setParking] = useState(parkingPage);
+  return (
+    <>
+      {parking ? (
+        <WelcomeGrid>
+          <Welcome />
+          <PicCollage />
+        </WelcomeGrid>
+      ) : (
+        <LandingContainer>
+          <CallToAction />
+          <WhatSection />
+        </LandingContainer>
+      )}
+    </>
+  );
+};
+
+if (parkingPage) LandingPage.layout = 'no';
+export default LandingPage;
