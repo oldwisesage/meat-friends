@@ -23,22 +23,19 @@ const WelcomeContainer = styled.div`
 
 const Hello = styled.h1`
   font-weight: ${fontWeight.mid};
-  @media ${device.phone} {
-    font-size: ${fontSize.h2};
-  }
+  font-size: ${fontSize.h1};
   @media ${device.tablet} {
-    font-size: ${fontSize.h1};
   }
 `;
 
 const Intro = styled.h3`
-  font-weight: ${fontWeight.mid};
-  font-size: ${fontSize.h2};
+  font-weight: ${fontWeight.book};
   @media ${device.phone} {
+    font-size: ${fontSize.h1};
     width: 250px;
   }
   @media ${device.tablet} {
-    width: 100%;
+    font-size: ${fontSize.h2};
   }
 `;
 

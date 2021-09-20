@@ -9,9 +9,13 @@ import { MessageInput } from '../forms/MessageInput';
 import { Button, FormContainer, NamesInputContainer } from '../ui/Form';
 import { fontSize, fontWeight } from '../../theme/Variables';
 import { SimpleLoader } from '../ui/Loader';
+import { device } from '../../theme/Breakpoints';
 
 const WelcomeFormContainer = styled.div`
   height: 31.6rem;
+  @media ${device.phone} {
+    width: 100%;
+  }
   width: 50rem;
 `;
 

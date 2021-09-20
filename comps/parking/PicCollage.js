@@ -8,9 +8,11 @@ const ImageContainer = styled.section`
   z-index: -1;
   @media ${device.phone} {
     position: absolute;
+    top: -20px;
   }
   @media ${device.tablet} {
     height: 100vh;
+    top: 0px;
   }
   @media ${device.laptop} {
     position: relative;
@@ -23,7 +25,7 @@ const PicGrid = styled.div`
   padding-top: 2rem;
   @media ${device.phone} {
     grid-template-columns: 1fr repeat(4, 1fr);
-    grid-template-rows: 126px 193px 214px 245px;
+    grid-template-rows: 150px 193px 214px 245px;
     grid-template-areas:
       '.    .    .    .    pic1'
       '.    pic6 pic6 pic6 pic6'
