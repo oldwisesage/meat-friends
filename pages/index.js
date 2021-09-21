@@ -36,19 +36,19 @@ const parkingPage = true;
 const LandingPage = () => {
   const [parking, setParking] = useState(parkingPage);
   return (
-    <>
-      {parking ? (
-        <WelcomeGrid>
-          <Welcome />
-          <PicCollage />
-        </WelcomeGrid>
-      ) : (
-        <LandingContainer>
-          <CallToAction />
-          <WhatSection />
-        </LandingContainer>
-      )}
-    </>
+    <WelcomeGrid>
+      <Welcome />
+      <PicCollage />
+    </WelcomeGrid>
+    // <>
+    //   {parking ? (
+    //   ) : (
+    //     <LandingContainer>
+    //       <CallToAction />
+    //       <WhatSection />
+    //     </LandingContainer>
+    //   )}
+    // </>
   );
 };
 
