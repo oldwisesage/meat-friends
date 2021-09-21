@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import CallToAction from '../comps/landing/CallToAction';
+// import CallToAction from '../comps/landing/CallToAction';
 // import HowItWorksSection from '../comps/landing/HowItWorksSection';
-import WhatSection from '../comps/landing/What';
+// import WhatSection from '../comps/landing/What';
 import PicCollage from '../comps/parking/PicCollage';
 import Welcome from '../comps/parking/Welcome';
 import { device } from '../theme/Breakpoints';
@@ -19,17 +19,17 @@ const WelcomeGrid = styled.div`
   }
 `;
 
-const LandingContainer = styled.main`
-  display: grid;
-  overflow-y: visible;
-  overflow-x: hidden;
-  min-height: 50rem;
-  grid-template-areas:
-    'cta'
-    'what'
-    'animal'
-    'cooking';
-`;
+// const LandingContainer = styled.main`
+//   display: grid;
+//   overflow-y: visible;
+//   overflow-x: hidden;
+//   min-height: 50rem;
+//   grid-template-areas:
+//     'cta'
+//     'what'
+//     'animal'
+//     'cooking';
+// `;
 
 const parkingPage = true;
 
@@ -52,5 +52,6 @@ const LandingPage = () => {
   );
 };
 
-if (parkingPage) LandingPage.layout = 'no';
+LandingPage.layout = 'no';
+
 export default LandingPage;
